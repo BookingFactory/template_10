@@ -1,0 +1,19 @@
+{
+  "name": "template-1",
+  "author": "Daria Kurmaeva",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "node-sass": "^4.9.2",
+    "parallelshell": "^3.0.2",
+    "sass-lint": "^1.12.1"
+  },
+  "scripts": {
+    "watch": "./node_modules/.bin/node-sass --watch src/styles/index.scss dist/styles/index.css",
+    "web": "./node_modules/.bin/browser-sync start --config bs-config.js",
+    "start": "./node_modules/.bin/parallelshell 'npm run watch' 'npm run web'"
+  }
+}
