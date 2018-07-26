@@ -1,0 +1,18 @@
+.button {
+  background-color: $color--white;
+  color: $color--grey;
+  font-family: 'Work Sans';
+  font-size: 12px;
+  font-weight: 500;
+  padding: 14px 32px;
+  text-transform: uppercase;
+
+  &.button-success {
+    background-color: $color--theme-2;
+    color: $color--white;
+  }
+
+  @media screen and (max-width: 320px) {
+    padding: 14px 24px;
+  }
+}
