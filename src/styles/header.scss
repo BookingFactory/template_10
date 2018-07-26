@@ -3,21 +3,46 @@ header {
   max-width: 1136px;
   width: 100%;
 
-  .header {
+  .header,
+  .info-box {
     color: $color--header-65;
     font-family: 'Work Sans';
     font-size: 11px;
     font-weight: 500;
+  }
+
+  .header {
     height: 40px;
     line-height: 40px;
+  }
 
-    .info-box {
-      padding-right: 27px;
+  .info-box {
+    padding-right: 27px;
 
-      i {
-        color: $color--theme-2;
-        padding-right: 6px;
-      }
+    i {
+      color: $color--theme-2;
+      padding-right: 6px;
     }
+  }
+
+  @media screen and (max-width: 1200px) {
+    max-width: 1040px;
+  }
+
+  @media screen and (max-width: 1080px) {
+    max-width: 768px;
+
+    .header {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    box-sizing: border-box;
+    padding: 0 51px 0 77px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 0;
   }
 }

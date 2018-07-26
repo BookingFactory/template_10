@@ -1,0 +1,237 @@
+.navbar {
+  margin: 45px 0 62px;
+  position: relative;
+  width: 100%;
+
+  .navbar-toggler {
+    background-color: $color--white;
+    border: 1px solid $color--unknown-1;
+    color: $color--theme-2;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0;
+    position: relative;
+    width: auto;
+    z-index: 999;
+
+    i {
+      padding: 15px 17px;
+
+      &.fa-times {
+        padding: 15px 18px;
+      }
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+
+    .logo-title {
+      font-family: 'Courgette';
+      font-size: 45px;
+    }
+
+    .logo-text {
+      color: $color--header-90;
+      font-family: 'Open Sans';
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  .navbar-menu {
+    background-color: transparent;
+    display: inline-block;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    li {
+      display: inline-block;
+    }
+
+    .navbar-link {
+      color: $color--header-90;
+      font-family: 'Work Sans';
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0 25px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &::before {
+        background-color: $color--theme-3;
+        content: '';
+        height: 3px;
+        left: 50%;
+        margin-top: 8px;
+        position: absolute;
+        top: 100%;
+        transform: translateX(-50%);
+        width: 0;
+      }
+
+      &.active {
+        &::before {
+          transition: width .3s ease-in-out;
+          width: 100%;
+        }
+      }
+    }
+
+    .booking-link {
+      margin-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    .logo,
+    .navbar-menu {
+      width: 100%;
+    }
+
+    .navbar-menu {
+      margin-top: 20px;
+      position: relative;
+      text-align: center;
+      top: 0;
+      transform: translateX(0);
+
+      .booking-link-wrapper {
+        text-align: center;
+        width: 100%;
+      }
+
+      .booking-link {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 30px;
+
+        &::before {
+          content: '\A';
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 57px 0 47px;
+    text-align: center;
+
+    .navbar-toggler,
+    .booking-link {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .navbar-toggler {
+      left: 0;
+    }
+
+    .booking-link {
+      margin: 0;
+      right: 0;
+    }
+
+    .navbar-menu {
+      height: 0;
+      left: -77px;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      position: absolute;
+      text-align: left;
+      top: -57px;
+      transform: translateY(0);
+      width: 291px;
+      z-index: 1;
+
+      &.opened {
+        border-bottom: 2px solid $color--unknown-1;
+        border-right: 2px solid $color--unknown-1;
+        height: auto;
+        opacity: 1;
+        padding: 177px 38px 46px 77px;
+        transition: opacity .3s ease-in-out;
+      }
+
+      li {
+        display: block;
+        margin-bottom: 32px;
+
+        &.info-box-wrapper {
+          display: block;
+          margin-bottom: 13px;
+          margin-top: 42px;
+
+          &:last-child {
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+        }
+      }
+
+      .navbar-link {
+        margin: 0;
+
+        &::before {
+          left: 0;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 31px 0 28px;
+
+    .navbar-toggler {
+      left: 16px;
+    }
+
+    .navbar-menu {
+      left: 0;
+      top: -31px;
+      width: 100%;
+
+      &.opened {
+        border-right: 0;
+        padding: 127px 38px 41px 36px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    text-align: left;
+
+    .logo {
+      display: inline-block;
+      margin-left: 150px;
+      transform: translateX(-50%);
+      width: auto;
+
+      .logo-title {
+        font-size: 37px;
+      }
+
+      .logo-text {
+        font-size: 8px;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .logo {
+      margin-left: 135px;
+    }
+  }
+}

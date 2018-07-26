@@ -8,31 +8,62 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="./styles/fontawesome/all.css">
     <link rel="stylesheet" type="text/css" href="./styles/index.css">
 
+    <script type="text/javascript" src="./scripts/index.js"></script>
+
     <title>Page Title</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="row header">
-          <div class="col-12">
-            <span class="info-box">
-              <i class="fas fa-phone"></i>
-              +4-567-120-4900
-            </span>
-            <span class="info-box">
-              <i class="far fa-envelope"></i>
-              zion-hostel@index.mail
-            </span>
-          </div>
+    <header>
+      <div class="header desktop-only">
+        <span class="info-box">
+          <i class="fas fa-phone"></i>
+          +4-567-120-4900
+        </span>
+        <span class="info-box">
+          <i class="far fa-envelope"></i>
+          zion-hostel@index.mail
+        </span>
+      </div>
+      <nav class="navbar">
+        <button class="navbar-toggler mobile-only">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo">
+          <div class="logo-title">Zion</div>
+          <div class="logo-text">Hostel</div>
         </div>
-      </header>
-      <div class="content"></div>
-      <footer></footer>
-    </div>
+        <ul class="navbar-menu">
+          <li><a class="navbar-link" href=#>Home</a></li>
+          <li><a class="navbar-link" href=#>Room & Services</a></li>
+          <li><a class="navbar-link" href=#>Special Offers</a></li>
+          <li><a class="navbar-link" href=#>Faq</a></li>
+          <li><a class="navbar-link" href=#>Blog</a></li>
+          <li><a class="navbar-link" href=#>Contacts</a></li>
+          <li class="desktop-only booking-link-wrapper">
+            <a class="button button-success booking-link">Book now</a>
+          </li>
+          <li class="mobile-only info-box-wrapper">
+            <span class="info-box">
+              <i class="fas fa-phone"></i>+4-567-120-4900
+            </span></li>
+          <li class="mobile-only info-box-wrapper">
+            <span class="info-box">
+              <i class="far fa-envelope"></i>zion-hostel@index.mail
+            </span></li>
+        </ul>
+        <a class="mobile-only button button-success booking-link">
+          Book now
+        </a>
+      </nav>
+    </header>
+    <div class="container"></div>
+    <footer></footer>
   </body>
 </html>
