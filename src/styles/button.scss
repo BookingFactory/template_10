@@ -1,15 +1,20 @@
 .button {
   background-color: $color--white;
+  border: 1px solid $color--unknown-1;
   color: $color--grey;
+  display: inline-block;
   font-family: 'Work Sans';
   font-size: 12px;
   font-weight: 500;
   padding: 14px 32px;
+  text-decoration: none;
   text-transform: uppercase;
 
   &.button-success {
     background-color: $color--theme-2;
+    border-color: $color--theme-2;
     color: $color--white;
+    font-weight: 600;
   }
 
   @media screen and (max-width: 320px) {
