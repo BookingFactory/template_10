@@ -1,0 +1,112 @@
+.carousel {
+  height: 366px;
+  width: 464px;
+
+  @media screen and (max-width: 992px) {
+    margin: auto;
+  }
+
+  @media screen and (max-width: 575px) {
+    height: auto;
+    margin: 0 -16px;
+    width: 100%;
+  }
+
+  .window {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .image-list {
+    display: inline-block;
+    left: 0;
+    position: relative;
+    top: 0;
+    transition: left .3s ease-in-out;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .image-warpper {
+    display: inline-block;
+    height: 310px;
+    width: 464px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 575px) {
+      height: auto;
+      width: 100vw;
+    }
+  }
+
+  .nav-tools {
+    margin: 25px 0;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .nav-point {
+    background-color: $color--black-20;
+    border-radius: 6px;
+    display: inline-block;
+    height: 6px;
+    margin: 0 6px;
+    width: 6px;
+
+    &.active {
+      background-color: $color--dark-grey;
+    }
+  }
+
+  &.carousel_shadow {
+    position: relative;
+
+    @media screen and (max-width: 575px) {
+      margin: 30px auto;
+    }
+
+    &::before {
+      border-bottom: 30px solid transparent;
+      border-left: 590px solid $color--white;
+      box-sizing: border-box;
+      content: '';
+      display: block;
+      height: 430px;
+      left: 53px;
+      position: absolute;
+      top: -35px;
+      width: 590px;
+      z-index: 1;
+
+      @media screen and (max-width: 992px) {
+        border-left: 659px solid $color--white;
+        height: 447px;
+        left: -42px;
+        top: -45px;
+        width: 659px;
+      }
+
+      @media screen and (max-width: 575px) {
+        border-bottom: 15px solid transparent;
+        border-left: 100vw solid $color--white;
+        bottom: -30px;
+        height: auto;
+        left: 50%;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        top: -30px;
+        transform: translateX(-50%);
+        width: 100vw;
+      }
+    }
+  }
+}

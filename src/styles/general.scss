@@ -9,3 +9,21 @@
     display: none !important;
   }
 }
+
+.no-xs-padding {
+  @media screen and (max-width: 575px) {
+    padding: 0 !important;
+  }
+}
+
+.no-xs-margin {
+  @media screen and (max-width: 575px) {
+    margin: 0 !important;
+  }
+}
+
+.overflow-x-xs-hidden {
+  @media screen and (max-width: 575px) {
+    overflow-x: hidden !important;
+  }
+}
