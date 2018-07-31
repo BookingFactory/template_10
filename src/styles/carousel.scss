@@ -45,28 +45,6 @@
     }
   }
 
-  .nav-tools {
-    margin: 25px 0;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-    width: 100%;
-    z-index: 2;
-  }
-
-  .nav-point {
-    background-color: $color--black-20;
-    border-radius: 6px;
-    display: inline-block;
-    height: 6px;
-    margin: 0 6px;
-    width: 6px;
-
-    &.active {
-      background-color: $color--dark-grey;
-    }
-  }
-
   &.carousel_shadow {
     position: relative;
 
