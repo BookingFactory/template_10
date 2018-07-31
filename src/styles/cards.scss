@@ -1,0 +1,209 @@
+.cards {
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (max-width: 1439px) {
+    margin-bottom: 0;
+  }
+
+  .window {
+    margin: auto;
+    overflow: hidden;
+
+    @media screen and (max-width: 575px) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 576px) {
+      width: 361px;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 754px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 1160px;
+    }
+  }
+
+  .cards-list {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .card {
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+
+    @media screen and (max-width: 575px) {
+      margin: 0;
+      width: 100vw;
+    }
+
+    @media screen and (min-width: 576px) {
+      margin: 0 18px;
+      width: 325px;
+
+      &:first-child {
+        margin-left: 18px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      &:first-child {
+        margin-left: 50px;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin: 0 25px;
+      width: 334px;
+    }
+
+    .image-wrapper {
+      height: 230px;
+      width: 100%;
+
+      @media screen and (max-width: 575px) {
+        height: auto;
+      }
+
+      @media screen and (min-width: 768px) {
+        height: 223px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+
+        @media screen and (max-width: 575px) {
+          height: auto;
+        }
+      }
+    }
+
+    .body {
+      background-color: $color--white;
+      border: 1px solid $color--unknown-1;
+      padding: 32px 45px 119px 40px;
+      width: 100%;
+
+      @media screen and (max-width: 575px) {
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+
+    h3 {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      color: $color--dark-grey;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.57;
+
+      li {
+        margin-bottom: 6px;
+      }
+    }
+
+    .marker {
+      background-color: $color--theme-2;
+      display: inline-block;
+      height: 6px;
+      line-height: 6px;
+      margin-right: 10px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+    }
+
+    .link {
+      color: $color--theme-2;
+      display: inline-block;
+      font-family: 'Work Sans';
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 2.16;
+      margin-top: 7px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      bottom: 32px;
+      position: absolute;
+
+      @media screen and (min-width: 320px) {
+        left: 0;
+        right: 30px;
+      }
+
+      @media screen and (min-width: 576px) {
+        left: -13px;
+        right: 30px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        left: -24px;
+        right: 40px;
+      }
+
+      &::before,
+      &::after {
+        background-color: $color--white;
+        content: '';
+        height: 13px;
+        position: relative;
+        width: 3px;
+
+        @media screen and (min-width: 320px) {
+          display: none;
+        }
+
+        @media screen and (min-width: 576px) {
+          display: block;
+          left: 12px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          left: 23px;
+        }
+      }
+    }
+
+    .price {
+      color: $color--dark-grey-40;
+      display: block;
+      font-family: Muli;
+      font-size: 9px;
+      font-weight: 600;
+      line-height: 11px;
+      position: absolute;
+      right: 0;
+      text-align: right;
+      text-transform: uppercase;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .value {
+        color: $color--dark-grey;
+        font-family: 'PT Serif';
+        font-size: 28px;
+        font-style: italic;
+        font-weight: bold;
+        line-height: 37px;
+      }
+    }
+  }
+}

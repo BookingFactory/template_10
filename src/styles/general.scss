@@ -27,3 +27,36 @@
     overflow-x: hidden !important;
   }
 }
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.content-shadow {
+  position: relative;
+
+  &::before {
+    border-right: 100vw solid $color--theme-1;
+    box-sizing: border-box;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    @media screen and (max-width: 320px) {
+      border-bottom: 27px solid transparent;
+      height: 1015px;
+    }
+
+    @media screen and (min-width: 321px) {
+      border-bottom: 66px solid transparent;
+      height: 1366px;
+    }
+
+    @media screen and (min-width: 992px) {
+      border-bottom: 180px solid transparent;
+      height: 1171px;
+    }
+  }
+}
