@@ -1,0 +1,117 @@
+.cells {
+  background-color: $color--white;
+  border: 1px solid $color--unknown-1;
+  margin-left: auto;
+  position: relative;
+  width: 100%;
+
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+    padding: 117px 23px 45px 53px;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding: 117px 0 45px;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 679px;
+    padding: 117px 23px 45px 53px;
+  }
+
+  @media screen and (min-width: 1136px) {
+    max-width: 944px;
+    padding: 48px 27px 46px 149px;
+  }
+
+  i {
+    color: $color--theme-2-50;
+    font-size: 38px;
+    line-height: 38px;
+    margin-bottom: 35px;
+  }
+
+  .header {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    z-index: 1;
+
+    @media screen and (max-width: 767px) {
+      left: -23px;
+      top: 58px;
+    }
+
+    @media screen and (min-width: 768px) {
+      left: -30px;
+      top: 58px;
+    }
+
+    @media screen and (min-width: 1136px) {
+      left: -113px;
+      top: 85px;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::after {
+      background-color: $color--white;
+      content: '';
+      display: block;
+      height: 102px;
+      position: absolute;
+      top: 65%;
+      transform: translateY(-50%);
+      width: 3px;
+      z-index: 1;
+
+      @media screen and (max-width: 767px) {
+        left: 21px;
+      }
+
+      @media screen and (min-width: 768px) {
+        left: 28px;
+      }
+
+      @media screen and (min-width: 1136px) {
+        left: 111px;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 1.62;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.77;
+  }
+
+  .cell {
+    @media screen and (max-width: 767px) {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 575px) {
+      padding: 40px 15px 40px 39px;
+      text-align: left;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 40px 37px;
+    }
+
+    @media screen and (min-width: 1136px) {
+      padding: 40px 77px;
+    }
+  }
+}

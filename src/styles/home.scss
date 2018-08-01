@@ -100,9 +100,21 @@
   }
 
   .rooms {
-    margin: 0 auto 128px;
+    margin: auto;
     max-width: 1160px;
     width: 100%;
+
+    @media screen and (min-width: 320px) {
+      margin-bottom: 85px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 100px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 128px;
+    }
 
     h2 {
       margin-bottom: 30px;
@@ -160,6 +172,60 @@
       .nav-tools {
         @media screen and (min-width: 1440px) {
           display: none;
+        }
+      }
+    }
+  }
+
+  .features {
+    margin: auto;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 143px;
+      max-width: 100%;
+      padding-left: 39px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 143px;
+      max-width: 710px;
+    }
+
+    @media screen and (min-width: 1136px) {
+      margin-bottom: 153px;
+      max-width: 1136px;
+    }
+
+    &.features-shadow {
+      position: relative;
+
+      &::before {
+        background-color: $color--theme-1-50;
+        content: '';
+        display: block;
+        position: absolute;
+        transform: skewY(7deg);
+
+        @media screen and (max-width: 767px) {
+          height: 1025px;
+          left: -28px;
+          top: -8px;
+          width: 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+          height: 515px;
+          left: -28px;
+          top: 0;
+          width: 410px;
+        }
+
+        @media screen and (min-width: 1136px) {
+          height: 500px;
+          left: -152px;
+          top: -30px;
+          width: 798px;
         }
       }
     }
