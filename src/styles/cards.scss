@@ -183,27 +183,11 @@
     }
 
     .price {
-      color: $color--dark-grey-40;
-      display: block;
-      font-family: Muli;
-      font-size: 9px;
-      font-weight: 600;
-      line-height: 11px;
       position: absolute;
       right: 0;
       text-align: right;
-      text-transform: uppercase;
       top: 50%;
       transform: translateY(-50%);
-
-      .value {
-        color: $color--dark-grey;
-        font-family: 'PT Serif';
-        font-size: 28px;
-        font-style: italic;
-        font-weight: bold;
-        line-height: 37px;
-      }
     }
   }
 }

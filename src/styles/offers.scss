@@ -1,0 +1,253 @@
+.offers {
+  margin: auto;
+  max-width: 1440px;
+  text-align: center;
+
+  h2 {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 68px;
+      margin-left: 89px;
+      text-align: left;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 98px;
+      text-align: center;
+    }
+  }
+
+  .offer {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: auto;
+
+    @media screen and (max-width: 767px) {
+      
+    }
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto 55px;
+      padding: 0 60px 53px 29px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin: 0 auto 76px;
+      padding: 0 125px 56px 52px;
+    }
+
+    .body {
+      background-color: $color--white;
+      border: 1px solid $color--unknown-1;
+      max-width: 730px;
+      padding: 58px 182px 57px 68.5px;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+
+      @media screen and (min-width: 768px) {
+        max-width: 649px;
+        padding: 48px 241px 52px 60px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        max-width: 730px;
+        padding: 58px 182px 57px 68.5px;
+      }
+
+      &.body-shadow {
+        &::before {
+          border-bottom: 30px solid transparent;
+          border-right: 350px solid $color--theme-1;
+          content: '';
+          display: block;
+          height: 365px;
+          position: absolute;
+          top: 46px;
+          width: 350px;
+          z-index: 1;
+
+          @media screen and (min-width: 768px) {
+            left: -29px;
+          }
+
+          @media screen and (min-width: 1440px) {
+            left: -52px;
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-family: 'Playfair Display';
+      font-size: 28px;
+      line-height: 1.32;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 31px;
+    }
+
+    .date-range {
+      color: $color--theme-2;
+      font-family: 'Work Sans';
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 2.36;
+      margin-bottom: 23px;
+
+      i {
+        margin-right: 9px;
+      }
+    }
+
+    .read-more-link {
+      color: $color--theme-2;
+      font-family: 'Work Sans';
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 2.16;
+      text-transform: uppercase;
+    }
+
+    .side {
+      position: absolute;
+      width: 245px;
+      z-index: 3;
+
+      @media screen and (min-width: 768px) {
+        right: -60px;
+        top: 46px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        right: -125px;
+        top: 33px;
+      }
+
+      &::before,
+      &::after {
+        background-color: $color--white;
+        content: '';
+        position: absolute;
+      }
+
+      &::after {
+        bottom: 41px;
+        height: 3px;
+        left: 0;
+        transform: translateX(-100%);
+        width: 19px;
+      }
+
+      &::before {
+        height: 16px;
+        top: 0;
+        transform: translateY(-100%);
+        width: 3px;
+
+        @media screen and (min-width: 768px) {
+          right: 58px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          right: 123px;
+        }
+      }
+
+      .image-wrapper {
+        height: 180px;
+        width: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .price {
+        background-color: $color--white;
+        border-left: 1px solid $color--unknown-1;
+        border-right: 1px solid $color--unknown-1;
+
+        @media screen and (min-width: 768px) {
+          padding: 36px 36px 31px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          padding: 40px 36px 31px;
+        }
+      }
+
+      .button-success {
+        width: 100%;
+      }
+    }
+
+    &.offer-reflection {
+      @media screen and (min-width: 768px) {
+        padding: 0 30px 51px 60px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        padding: 0 52px 56px 125px;
+      }
+
+      .body {
+        @media screen and (min-width: 768px) {
+          padding: 51px 60px 49px 240px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          padding: 58px 70px 57px 182px;
+        }
+
+        &.body-shadow {
+          &::before {
+            left: auto;
+
+            @media screen and (min-width: 768px) {
+              right: -30px;
+            }
+
+            @media screen and (min-width: 1440px) {
+              right: -52px;
+            }
+          }
+        }
+      }
+
+      .side {
+        right: auto;
+
+        @media screen and (min-width: 768px) {
+          left: -60px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          left: -125px;
+        }
+
+        &::after {
+          left: auto;
+          right: 0;
+          transform: translateX(100%);
+        }
+
+        &::before {
+          right: auto;
+
+          @media screen and (min-width: 768px) {
+            left: 58px;
+          }
+
+          @media screen and (min-width: 1440px) {
+            left: 123px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.price {
+  color: $color--dark-grey-40;
+  display: block;
+  font-family: Muli;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 11px;
+  text-transform: uppercase;
+
+  .value {
+    color: $color--dark-grey;
+    display: inline-block;
+    font-family: 'PT Serif';
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 37px;
+    margin: 4px 0 6px;
+  }
+}
