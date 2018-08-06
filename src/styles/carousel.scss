@@ -2,7 +2,7 @@
   height: 366px;
   width: 464px;
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1199px) {
     margin: auto;
   }
 
@@ -65,7 +65,12 @@
       width: 590px;
       z-index: 1;
 
-      @media screen and (max-width: 992px) {
+      @media screen and (max-width: 1439px) {
+        border-left: 465px solid $color--white;
+        width: 465px;
+      }
+
+      @media screen and (max-width: 1199px) {
         border-left: 659px solid $color--white;
         height: 447px;
         left: -42px;
