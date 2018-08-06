@@ -17,6 +17,10 @@
     font-weight: 600;
   }
 
+  &.button-info {
+    color: $color--theme-2;
+  }
+
   @media screen and (max-width: 320px) {
     padding: 14px 24px;
   }

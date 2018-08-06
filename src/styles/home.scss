@@ -230,4 +230,44 @@
       }
     }
   }
+
+  .special-offers {
+    text-align: center;
+
+    h2 {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 47px;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 68px;
+        margin-left: 89px;
+        text-align: left;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 98px;
+        text-align: center;
+      }
+    }
+
+    .nav-tools {
+      margin: 21px 0 26px;
+    }
+
+    @media screen and (max-width: 575px) {
+      .cards {
+        .card {
+          .body {
+            padding: 25px 45px 128px 17px;
+          }
+
+          .footer {
+            bottom: 54px;
+          }
+        }
+      }
+    }
+  }
 }

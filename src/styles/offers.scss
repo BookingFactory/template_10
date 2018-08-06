@@ -3,28 +3,11 @@
   max-width: 1440px;
   text-align: center;
 
-  h2 {
-    @media screen and (min-width: 768px) {
-      margin-bottom: 68px;
-      margin-left: 89px;
-      text-align: left;
-    }
-
-    @media screen and (min-width: 1440px) {
-      margin-bottom: 98px;
-      text-align: center;
-    }
-  }
-
   .offer {
     display: inline-block;
     position: relative;
     text-align: left;
     width: auto;
-
-    @media screen and (max-width: 767px) {
-      
-    }
 
     @media screen and (min-width: 768px) {
       margin: 0 auto 55px;
@@ -88,19 +71,6 @@
     p {
       font-size: 14px;
       margin-bottom: 31px;
-    }
-
-    .date-range {
-      color: $color--theme-2;
-      font-family: 'Work Sans';
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 2.36;
-      margin-bottom: 23px;
-
-      i {
-        margin-right: 9px;
-      }
     }
 
     .read-more-link {
