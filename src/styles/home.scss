@@ -160,15 +160,6 @@
     &>.footer {
       text-align: center;
 
-      .button {
-        color: $color--theme-2;
-        font-weight: 600;
-
-        @media screen and (max-width: 1439px) {
-          display: none;
-        }
-      }
-
       .nav-tools {
         @media screen and (min-width: 1440px) {
           display: none;
