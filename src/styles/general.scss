@@ -44,6 +44,10 @@
     top: 0;
     z-index: -1;
 
+    @media screen and (max-width: 767px) {
+      top: -31px;
+    }
+
     @media screen and (max-width: 320px) {
       border-bottom: 27px solid transparent;
       height: 1015px;
