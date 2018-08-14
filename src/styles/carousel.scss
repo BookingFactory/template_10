@@ -17,6 +17,10 @@
     position: relative;
     width: 100%;
     z-index: 2;
+
+    @media screen and (max-width: 575px) {
+      width: 100vw;
+    }
   }
 
   .image-list {
