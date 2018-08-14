@@ -6,7 +6,7 @@
     margin: auto;
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 767px) {
     height: auto;
     margin: 0 -16px;
     width: 100%;
@@ -18,7 +18,7 @@
     width: 100%;
     z-index: 2;
 
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 767px) {
       width: 100vw;
     }
   }
@@ -43,7 +43,7 @@
       width: 100%;
     }
 
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 767px) {
       height: auto;
       width: 100vw;
     }
@@ -52,7 +52,7 @@
   &.carousel_shadow {
     position: relative;
 
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 767px) {
       margin: 30px auto;
     }
 
@@ -82,7 +82,7 @@
         width: 659px;
       }
 
-      @media screen and (max-width: 575px) {
+      @media screen and (max-width: 767px) {
         border-bottom: 15px solid transparent;
         border-left: 100vw solid $color--white;
         bottom: -30px;
