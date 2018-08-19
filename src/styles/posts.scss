@@ -1,0 +1,123 @@
+.posts {
+  margin: auto;
+  max-width: 1440px;
+
+  h2 {
+    color: $color--white;
+    font-family: 'Work Sans';
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3.75px;
+    line-height: 11px;
+    margin-bottom: 21px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    color: $color--white;
+    font-family: 'Playfair Display';
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 58px;
+    margin-bottom: 44px;
+  }
+
+  p {
+    color: $color--white;
+    font-family: Muli;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    margin-bottom: 50px;
+  }
+
+  .body {
+    background-color: $color--theme-2;
+    margin-left: auto;
+    padding: 102px 263px 90px 176px;
+    position: relative;
+    width: 903px;
+    z-index: 2;
+  }
+
+  .image-wrapper {
+    font-size: 0;
+    height: 320px;
+    left: -384px;
+    position: absolute;
+    top: 76px;
+    white-space: nowrap;
+    width: 480px;
+    z-index: 3;
+
+    img {
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: relative;
+      transition: opacity .7s ease-in-out;
+      width: 100%;
+
+      @for $i from 2 through 10 {
+        &:nth-child(#{$i}) {
+          left: -100% * ($i - 1);
+        }
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .post-list {
+    font-size: 0;
+    position: relative;
+    white-space: nowrap;
+
+    .post {
+      display: inline-block;
+      left: 0;
+      opacity: 0;
+      position: relative;
+      transition: opacity .7s ease-in-out;
+      white-space: normal;
+
+      @for $i from 2 through 10 {
+        &:nth-child(#{$i}) {
+          left: -100% * ($i - 1);
+        }
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .pagination {
+    background-color: transparent;
+    bottom: 71px;
+    left: 580px;
+    transform: translateY(0);
+
+    .left-arrow,
+    .right-arrow {
+      border-color: $color--white;
+    }
+
+    .delimiter {
+      background-color: $color--white;
+    }
+
+    .pages {
+      li {
+        color: $color--white;
+      }
+    }
+
+    .count-page {
+      color: $color--white;
+    }
+  }
+}
