@@ -1,19 +1,21 @@
 $color--white: #fff;
 $color--grey: #a8abb3;
 $color--dark-grey: #545660;
-$color--dark-grey-40: rgba($color--dark-grey, .4);
+$color--dark-grey-40: rgba($color--dark-grey, .4); // #bbbbbf
 $color--theme-1: #f9f9fa;
-$color--theme-1-50: rgba($color--theme-1, .5);
+$color--theme-1-50: rgba($color--theme-1, .5); // #fcfcfd
 $color--theme-2: #93a1d6;
-$color--theme-2-50: rgba($color--theme-2, .5);
+$color--theme-2-50: rgba($color--theme-2, .5); // #c9d0eb
 $color--theme-3: #d9dbff;
 
 $color--header-100: #1c1c1c;
-$color--header-90: rgba($color--header-100, .9);
-$color--header-65: rgba($color--header-100, .65);
+$color--header-90: rgba($color--header-100, .9); // #333333
+$color--header-65: rgba($color--header-100, .65); // #6b6b6b
 
 $color--black: #000;
-$color--black-20: rgba($color--black, .2);
+$color--black-20: rgba($color--black, .2); // #cccccc
 
 $color--unknown-1: #dcdee6;
+$color--unknown-1-80: rgba($color--unknown-1, .8); // #e3e5eb
 
+$color--unknown-2: #efeff2;
