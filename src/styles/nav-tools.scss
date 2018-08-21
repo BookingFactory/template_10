@@ -5,17 +5,29 @@
   white-space: nowrap;
   width: 100%;
   z-index: 2;
-}
 
-.nav-point {
-  background-color: $color--black-20;
-  border-radius: 6px;
-  display: inline-block;
-  height: 6px;
-  margin: 0 6px;
-  width: 6px;
+  &.white-theme {
+    .nav-point {
+      background-color: $color--white-2;
 
-  &.active {
-    background-color: $color--dark-grey;
+      &.active {
+        background-color: $color--white;
+      }
+    }
+  }
+
+  .nav-point {
+    background-color: $color--black-20;
+    border-radius: 6px;
+    display: inline-block;
+    height: 6px;
+    margin: 0 6px;
+    width: 6px;
+
+    &.active {
+      background-color: $color--dark-grey;
+    }
   }
 }
+
+
