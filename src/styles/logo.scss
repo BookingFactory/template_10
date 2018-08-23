@@ -1,0 +1,19 @@
+.logo {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+
+  .logo-title {
+    font-family: 'Courgette';
+    font-size: 45px;
+  }
+
+  .logo-text {
+    color: $color--header-90;
+    font-family: 'Open Sans';
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
