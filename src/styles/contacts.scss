@@ -213,11 +213,22 @@
     &.map-wrapper-shadow {
       &::after {
         border-bottom: 50px solid $color--white;
-        border-right: 1440px solid transparent;
+        border-right: 100vw solid transparent;
         bottom: 0;
         content: '';
-        height: 50px;
         position: absolute;
+
+        @media screen and (max-width: 767px) {
+          border-bottom: 30px solid $color--white;
+        }
+
+        @media screen and (min-width: 768px) {
+          border-bottom: 70px solid $color--white;
+        }
+
+        @media screen and (min-width: 1440px) {
+          border-bottom: 50px solid $color--white;
+        }
       }
     }
 
