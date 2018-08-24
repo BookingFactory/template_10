@@ -37,38 +37,43 @@
 }
 
 .content-shadow {
-  position: relative;
+  background-color: $color--theme-1;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
 
-  &::before {
-    border-right: 100vw solid $color--theme-1;
-    box-sizing: border-box;
+  @media screen and (max-width: 767px) {
+    height: 1085px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 1406px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 1171px;
+  }
+
+  &::after {
+    border-right: 100vw solid transparent;
+    bottom: 0;
     content: '';
     left: 0;
     position: absolute;
-    top: 0;
-    z-index: -1;
-
-    @media screen and (max-width: 768px) {
-      top: -57px;
-    }
 
     @media screen and (max-width: 767px) {
-      top: -31px;
+      border-bottom: 30px solid $color--white;
     }
 
-    @media screen and (max-width: 320px) {
-      border-bottom: 27px solid transparent;
-      height: 1015px;
+    @media screen and (min-width: 768px) {
+      border-bottom: 60px solid $color--white;
     }
 
-    @media screen and (min-width: 321px) {
-      border-bottom: 66px solid transparent;
-      height: 1366px;
-    }
-
-    @media screen and (min-width: 992px) {
-      border-bottom: 180px solid transparent;
-      height: 1171px;
+    @media screen and (min-width: 1440px) {
+      border-bottom: 180px solid $color--white;
     }
   }
 }
