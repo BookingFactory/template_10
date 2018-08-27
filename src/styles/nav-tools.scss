@@ -10,7 +10,8 @@
     .nav-point {
       background-color: $color--white-2;
 
-      &.active {
+      &.active,
+      &.tns-nav-active {
         background-color: $color--white;
       }
     }
@@ -24,7 +25,8 @@
     margin: 0 6px;
     width: 6px;
 
-    &.active {
+    &.active,
+    &.tns-nav-active {
       background-color: $color--dark-grey;
     }
   }

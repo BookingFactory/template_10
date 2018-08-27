@@ -17,6 +17,20 @@
     <link rel="stylesheet" type="text/css" href="./styles/index.css">
 
     <script type="text/javascript" src="./scripts/index.js"></script>
+    <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
+    <script type="module">
+      let carousel = tns({
+        container: '.carousel .image-list',
+        items: 1,
+        slideBy: 'page',
+        speed: 700,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        controls: false,
+        autoplayButtonOutput: false,
+        navContainer: '.carousel .nav-tools',
+      });
+    </script>
 
     <title>Page Title</title>
   </head>
@@ -91,7 +105,7 @@
               </div>
               <div class="nav-tools">
                 <div class="nav-point"></div>
-                <div class="nav-point active"></div>
+                <div class="nav-point"></div>
                 <div class="nav-point"></div>
               </div>
             </div>

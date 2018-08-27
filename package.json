@@ -15,5 +15,8 @@
     "watch": "./node_modules/.bin/node-sass --watch src/styles/index.scss dist/styles/index.css",
     "web": "./node_modules/.bin/browser-sync start --config bs-config.js",
     "start": "./node_modules/.bin/parallelshell 'npm run watch' 'npm run web'"
+  },
+  "dependencies": {
+    "tiny-slider": "^2.8.5"
   }
 }
