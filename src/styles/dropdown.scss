@@ -1,0 +1,93 @@
+.dropdown {
+  position: relative;
+
+  &.opened {
+    .dropdown-backdrop {
+      display: block;
+    }
+
+    .dropdown-menu {
+      opacity: 1;
+    }
+  }
+
+  .dropdown-backdrop {
+    background-color: transparent;
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  .dropdown-toggle {
+    background-color: transparent;
+    border: 0;
+    color: $color--header-65;
+    cursor: pointer;
+    font-family: 'Work Sans';
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    padding: 0 10px;
+    position: relative;
+    text-transform: uppercase;
+
+    &::after {
+      border-bottom: 1px solid $color--header-65;
+      border-left: 1px solid $color--header-65;
+      border-right: 1px solid transparent;
+      border-top: 1px solid transparent;
+      content: '';
+      display: inline-block;
+      height: 5px;
+      margin-left: 5px;
+      position: absolute;
+      top: 3px;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 5px;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $color--white;
+    border: 1px solid $color--unknown-1;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    transition: opacity .3s ease-in-out;
+    width: 100px;
+    z-index: 10;
+
+    li {
+      &:first-child {
+        a {
+          padding-top: 16px;
+        }
+      }
+
+      &:last-child {
+        a {
+          padding-bottom: 16px;
+        }
+      }
+    }
+
+    a {
+      box-sizing: border-box;
+      color: $color--header-65;
+      display: block;
+      font-family: 'Work Sans';
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 13px;
+      padding: 6px 20px;
+      text-decoration: none;
+      width: 100%;
+    }
+  }
+}
