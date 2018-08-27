@@ -2,7 +2,9 @@ $color--white: #fff;
 $color--white-2: rgba($color--white, .2);
 $color--grey: #a8abb3;
 $color--dark-grey: #545660;
+$color--dark-grey-80: rgba($color--dark-grey, .8); // #767880
 $color--dark-grey-40: rgba($color--dark-grey, .4); // #bbbbbf
+$color--dark-grey-05: rgba($color--dark-grey, .05); // #f6f7f7
 $color--theme-1: #f9f9fa;
 $color--theme-1-50: rgba($color--theme-1, .5); // #fcfcfd
 $color--theme-2: #93a1d6;
@@ -15,6 +17,7 @@ $color--header-65: rgba($color--header-100, .65); // #6b6b6b
 
 $color--black: #000;
 $color--black-20: rgba($color--black, .2); // #cccccc
+$color--black-30: rgba($color--black, .3); // #cccccc
 
 $color--unknown-1: #dcdee6;
 $color--unknown-1-80: rgba($color--unknown-1, .8); // #e3e5eb

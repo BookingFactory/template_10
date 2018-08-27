@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   new Reviews('reviews_1');
   new Pagination('reviews_2');
   new Dropdown('lang-menu');
+  new Dropdown('currency-menu');
 });
 
 class NavBar {
@@ -108,6 +109,7 @@ class Pagination {
 
 class Dropdown {
   constructor(id) {
+    console.warn('drop');
     this.dropdown = document.querySelector(`#${id}`);
     this.toggle = document.querySelector(`#${id} .dropdown-toggle`);
     this.backdrop = document.querySelector(`#${id} .dropdown-backdrop`);
@@ -121,6 +123,7 @@ class Dropdown {
 
   onToggleClick() {
     this.dropdown.classList.add('opened');
+    console.warn('click');
   }
 
   onBackdropClick() {
