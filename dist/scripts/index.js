@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   new Pagination('reviews_2');
   new Dropdown('lang-menu');
   new Dropdown('currency-menu');
+  new Dropdown('lang-menu-mobile');
+  new Dropdown('currency-menu-mobile');
 });
 
 class NavBar {

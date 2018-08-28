@@ -31,6 +31,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 3;
 
     li {
       display: inline-block;
@@ -166,6 +167,16 @@
         &::before {
           left: 0;
           transform: translateX(0);
+        }
+      }
+
+      .dropdown {
+        &:first-child {
+          margin-right: 20px;
+        }
+
+        .dropdown-menu {
+          left: 0;
         }
       }
     }
