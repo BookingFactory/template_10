@@ -8,23 +8,28 @@
   }
 
   .window {
+    font-size: 0;
     margin: auto;
     overflow: hidden;
+    padding-bottom: 1px;
 
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 480px) {
       width: 100%;
     }
 
-    @media screen and (min-width: 576px) {
-      width: 361px;
+    @media screen and (min-width: 481px) {
+      padding-left: 13px;
+      width: 338px;
     }
 
     @media screen and (min-width: 768px) {
-      width: 754px;
+      padding-left: 13px;
+      width: 713px;
     }
 
     @media screen and (min-width: 1440px) {
-      width: 1160px;
+      padding-left: 24px;
+      width: 1126px;
     }
   }
 
@@ -34,6 +39,7 @@
   }
 
   .card {
+    box-sizing: content-box;
     display: inline-block;
     font-size: 0;
     position: relative;
@@ -41,28 +47,15 @@
     vertical-align: top;
     white-space: normal;
 
-    @media screen and (max-width: 575px) {
-      margin: 0;
+    @media screen and (max-width: 480px) {
       width: 100vw;
     }
 
-    @media screen and (min-width: 576px) {
-      margin: 0 18px;
+    @media screen and (min-width: 481px) {
       width: 325px;
-
-      &:first-child {
-        margin-left: 18px;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      &:first-child {
-        margin-left: 50px;
-      }
     }
 
     @media screen and (min-width: 1440px) {
-      margin: 0 25px;
       width: 334px;
     }
 
@@ -70,7 +63,7 @@
       height: 230px;
       width: 100%;
 
-      @media screen and (max-width: 575px) {
+      @media screen and (max-width: 480px) {
         height: auto;
       }
 
@@ -82,7 +75,7 @@
         height: 100%;
         width: 100%;
 
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 480px) {
           height: auto;
         }
       }
@@ -91,13 +84,9 @@
     .body {
       background-color: $color--white;
       border: 1px solid $color--unknown-1;
+      box-sizing: border-box;
       padding: 32px 35px 119px 40px;
       width: 100%;
-
-      @media screen and (max-width: 575px) {
-        border-left: 0;
-        border-right: 0;
-      }
     }
 
     h3 {
@@ -141,23 +130,24 @@
     }
 
     .footer {
+      box-sizing: border-box;
       position: absolute;
 
       @media screen and (min-width: 320px) {
         bottom: 47px;
         left: 0;
-        right: 30px;
+        width: 100vw;
       }
 
-      @media screen and (min-width: 576px) {
+      @media screen and (min-width: 481px) {
         bottom: 32px;
         left: -13px;
-        right: 30px;
+        width: 325px;
       }
 
       @media screen and (min-width: 1440px) {
         left: -24px;
-        right: 40px;
+        width: 335px;
       }
 
       &::before,
@@ -172,7 +162,7 @@
           display: none;
         }
 
-        @media screen and (min-width: 576px) {
+        @media screen and (min-width: 481px) {
           display: block;
           left: 12px;
         }
@@ -185,10 +175,21 @@
 
     .price {
       position: absolute;
-      right: 0;
       text-align: right;
       top: 50%;
       transform: translateY(-50%);
+
+      @media screen and (min-width: 320px) {
+        right: 30px;
+      }
+
+      @media screen and (min-width: 481px) {
+        right: 17px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        right: 16px;
+      }
     }
   }
 }

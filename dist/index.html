@@ -30,6 +30,20 @@
         autoplayButtonOutput: false,
         navContainer: '.carousel .nav-tools',
       });
+      let cards = tns({
+        autoWidth: true,
+        container: '.cards .cards-list',
+        items: 1,
+        slideBy: 'page',
+        speed: 700,
+        autoplay: false,
+        autoplayTimeout: 2000,
+        controls: false,
+        autoplayButtonOutput: false,
+        gutter: 50,
+        mouseDrag: true,
+        navContainer: '.rooms .nav-tools',
+      });
     </script>
 
     <title>Page Title</title>
@@ -258,7 +272,7 @@
           <div class="col-12">
             <div class="nav-tools">
               <div class="nav-point"></div>
-              <div class="nav-point active"></div>
+              <div class="nav-point"></div>
               <div class="nav-point"></div>
             </div>
             <a class="button button-info" href="#">Check all rooms</a>
