@@ -32,17 +32,31 @@
       });
       let cards = tns({
         autoWidth: true,
-        container: '.cards .cards-list',
+        container: '.rooms .cards .cards-list',
         items: 1,
         slideBy: 'page',
         speed: 700,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 2000,
         controls: false,
         autoplayButtonOutput: false,
         gutter: 50,
         mouseDrag: true,
         navContainer: '.rooms .nav-tools',
+      });
+      let offers = tns({
+        autoWidth: true,
+        container: '.special-offers .cards .cards-list',
+        items: 1,
+        slideBy: 'page',
+        speed: 700,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        controls: false,
+        autoplayButtonOutput: false,
+        gutter: 50,
+        mouseDrag: true,
+        navContainer: '.special-offers .nav-tools',
       });
     </script>
 
