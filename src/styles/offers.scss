@@ -3,6 +3,10 @@
   max-width: 1440px;
   text-align: center;
 
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  }
+
   .offer {
     display: inline-block;
     position: relative;
@@ -11,7 +15,7 @@
 
     @media screen and (min-width: 768px) {
       margin: 0 auto 55px;
-      padding: 0 60px 53px 29px;
+      padding: 0 90px 53px 29px;
     }
 
     @media screen and (min-width: 1440px) {
@@ -151,7 +155,7 @@
 
     &.offer-reflection {
       @media screen and (min-width: 768px) {
-        padding: 0 30px 51px 60px;
+        padding: 0 30px 51px 90px;
       }
 
       @media screen and (min-width: 1440px) {

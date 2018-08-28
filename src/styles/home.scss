@@ -227,20 +227,40 @@
   .special-offers {
     text-align: center;
 
+    @media screen and (max-width: 767px) {
+      .offers {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .cards {
+        display: none;
+      }
+    }
+
     h2 {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+
       @media screen and (max-width: 767px) {
         margin-bottom: 47px;
+        max-width: 767px;
         text-align: center;
       }
 
       @media screen and (min-width: 768px) {
         margin-bottom: 68px;
-        margin-left: 89px;
+        max-width: 768px;
+        padding-left: 89px;
         text-align: left;
       }
 
       @media screen and (min-width: 1440px) {
         margin-bottom: 98px;
+        max-width: 1440px;
+        padding-left: 0;
         text-align: center;
       }
     }
