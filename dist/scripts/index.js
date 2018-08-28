@@ -111,7 +111,6 @@ class Pagination {
 
 class Dropdown {
   constructor(id) {
-    console.warn('drop');
     this.dropdown = document.querySelector(`#${id}`);
     this.toggle = document.querySelector(`#${id} .dropdown-toggle`);
     this.backdrop = document.querySelector(`#${id} .dropdown-backdrop`);
@@ -125,7 +124,6 @@ class Dropdown {
 
   onToggleClick() {
     this.dropdown.classList.add('opened');
-    console.warn('click');
   }
 
   onBackdropClick() {
