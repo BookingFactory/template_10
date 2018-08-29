@@ -20,7 +20,7 @@
     <script type="text/javascript" src="./scripts/index.js"></script>
     <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
     <script type="module">
-      let carousel = tns({
+      const carouselSlider = tns({
         container: '.carousel .image-list',
         items: 1,
         slideBy: 'page',
@@ -31,7 +31,7 @@
         autoplayButtonOutput: false,
         navContainer: '.carousel .nav-tools',
       });
-      let cards = tns({
+      const cardSlider = tns({
         autoWidth: true,
         container: '.rooms .cards .cards-list',
         items: 1,
@@ -45,7 +45,7 @@
         mouseDrag: true,
         navContainer: '.rooms .nav-tools',
       });
-      let offers = tns({
+      const offerSlider = tns({
         autoWidth: true,
         container: '.special-offers .cards .cards-list',
         items: 1,
@@ -59,7 +59,7 @@
         mouseDrag: true,
         navContainer: '.special-offers .nav-tools',
       });
-      let opinions = tns({
+      const opinionSlider = tns({
         container: '.posts .post-list',
         controlsContainer: ".posts .pagination",
         navContainer: '.posts .nav-tools',
@@ -88,9 +88,9 @@
         imagesList[info.navCurrentIndex].classList.add('active');
       }
 
-      opinions.events.on('transitionStart', moveNavSlider);
+      opinionSlider.events.on('transitionStart', moveNavSlider);
 
-      let reviewSlider = tns({
+      const reviewSlider = tns({
         container: '.reviews .reviews-list',
         controlsContainer: ".reviews .pagination",
         navContainer: '.reviews .pagination .pages',
