@@ -83,7 +83,8 @@
       position: absolute;
       top: 13px;
 
-      &.active {
+      &.active,
+      &.tns-nav-active {
         opacity: 1;
       }
     }

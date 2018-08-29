@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="./styles/fontawesome/all.css">
+    <link rel="stylesheet" type="text/css" href="./styles/tiny-slider.css">
     <link rel="stylesheet" type="text/css" href="./styles/index.css">
 
     <script type="text/javascript" src="./scripts/index.js"></script>
@@ -58,6 +59,37 @@
         mouseDrag: true,
         navContainer: '.special-offers .nav-tools',
       });
+      let opinions = tns({
+        container: '.posts .post-list',
+        controlsContainer: ".posts .pagination",
+        navContainer: '.posts .nav-tools',
+        items: 1,
+        speed: 700,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayButtonOutput: false,
+        gutter: 50,
+        mode: "gallery",
+        animateIn: "fade-in",
+        animateOut: "fade-out",
+      });
+      const paginationPages = Array.from(document.querySelector('.posts .pagination .pages').children);
+      const imagesList = Array.from(document.querySelector('.expert-opinion .image-list').children);
+
+      paginationPages[0].classList.add('active');
+      imagesList[0].classList.add('active');
+
+      const moveNavSlider = function (info) {
+        const indexCached = (info.indexCached === info.slideCount) ? 0: info.indexCached;
+
+        paginationPages[indexCached].classList.remove('active');
+        paginationPages[info.navCurrentIndex].classList.add('active');
+
+        imagesList[indexCached].classList.remove('active');
+        imagesList[info.navCurrentIndex].classList.add('active');
+      }
+
+      opinions.events.on('transitionStart', moveNavSlider);
     </script>
 
     <title>Page Title</title>
@@ -518,7 +550,7 @@
               </div>
             </div>
             <div class="post-list pagination-text-list">
-              <div class="post active">
+              <div class="post">
                 <h2>Our blog</h2>
                 <h3>Thesis with expert opinion</h3>
                 <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa. Vestibulum sed metus in lorem…</p>
@@ -539,18 +571,18 @@
             </div>
             <div class="pagination desktop-only">
               <div class="left-arrow" data-arrrow="left"></div>
+              <div class="right-arrow" data-arrrow="right"></div>
               <ul class="pages">
-                <li class="active">1</li>
+                <li>1</li>
                 <li>2</li>
                 <li>3</li>
               </ul>
               <span class="delimiter"></span>
               <span class="count-page">3</span>
-              <div class="right-arrow" data-arrrow="right"></div>
             </div>
             <div class="nav-tools white-theme mobile-only">
               <div class="nav-point"></div>
-              <div class="nav-point active"></div>
+              <div class="nav-point"></div>
               <div class="nav-point"></div>
             </div>
           </div>
