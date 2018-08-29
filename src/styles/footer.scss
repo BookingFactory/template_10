@@ -4,7 +4,7 @@ footer {
   }
 
   .output-info {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       margin: 55px 0 0;
     }
 
@@ -76,7 +76,7 @@ footer {
 
     @media screen and (max-width: 767px) {
       display: inline-block;
-      margin: 65px 20px 60px;
+      margin: 65px 0 60px;
       text-align: center;
       width: 280px;
     }
