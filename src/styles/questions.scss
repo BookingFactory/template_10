@@ -98,6 +98,11 @@
     width: auto;
     z-index: 3;
 
+    .button {
+      position: relative;
+      z-index: 2;
+    }
+
     &::before,
     &::after {
       background-color: $color--white;
@@ -106,16 +111,17 @@
       position: absolute;
       top: 18px;
       width: 25px;
+      z-index: 1;
     }
 
     &::before {
       left: 0;
-      transform: translateX(-26px);
+      transform: translateX(-100%);
     }
 
     &::after {
       right: 0;
-      transform: translateX(25px);
+      transform: translateX(100%);
     }
   }
 

@@ -154,6 +154,11 @@
         width: 335px;
       }
 
+      .button {
+        position: relative;
+        z-index: 2;
+      }
+
       &::before,
       &::after {
         background-color: $color--white;
@@ -161,6 +166,7 @@
         height: 13px;
         position: relative;
         width: 3px;
+        z-index: 1;
 
         @media screen and (min-width: 320px) {
           display: none;
