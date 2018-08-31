@@ -19,6 +19,7 @@
 
     <script type="text/javascript" src="./scripts/index.js"></script>
     <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
+    <script type="text/javascript" src="./scripts/autosize.js"></script>
     <script type="module">
       const carouselSlider = tns({
         container: '.carousel .image-list',
@@ -103,6 +104,8 @@
         animateIn: "fade-in",
         animateOut: "fade-out",
       });
+
+      autosize(document.querySelectorAll('textarea'));
     </script>
 
     <title>Page Title</title>
@@ -629,7 +632,7 @@
         </div>
       </div>
       <div class="contacts">
-        <div class="body">
+        <div id="contact-us" class="body show">
           <h2>Contact Us</h2>
           <p>Kogi Cosby sweater ethical squid irony disrupt, organic tote bag gluten-free wolf typewriter mixtape small batch.</p>
           <ul>
@@ -639,10 +642,52 @@
               </span></li>
           </ul>
           <div class="button-wrapper">
-            <a class="button button-success" href="#">
+            <button class="button button-success">
               <span class="desktop-only">Get In Touch</span>
               <span class="arrow mobile-only"></span>
-            </a>
+            </button>
+          </div>
+        </div>
+        <div id="get-in-touch" class="body body__form">
+          <h2>Get In Touch</h2>
+          <form>
+            <div class="row no-gutters">
+              <div class="col-md-6 col-12 no-gutters">
+                <div class="form-group e-mail-group">
+                  <input id="e-mail" type="text">
+                  <label for="e-mail">E-Mail</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-12 no-gutters">
+                <div class="form-group first-name-group">
+                  <input id="first-name" type="text">
+                  <label for="first-name">First Name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-12 no-gutters">
+                <div class="form-group">
+                  <textarea id="message" rows="1"></textarea>
+                  <label for="message">Text your message here…</label>
+                </div>
+              </div>
+            </div>
+            <div class="row footer no-gutters">
+              <div class="col-md-6 col-12 no-gutters">
+                <input id="get-in-touch-checkbox" name="get-in-touch-checkbox" type="checkbox">
+                <label for="get-in-touch-checkbox">I'm not a robot</label>
+              </div>
+              <div class="col-md-6 col-12 no-gutters">
+                <a class="button button-success footer-button" href="#">Send message</a>
+              </div>
+            </div>
+          </form>
+          <div class="button-wrapper">
+            <button class="button button-success">
+              <span class="desktop-only">Contact Us</span>
+              <span class="arrow mobile-only"></span>
+            </button>
           </div>
         </div>
         <div class="map-wrapper map-wrapper-shadow">

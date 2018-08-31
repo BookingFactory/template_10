@@ -1,0 +1,123 @@
+@mixin text-styles {
+  font-family: Muli;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin box-styles {
+  border: 0;
+  border-bottom: 1px solid $color--unknown-1;
+  box-sizing: border-box;
+  color: $color--dark-grey;
+  display: inline-block;
+  overflow: hidden;
+  padding: 25px 0 8px;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+@mixin label-styles {
+  & + label {
+    color: $color--grey;
+    left: 0;
+    position: absolute;
+    top: 25px;
+    transition: top .3s ease-in-out;
+  }
+}
+
+@mixin focus-styles {
+  &:focus {
+    & + label {
+      top: 0;
+    }
+  }
+}
+
+@mixin dirty-styles {
+  &.dirty {
+    & + label {
+      top: 0;
+    }
+  }
+}
+
+.form-group {
+  position: relative;
+}
+
+textarea {
+  @include text-styles;
+  @include box-styles;
+  @include label-styles;
+  @include focus-styles;
+  @include dirty-styles;
+
+  resize: none;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 40px;
+
+    & + label {
+      top: 40px;
+    }
+  }
+}
+
+input {
+  &[type='text'] {
+    @include text-styles;
+    @include box-styles;
+    @include label-styles;
+    @include focus-styles;
+    @include dirty-styles;
+  }
+
+  &[type='checkbox'] {
+    display: inline-block;
+    height: 24px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    z-index: 0;
+
+    & + label {
+      cursor: pointer;
+      padding-left: 39px;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        background-color: $color--theme-2;
+        color: $color--white;
+        content: '';
+        display: inline-block;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        height: 24px;
+        left: 0;
+        line-height: 24px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+      }
+    }
+
+    &:checked {
+      & + label {
+        &::before {
+          content: '\f00c';
+        }
+      }
+    }
+  }
+}
+
+label {
+  @include text-styles;
+  color: $color--dark-grey;
+}
