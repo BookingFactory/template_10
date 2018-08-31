@@ -227,18 +227,6 @@
   .special-offers {
     text-align: center;
 
-    @media screen and (max-width: 767px) {
-      .offers {
-        display: none;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      .cards {
-        display: none;
-      }
-    }
-
     h2 {
       box-sizing: border-box;
       display: inline-block;

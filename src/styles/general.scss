@@ -10,6 +10,18 @@
   }
 }
 
+.tablet-see {
+  @media screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.mobile-see {
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+
 .no-xs-padding {
   @media screen and (max-width: 575px) {
     padding: 0 !important;
