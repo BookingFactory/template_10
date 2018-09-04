@@ -62,7 +62,7 @@
       });
       const opinionSlider = tns({
         container: '.posts .post-list',
-        controlsContainer: ".posts .pagination",
+        controlsContainer: ".posts .carousel-pagination",
         navContainer: '.posts .nav-tools',
         items: 1,
         speed: 700,
@@ -73,7 +73,7 @@
         animateIn: "fade-in",
         animateOut: "fade-out",
       });
-      const paginationPages = Array.from(document.querySelector('.posts .pagination .pages').children);
+      const paginationPages = Array.from(document.querySelector('.posts .carousel-pagination .pages').children);
       const imagesList = Array.from(document.querySelector('.expert-opinion .image-list').children);
 
       paginationPages[0].classList.add('active');
@@ -93,8 +93,8 @@
 
       const reviewSlider = tns({
         container: '.reviews .reviews-list',
-        controlsContainer: ".reviews .pagination",
-        navContainer: '.reviews .pagination .pages',
+        controlsContainer: ".reviews .carousel-pagination",
+        navContainer: '.reviews .carousel-pagination .pages',
         items: 1,
         speed: 700,
         autoplay: true,
@@ -541,7 +541,7 @@
                 </div>
               </div>
             </div>
-            <div class="pagination">
+            <div class="carousel-pagination">
               <div class="left-arrow"></div>
               <div class="right-arrow"></div>
               <ul class="pages">
@@ -585,7 +585,7 @@
                 <a class="button button-info" href="#">Check post</a>
               </div>
             </div>
-            <div class="pagination tablet-see">
+            <div class="carousel-pagination tablet-see">
               <div class="left-arrow" data-arrrow="left"></div>
               <div class="right-arrow" data-arrrow="right"></div>
               <ul class="pages">
