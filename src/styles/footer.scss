@@ -1,29 +1,26 @@
 footer {
-  @media screen and (max-width: 767px) {
-    text-align: center;
-  }
-
   .output-info {
     @media screen and (max-width: 767px) {
-      margin: 55px 0 0;
+      padding: 55px 0 0;
     }
 
     @media screen and (min-width: 768px) {
-      margin: 65px 0 83px;
+      padding: 65px 0 83px;
     }
 
     @media screen and (min-width: 1200px) {
-      padding: 81px 0 110px;
+      padding: 85px 0 110px;
     }
 
     .logo-wrapper {
+      text-align: center;
+
       @media screen and (max-width: 767px) {
         margin-bottom: 14px;
       }
 
       @media screen and (min-width: 768px) {
         margin-bottom: 68px;
-        text-align: center;
       }
 
       @media screen and (min-width: 1200px) {
@@ -55,13 +52,14 @@ footer {
 
     .title,
     p {
+      text-align: center;
+
       @media screen and (max-width: 767px) {
         padding: 0 21px;
       }
 
       @media screen and (min-width: 768px) {
         padding: 0 22px;
-        text-align: center;
       }
 
       @media screen and (min-width: 1200px) {
@@ -73,17 +71,16 @@ footer {
 
   .footer-nav {
     position: relative;
+    text-align: center;
 
     @media screen and (max-width: 767px) {
       display: inline-block;
       margin: 65px 0 60px;
-      text-align: center;
-      width: 280px;
+      width: 100%;
     }
 
     @media screen and (min-width: 768px) {
       margin-bottom: 58px;
-      text-align: center;
     }
 
     @media screen and (min-width: 1200px) {
@@ -154,19 +151,19 @@ footer {
     font-size: 11px;
     font-weight: 500;
     line-height: 13px;
+    text-align: center;
     vertical-align: middle;
 
     @media screen and (max-width: 767px) {
-      margin: 46px 0 43px;
+      padding: 46px 0 43px;
     }
 
     @media screen and (min-width: 768px) {
-      margin: 45px 0 64px;
-      text-align: center;
+      padding: 45px 0 64px;
     }
 
     @media screen and (min-width: 1200px) {
-      margin: 36px 0 39px;
+      padding: 36px 0 39px;
       text-align: left;
     }
 
