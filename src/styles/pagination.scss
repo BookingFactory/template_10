@@ -1,0 +1,121 @@
+.pagination {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 12px;
+    width: 320px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 42px;
+    width: 541px;
+  }
+
+  .pagination-list {
+    box-sizing: content-box;
+    height: 63px;
+    line-height: 63px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      height: 63px;
+      line-height: 63px;
+      vertical-align: middle;
+    }
+
+    a,
+    strong {
+      color: $color--grey;
+      font-family: 'PT Serif';
+      font-size: 20px;
+      font-style: italic;
+      font-weight: bold;
+      line-height: 63px;
+      margin: 0 10px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    strong {
+      font-size: 14px;
+    }
+
+    .active {
+      color: $color--dark-grey;
+      font-size: 32px;
+      margin: 0 20px;
+
+      @media screen and (max-width: 767px) {
+        margin: 0 12px;
+      }
+    }
+
+    .left-arrow,
+    .right-arrow {
+      background-color: $color--theme-1;
+      display: block;
+      height: 67px;
+      margin: 0;
+      position: absolute;
+      text-decoration: none;
+      top: 0;
+      width: 63px;
+
+      &::before {
+        border: 2px solid $color--theme-2;
+        content: '';
+        cursor: pointer;
+        display: inline-block;
+        height: 11px;
+        position: absolute;
+        top: 29px;
+        transform: rotate(-45deg);
+        width: 11px;
+      }
+
+      &::after {
+        border-bottom: 4px solid $color--white;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+      }
+    }
+
+    .left-arrow {
+      left: 0;
+
+      &::before {
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        left: 28px;
+      }
+
+      &::after {
+        border-right: 63px solid transparent;
+      }
+    }
+
+    .right-arrow {
+      right: 0;
+
+      &::before {
+        border-left-color: transparent;
+        border-top-color: transparent;
+        left: 24px;
+      }
+
+      &::after {
+        border-left: 63px solid transparent;
+      }
+    }
+  }
+}
