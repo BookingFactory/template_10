@@ -27,9 +27,9 @@
       &::before {
         border-bottom: 30px solid transparent;
         border-right: 350px solid $color--theme-1;
+        bottom: 0;
         content: '';
         display: block;
-        height: 365px;
         left: 0;
         position: absolute;
         top: 46px;
@@ -42,7 +42,7 @@
       background-color: $color--white;
       border: 1px solid $color--unknown-1;
       max-width: 730px;
-      padding: 58px 182px 57px 68.5px;
+      padding: 58px 182px 57px 68px;
       position: relative;
       width: 100%;
       z-index: 2;
@@ -54,10 +54,47 @@
 
       @media screen and (min-width: 1440px) {
         max-width: 730px;
-        padding: 58px 182px 57px 68.5px;
+        padding: 58px 182px 57px 68px;
+      }
+
+      &::before,
+      &::after {
+        background-color: $color--white;
+        content: '';
+        position: absolute;
+      }
+
+      &::before {
+        height: 16px;
+        right: -2px;
+        transform: translateY(-100%);
+        width: 3px;
+
+        @media screen and (min-width: 768px) {
+          top: 46px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          top: 33px;
+        }
+      }
+
+      &::after {
+        bottom: -2px;
+        height: 3px;
+        width: 19px;
+
+        @media screen and (min-width: 768px) {
+          right: 180px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          right: 120px;
+        }
       }
     }
 
+    h2,
     h3 {
       font-family: 'Playfair Display';
       font-size: 28px;
@@ -81,47 +118,18 @@
 
     .side {
       position: absolute;
-      width: 245px;
       z-index: 3;
 
       @media screen and (min-width: 768px) {
         right: -60px;
         top: 46px;
+        width: 240px;
       }
 
       @media screen and (min-width: 1440px) {
         right: -125px;
         top: 33px;
-      }
-
-      &::before,
-      &::after {
-        background-color: $color--white;
-        content: '';
-        position: absolute;
-      }
-
-      &::after {
-        bottom: 41px;
-        height: 3px;
-        left: 0;
-        transform: translateX(-100%);
-        width: 19px;
-      }
-
-      &::before {
-        height: 16px;
-        top: 0;
-        transform: translateY(-100%);
-        width: 3px;
-
-        @media screen and (min-width: 768px) {
-          right: 58px;
-        }
-
-        @media screen and (min-width: 1440px) {
-          right: 123px;
-        }
+        width: 245px;
       }
 
       .image-wrapper {
@@ -177,6 +185,35 @@
         @media screen and (min-width: 1440px) {
           padding: 58px 70px 57px 182px;
         }
+
+        &::before {
+          height: 16px;
+          left: -2px;
+          transform: translateY(-100%);
+          width: 3px;
+
+          @media screen and (min-width: 768px) {
+            top: 46px;
+          }
+
+          @media screen and (min-width: 1440px) {
+            top: 33px;
+          }
+        }
+
+        &::after {
+          bottom: -2px;
+          height: 3px;
+          width: 19px;
+
+          @media screen and (min-width: 768px) {
+            left: 180px;
+          }
+
+          @media screen and (min-width: 1440px) {
+            left: 120px;
+          }
+        }
       }
 
       .side {
@@ -188,24 +225,6 @@
 
         @media screen and (min-width: 1440px) {
           left: -125px;
-        }
-
-        &::after {
-          left: auto;
-          right: 0;
-          transform: translateX(100%);
-        }
-
-        &::before {
-          right: auto;
-
-          @media screen and (min-width: 768px) {
-            left: 58px;
-          }
-
-          @media screen and (min-width: 1440px) {
-            left: 123px;
-          }
         }
       }
     }

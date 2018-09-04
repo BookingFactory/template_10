@@ -1,0 +1,131 @@
+.room-services {
+  h1 {
+    text-align: center;
+
+    @media screen and (max-width: 767px) {
+      font-size: 34px;
+      margin: 50px 0 22px;
+      padding: 0 16px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin: 0 auto 33px;
+      max-width: 710px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin: 0 auto 35px;
+      max-width: 1136px;
+    }
+
+    & + p {
+      text-align: center;
+
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+        margin-bottom: 40px;
+        padding: 0 16px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin: 0 auto 68px;
+        max-width: 710px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin: 0 auto 58px;
+        max-width: 1136px;
+      }
+    }
+  }
+
+  .offers {
+    .offer {
+      @media screen and (min-width: 768px) {
+        margin: 0 auto 55px;
+        padding: 0 60px 71px 30px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin: 0 auto 86px;
+        padding: 0 125px 61px 26px;
+      }
+
+      &.offer-shadow {
+        &::before {
+          top: 21px;
+        }
+      }
+
+      h2 {
+        margin-bottom: 30px;
+      }
+
+      .body {
+        width: 655px;
+
+        @media screen and (min-width: 768px) {
+          padding: 60px 265px 60px 60px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          padding: 55px 265px 62px 66px;
+        }
+      }
+
+      .read-more-link {
+        display: inline-block;
+        margin-left: 16px;
+        margin-top: 15px;
+      }
+
+      &.offer-reflection {
+        @media screen and (min-width: 768px) {
+          padding: 0 30px 71px 89px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          padding: 0 26px 61px 125px;
+        }
+
+        .body {
+          @media screen and (min-width: 768px) {
+            padding: 60px 84px 60px 240px;
+          }
+
+          @media screen and (min-width: 1440px) {
+            padding: 55px 139px 59px 192px;
+          }
+        }
+      }
+    }
+  }
+
+  .cards {
+    .cards-list {
+      white-space: normal;
+    }
+
+    .card {
+      margin-bottom: 40px;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .body {
+        padding: 30px 34px 119px 36px;
+      }
+    }
+  }
+
+  footer {
+    background-color: $color--theme-1;
+
+    .output-info {
+      @media screen and (min-width: 1200px) {
+        padding-top: 79px;
+      }
+    }
+  }
+}
