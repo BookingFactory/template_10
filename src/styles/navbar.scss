@@ -1,7 +1,17 @@
 .navbar {
-  margin: 45px 0 104px;
+  margin: 45px auto 104px;
+  max-width: 1136px;
   position: relative;
   width: 100%;
+  z-index: 999;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 1040px;
+  }
+
+  @media screen and (max-width: 1080px) {
+    max-width: 736px;
+  }
 
   .navbar-toggler {
     background-color: $color--white;
@@ -31,7 +41,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 3;
+    z-index: 998;
 
     li {
       display: inline-block;
@@ -134,7 +144,6 @@
       top: -57px;
       transform: translateY(0);
       width: 291px;
-      z-index: 3;
 
       &.opened {
         border-bottom: 2px solid $color--unknown-1;

@@ -1,6 +1,4 @@
 header {
-  margin: auto;
-  max-width: 1136px;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -16,6 +14,25 @@ header {
   .header {
     height: 40px;
     line-height: 40px;
+    width: 100%;
+
+    &.grey-theme {
+      background-color: $color--theme-1;
+    }
+
+    .content-wrapper {
+      margin: auto;
+      max-width: 1136px;
+      width: 100%;
+
+      @media screen and (max-width: 1200px) {
+        max-width: 1040px;
+      }
+    
+      @media screen and (max-width: 1080px) {
+        max-width: 736px;
+      }
+    }
   }
 
   .right-side {
@@ -36,14 +53,6 @@ header {
       color: $color--theme-2;
       padding-right: 6px;
     }
-  }
-
-  @media screen and (max-width: 1200px) {
-    max-width: 1040px;
-  }
-
-  @media screen and (max-width: 1080px) {
-    max-width: 736px;
   }
 
   @media screen and (max-width: 768px) {
