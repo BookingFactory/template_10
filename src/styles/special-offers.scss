@@ -1,0 +1,19 @@
+.special-offers {
+  h1 {
+    @media screen and (max-width: 767px) {
+      font-size: 34px;
+      margin-bottom: 46px;
+      margin-top: 47px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 52px;
+      margin-top: 63px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 90px;
+      margin-top: 115px;
+    }
+  }
+}
