@@ -16,4 +16,30 @@
       margin-top: 115px;
     }
   }
+
+  .filters {
+    text-align: center;
+    text-transform: capitalize;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 23px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 38px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 37px;
+    }
+
+    span {
+      color: $color--dark-grey;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-right: 28px;
+    }
+  }
 }
