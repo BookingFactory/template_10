@@ -1,40 +1,33 @@
 .room-services {
   h1 {
-    text-align: center;
-
     @media screen and (max-width: 767px) {
       font-size: 34px;
-      margin: 50px 0 22px;
-      padding: 0 16px;
+      margin-bottom: 22px;
+      margin-top: 47px;
     }
 
     @media screen and (min-width: 768px) {
-      margin: 0 auto 33px;
-      max-width: 710px;
+      margin-bottom: 33px;
+      margin-top: 63px;
     }
 
     @media screen and (min-width: 1440px) {
-      margin: 0 auto 35px;
-      max-width: 1136px;
+      margin-bottom: 35px;
+      margin-top: 115px;
     }
 
     & + p {
-      text-align: center;
-
       @media screen and (max-width: 767px) {
         font-size: 14px;
         margin-bottom: 40px;
-        padding: 0 16px;
       }
 
       @media screen and (min-width: 768px) {
-        margin: 0 auto 68px;
-        max-width: 710px;
+        margin-bottom: 68px;
       }
 
       @media screen and (min-width: 1440px) {
-        margin: 0 auto 58px;
-        max-width: 1136px;
+        margin-bottom: 58px;
       }
     }
   }
