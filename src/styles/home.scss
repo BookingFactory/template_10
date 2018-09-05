@@ -2,6 +2,11 @@
   .info {
     font-size: 0;
     margin-bottom: 100px;
+    margin-top: 97px;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 28px;
+    }
 
     h1 {
       margin: 20px 0 42px;
