@@ -153,6 +153,7 @@
     position: relative;
     vertical-align: top;
     white-space: normal;
+    width: 204px;
 
     &:first-child {
       margin-left: 0;
@@ -167,14 +168,21 @@
       width: 6px;
     }
 
-    p {
-      width: 204px;
-    }
-
     .question-text {
+      font-family: 'Work Sans';
       font-weight: 600;
       margin-bottom: 25px;
       text-transform: uppercase;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
