@@ -42,4 +42,13 @@
       margin-right: 28px;
     }
   }
+
+  .cards-list {
+    white-space: normal;
+
+    .card {
+      display: block;
+      margin-bottom: 21px;
+    }
+  }
 }
