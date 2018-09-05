@@ -1,4 +1,8 @@
 footer {
+  &.grey-theme {
+    background-color: $color--theme-1;
+  }
+
   .output-info {
     @media screen and (max-width: 767px) {
       padding: 55px 0 0;
