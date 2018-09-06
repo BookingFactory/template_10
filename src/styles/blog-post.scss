@@ -1,0 +1,226 @@
+.blog-post {
+  .posts {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 81px;
+      margin-top: 42px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 95px;
+      margin-top: 62px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 109px;
+      margin-top: 68px;
+      padding-top: 126px;
+    }
+
+    .body {
+      border: 1px solid $color--unknown-1;
+      margin: auto;
+
+      @media screen and (max-width: 767px) {
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        padding-bottom: 0;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 282px 90px 63px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        padding: 101px 96px 88px;
+        width: 1136px;
+      }
+    }
+
+    .image-wrapper {
+      @media screen and (min-width: 1440px) {
+        left: auto;
+        right: 96px;
+        top: -79px;
+
+        &.image-wrapper-shadow {
+          &::before {
+            border-bottom: 0;
+            border-top: 30px solid transparent;
+            left: -31px;
+            top: -47px;
+          }
+        }
+      }
+    }
+
+    .post {
+      position: relative;
+    }
+
+    .post-subtitle,
+    .post-title,
+    .date-post {
+      @media screen and (max-width: 767px) {
+        width: auto;
+      }
+
+      @media screen and (min-width: 768px) {
+        width: 464px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        width: 384px;
+      }
+    }
+
+    .post-subtitle {
+      @media screen and (max-width: 1439px) {
+        height: 0;
+        margin-bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    .post-title {
+      @media screen and (max-width: 767px) {
+        margin-top: 30px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-top: 44px;
+      }
+    }
+
+    .date-post {
+      @media screen and (max-width: 1439px) {
+        margin-bottom: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 40px;
+      }
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .footer {
+      line-height: 48px;
+      vertical-align: middle;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 37px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-top: 39px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-top: 66px;
+      }
+
+      .left-side,
+      .right-side {
+        font-size: 0;
+        vertical-align: middle;
+
+        @media screen and (max-width: 767px) {
+          line-height: 1;
+        }
+      }
+
+      .left-side {
+        @media screen and (max-width: 767px) {
+          margin-bottom: 41px;
+        }
+      }
+
+      .right-side {
+        @media screen and (max-width: 767px) {
+          flex: none;
+          margin-left: -17px;
+          margin-right: -16px;
+          max-width: none;
+          text-align: center;
+          width: calc(100% + 33px);
+        }
+
+        @media screen and (min-width: 768px) {
+          text-align: right;
+        }
+      }
+
+      .text {
+        color: $color--header-90;
+        display: inline-block;
+        font-family: 'Work Sans';
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-right: 36px;
+        text-transform: uppercase;
+        vertical-align: middle;
+      }
+
+      .social-nav {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+
+        li {
+          margin-right: 23px;
+        }
+      }
+
+      .button-info {
+        font-weight: 600;
+        line-height: 26px;
+        margin: 0; //!!!!
+        padding: 10px 31px;
+
+        &:last-child {
+          margin-left: -1px;
+        }
+
+        @media screen and (max-width: 767px) {
+          text-align: center;
+          width: 50%;
+
+          &:first-child {
+            border-left: 0;
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      .arrow {
+        border: 2px solid $color--theme-2;
+        display: inline-block;
+        height: 8px;
+        position: relative;
+        transform: rotate(-45deg);
+        width: 8px;
+
+        &.arrow-left {
+          border-bottom-color: transparent;
+          border-right-color: transparent;
+          margin-right: 10px;
+        }
+
+        &.arrow-right {
+          border-left-color: transparent;
+          border-top-color: transparent;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
