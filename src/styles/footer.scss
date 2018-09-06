@@ -121,34 +121,6 @@ footer {
     }
   }
 
-  .social-nav {
-    text-align: center;
-
-    @media screen and (min-width: 1200px) {
-      text-align: right;
-    }
-
-    li {
-      display: inline-block;
-      margin-right: 27px;
-
-      &:first-child {
-        a {
-          color: $color--theme-2;
-        }
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    a {
-      color: $color--unknown-1;
-      font-size: 20px;
-    }
-  }
-
   .copyright {
     color: $color--grey;
     font-family: 'Work Sans';
