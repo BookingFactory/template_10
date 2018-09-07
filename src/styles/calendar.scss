@@ -1,0 +1,90 @@
+.calendar {
+  margin: auto;
+  text-align: center;
+
+  @media screen and (max-width: 767px) {
+    max-width: 384px;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+  }
+
+  &.calendar-shadow {
+    padding: 1px 0 148px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      border-bottom-color: transparent;
+      border-bottom-style: solid;
+      border-right-color: $color--theme-1;
+      border-right-style: solid;
+      content: '';
+      height: 640px;
+      left: 0;
+      position: absolute;
+      top: 0;
+
+      @media screen and (max-width: 767px) {
+        border-bottom-width: 15px;
+        border-right-width: 384px;
+      }
+
+      @media screen and (max-width: 480px) {
+        border-bottom-width: 15px;
+        border-right-width: 100vw;
+      }
+
+      @media screen and (min-width: 768px) {
+        border-bottom-width: 20px;
+        border-right-width: 384px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        border-bottom-width: 40px;
+        border-right-width: 761px;
+      }
+    }
+  }
+
+  h2,
+  .button {
+    position: relative;
+    z-index: 2;
+  }
+
+  .window {
+    display: block;
+    font-size: 0;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: 767px) {
+      max-width: 344px;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 687px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      max-width: 1030px;
+    }
+
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
+}

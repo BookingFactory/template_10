@@ -1,0 +1,52 @@
+.room {
+  .calendar {
+    h2 {
+      margin-bottom: 42px;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 71px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-top: 59px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  .cards {
+    h2 {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 42px;
+        margin-top: 65px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 68px;
+        margin-top: 86px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 69px;
+        margin-top: 105px;
+      }
+    }
+
+    .card {
+      @media screen and (max-width: 480px) {
+        margin-right: 0;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-right: 37px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-right: 50px;
+      }
+    }
+  }
+}
