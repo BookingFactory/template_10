@@ -5,10 +5,6 @@ h3 {
   font-family: 'Playfair Display';
   font-weight: bold;
   line-height: 1.25;
-}
-
-h1 {
-  font-size: 48px;
 
   &.to-center {
     margin-left: auto;
@@ -45,6 +41,10 @@ h1 {
       }
     }
   }
+}
+
+h1 {
+  font-size: 48px;
 }
 
 h2 {
