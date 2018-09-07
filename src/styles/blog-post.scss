@@ -223,4 +223,39 @@
       }
     }
   }
+
+  .date-post {
+    margin-bottom: 10px;
+  }
+
+  .cards {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 55px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 103px;
+    }
+
+    h2 {
+      font-size: 40px;
+      line-height: 60px;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 42px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 68px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 59px;
+      }
+    }
+  }
 }
