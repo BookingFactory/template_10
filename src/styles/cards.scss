@@ -192,8 +192,8 @@
     }
 
     .card {
-      @media screen and (max-width: 480px) {
-        margin-right: 0;
+      @media screen and (max-width: 767px) {
+        margin-right: 37px;
         width: 320px;
       }
 
@@ -202,7 +202,7 @@
       }
 
       @media screen and (min-width: 1440px) {
-        margin-right: 32px;
+        margin-right: 50px;
       }
 
       &:last-child {
@@ -211,7 +211,7 @@
 
       .body {
         border-top: 0;
-        padding: 36px 40px 45px 38px;
+        padding: 36px 40px 139px 38px;
       }
 
       h2,
