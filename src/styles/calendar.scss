@@ -3,10 +3,6 @@
   text-align: center;
 
   @media screen and (max-width: 767px) {
-    max-width: 384px;
-  }
-
-  @media screen and (max-width: 480px) {
     max-width: 100%;
   }
 
@@ -35,11 +31,6 @@
       top: 0;
 
       @media screen and (max-width: 767px) {
-        border-bottom-width: 15px;
-        border-right-width: 384px;
-      }
-
-      @media screen and (max-width: 480px) {
         border-bottom-width: 15px;
         border-right-width: 100vw;
       }
