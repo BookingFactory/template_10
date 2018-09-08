@@ -1,0 +1,114 @@
+.features {
+  margin: auto;
+  position: relative;
+  z-index: 3;
+
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+  }
+
+  .body {
+    background-color: $color--white;
+    border-left: 1px solid $color--unknown-1;
+    border-right: 1px solid $color--unknown-1;
+    border-top: 1px solid $color--unknown-1;
+    margin-right: auto;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+      border-left: 0;
+      border-right: 0;
+      max-width: 100%;
+      padding: 50px 16px 75px;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 739px;
+      padding: 55px 89px 96px 90px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      max-width: 1084px;
+      padding: 55px 80px 88px 252px;
+    }
+
+    @media screen and (width: 1440px),
+      screen and (width: 768px) {
+        border-left: 0;
+      }
+
+    @media screen and (width: 768px) {
+      border-left: 0;
+    }
+
+    &::before {
+      background-color: $color--white;
+      border-bottom: 1px solid $color--unknown-1;
+      bottom: -14px;
+      content: '';
+      display: block;
+      height: 21px;
+      left: 0;
+      position: absolute;
+      transform: rotate(1.5deg);
+
+      @media screen and (max-width: 767px) {
+        bottom: -14px;
+        width: 100%;
+      }
+
+      @media screen and (min-width: 768px) {
+        bottom: -10px;
+        width: 738px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        bottom: -14px;
+        width: 1083px;
+      }
+    }
+
+    &::after {
+      background-color: $color--unknown-1;
+      bottom: 0%;
+      content: '';
+      display: block;
+      position: absolute;
+      right: -1px;
+      width: 1px;
+
+      @media screen and (max-width: 767px) {
+        content: none;
+      }
+
+      @media screen and (min-width: 768px) {
+        bottom: -20px;
+        height: 21px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        bottom: -28px;
+        height: 29px;
+      }
+    }
+  }
+
+  .title {
+    color: $color--dark-grey;
+    font-family: 'Work Sans';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+}
