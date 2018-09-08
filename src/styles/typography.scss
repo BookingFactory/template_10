@@ -47,6 +47,17 @@ h1 {
   font-size: 48px;
 }
 
+.section-title {
+  font-family: 'Work Sans';
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 11px;
+  margin-bottom: 11px;
+  margin-top: 18px;
+  text-transform: uppercase;
+}
+
 h2 {
   @media screen and (min-width: 320px) {
     font-size: 38px;
