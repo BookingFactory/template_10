@@ -96,17 +96,33 @@ p {
     margin-bottom: 6px;
     position: relative;
 
-    .marker {
-      background-color: $color--theme-2;
+  }
+
+  .marker {
+    background-color: $color--theme-2;
+    display: inline-block;
+    height: 6px;
+    line-height: 6px;
+    margin-left: -16px;
+    margin-right: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+  }
+
+  &.horizontal-view {
+    padding-left: 0;
+    white-space: nowrap;
+
+    li {
       display: inline-block;
-      height: 6px;
-      line-height: 6px;
-      margin-left: -16px;
-      margin-right: 10px;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 6px;
+      margin-bottom: 0;
+      margin-right: 35px;
+    }
+
+    .marker {
+      margin-left: 0;
     }
   }
 }
