@@ -1,4 +1,187 @@
 .room {
+  .info {
+    margin: auto;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 50px;
+      margin-top: 55px;
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 75px;
+      margin-top: 66px;
+      max-width: 768px;
+      text-align: right;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 75px;
+      margin-top: 102px;
+      max-width: 1440px;
+    }
+
+    .header {
+      text-align: left;
+
+      @media screen and (max-width: 767px) {
+        padding: 0 16px;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 0 90px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        padding-left: 251px;
+      }
+
+      h2 {
+        @media screen and (max-width: 767px) {
+          font-size: 34px;
+          line-height: 46px;
+          margin-bottom: 32px;
+        }
+
+        @media screen and (min-width: 768px) {
+          font-size: 38px;
+          line-height: 60px;
+          margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: 1440px) {
+          margin-bottom: 36px;
+        }
+      }
+    }
+
+    .text-wrapper {
+      text-align: justify;
+      width: 100%;
+
+      @media screen and (max-width: 767px) {
+        padding: 0 16px;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 0 90px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        box-sizing: content-box;
+        padding-left: 251px;
+        text-align: left;
+        width: 480px;
+      }
+    }
+
+    .bulleted-list {
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .price {
+      margin-top: 35px;
+    }
+
+    .carousel-wrapper {
+      display: inline-block;
+      text-align: center;
+      width: auto;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 44px;
+        padding: 27px 0 0;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 59px;
+        padding: 35px 152px 0 0;
+      }
+
+      @media screen and (min-width: 1440px) {
+        left: 809px;
+        padding: 35px 170px 0 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .button {
+        padding-left: 71px;
+        padding-right: 71px;
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .carousel {
+      @media screen and (max-width: 1439px) {
+        margin: auto;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin: 0;
+      }
+
+      &.carousel-shadow {
+        position: relative;
+        z-index: 2;
+
+        &::before {
+          border-bottom-color: transparent;
+          border-bottom-style: solid;
+          border-left-color: $color--theme-1;
+          border-left-style: solid;
+          content: '';
+          display: block;
+          height: 430px;
+          left: 53px;
+          position: absolute;
+          top: -35px;
+          z-index: 1;
+
+          @media screen and (max-width: 767px) {
+            border-bottom-width: 15px;
+            border-left-width: 100vw;
+            bottom: -26px;
+            height: auto;
+            left: 0;
+            top: -27px;
+          }
+
+          @media screen and (min-width: 768px) {
+            border-bottom-width: 30px;
+            border-left-width: 563px;
+          }
+
+          @media screen and (min-width: 1440px) {
+            border-bottom-width: 30px;
+            border-left-width: 580px;
+          }
+        }
+      }
+    }
+
+    .nav-tools {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 26px;
+        margin-top: 15px;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 31px;
+      }
+    }
+  }
+
   .calendar {
     h2 {
       margin-bottom: 42px;
