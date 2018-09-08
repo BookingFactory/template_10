@@ -1,4 +1,4 @@
-.room {
+.simple-page {
   .info {
     margin: auto;
     position: relative;
@@ -55,6 +55,14 @@
           margin-bottom: 36px;
         }
       }
+
+      .section-title {
+        margin-bottom: 11px;
+
+        @media screen and (min-width: 1440px) {
+          padding-top: 16px;
+        }
+      }
     }
 
     .text-wrapper {
@@ -77,7 +85,8 @@
       }
     }
 
-    .bulleted-list {
+    .bulleted-list,
+    .offer-text {
       margin-bottom: 16px;
     }
 
