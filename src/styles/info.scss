@@ -86,50 +86,6 @@
     @media screen and (min-width: 1440px) {
       margin: 0;
     }
-
-    &.carousel-shadow {
-      position: relative;
-      z-index: 2;
-
-      &::before {
-        border-bottom-color: transparent;
-        border-bottom-style: solid;
-        border-left-color: $color--theme-1;
-        border-left-style: solid;
-        content: '';
-        display: block;
-        height: 430px;
-        left: 53px;
-        position: absolute;
-        top: -35px;
-        z-index: 1;
-
-        @media screen and (max-width: 767px) {
-          border-bottom-width: 15px;
-          border-left-width: 100vw;
-          bottom: -26px;
-          height: auto;
-          left: 0;
-          top: -27px;
-        }
-
-        @media screen and (min-width: 768px) {
-          border-bottom-width: 30px;
-          border-left-width: 563px;
-        }
-
-        @media screen and (min-width: 1440px) {
-          border-bottom-width: 30px;
-          border-left-width: 580px;
-        }
-      }
-
-      &.white-theme {
-        &::before {
-          border-left-color: $color--white;
-        }
-      }
-    }
   }
 
   .nav-tools {
