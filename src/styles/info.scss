@@ -54,18 +54,16 @@
     width: auto;
 
     @media screen and (max-width: 767px) {
-      margin-bottom: 44px;
       padding: 27px 0 0;
     }
 
     @media screen and (min-width: 768px) {
-      margin-bottom: 59px;
       padding: 35px 152px 0 0;
     }
 
     @media screen and (min-width: 1440px) {
       left: 809px;
-      padding: 35px 170px 0 0;
+      padding: 35px 150px 0 0;
       position: absolute;
       top: 0;
     }
