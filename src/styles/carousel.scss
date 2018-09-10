@@ -52,7 +52,7 @@
 
   &.carousel-shadow {
     position: relative;
-    z-index: 2;
+    z-index: 0;
 
     &::before {
       border-bottom-color: transparent;
