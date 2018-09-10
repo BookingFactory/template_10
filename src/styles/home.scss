@@ -1,105 +1,98 @@
 .home {
   .info {
     font-size: 0;
-    margin-bottom: 100px;
-    margin-top: 97px;
 
     @media screen and (max-width: 767px) {
-      margin-top: 28px;
+      margin: 33px auto 166px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin: 55px auto 110px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin: 70px auto 173px;
+    }
+
+    .text-wrapper {
+      @media screen and (min-width: 768px) {
+        text-align: center;
+      }
+
+      @media screen and (min-width: 1440px) {
+        text-align: left;
+      }
     }
 
     h1 {
-      margin: 20px 0 42px;
+      @media screen and (max-width: 767px) {
+        font-size: 40px;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 37px;
+        padding-top: 48px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 42px;
+        padding-top: 55px;
+      }
     }
 
     p {
-      margin-bottom: 49px;
-      max-width: 368px;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 41px;
+        width: 100%;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-bottom:  49px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 368px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
     .button {
+      box-sizing: border-box;
       height: 48px;
       line-height: 48px;
       padding: 0 19px;
       width: 160px;
 
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
       &.check-out {
         margin: 0 -1px;
+
+        @media screen and (max-width: 767px) {
+          margin: -1px 0;
+        }
       }
 
       &.button-success {
         padding: 0;
         text-align: center;
         width: 145px;
+
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
       }
 
       i {
         color: $color--dark-grey;
         margin-right: 12px;
-      }
-    }
-
-    .text-wrapper {
-      clear: both;
-      float: right;
-    }
-
-    .carousel-wrapper {
-      padding-left: 63px;
-    }
-
-    @media screen and (max-width: 1199px) {
-      margin-bottom: 59px;
-      text-align: center;
-
-      h1 {
-        margin: 110px 0 37px;
-      }
-
-      p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .text-wrapper {
-        float: none;
-      }
-
-      .carousel-wrapper {
-        padding-left: 0;
-        text-align: center;
-      }
-    }
-
-    @media screen and (max-width: 575px) {
-      margin-bottom: 38px;
-      text-align: left;
-
-      h1 {
-        margin: 57px 0 25px 16px;
-      }
-
-      p {
-        margin-bottom: 41px;
-        margin-left: 16px;
-      }
-
-      .button {
-        width: 100%;
-
-        &.check-out {
-          margin: -1px 0;
-        }
-
-        &.button-success {
-          width: 100%;
-        }
-      }
-    }
-
-    @media screen and (max-width: 320px) {
-      h1 {
-        font-size: 40px;
       }
     }
   }
