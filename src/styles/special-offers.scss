@@ -34,8 +34,9 @@
     }
 
     span {
+      @include font--muli;
+
       color: $color--dark-grey;
-      font-family: Muli;
       font-size: 14px;
       font-weight: 600;
       line-height: 24px;

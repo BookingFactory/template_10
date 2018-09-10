@@ -16,8 +16,9 @@
   }
 
   .post-subtitle {
+    @include font--work-sans;
+
     color: $color--white;
-    font-family: 'Work Sans';
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 4px;
@@ -27,8 +28,9 @@
   }
 
   .post-title {
+    @include font--playfair-display;
+
     color: $color--white;
-    font-family: 'Playfair Display';
     font-size: 48px;
     font-weight: bold;
     line-height: 58px;
@@ -42,8 +44,9 @@
   }
 
   p {
+    @include font--muli;
+
     color: $color--white;
-    font-family: Muli;
     font-size: 15px;
     font-weight: 300;
     line-height: 26px;

@@ -5,13 +5,14 @@
   width: auto;
 
   .logo-title {
-    font-family: 'Courgette';
+    @include font--courgette;
     font-size: 45px;
   }
 
   .logo-text {
+    @include font--open-sans;
+
     color: $color--header-90;
-    font-family: 'Open Sans';
     font-size: 9px;
     letter-spacing: 2px;
     text-transform: uppercase;

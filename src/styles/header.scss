@@ -5,8 +5,9 @@ header {
 
   .header,
   .info-box {
+    @include font--work-sans;
+
     color: $color--header-65;
-    font-family: 'Work Sans';
     font-size: 11px;
     font-weight: 500;
   }

@@ -1,5 +1,6 @@
 @mixin text-styles {
-  font-family: Muli;
+  @include font--muli;
+
   font-size: 14px;
   line-height: 24px;
 }
@@ -90,12 +91,12 @@ input {
       z-index: 1;
 
       &::before {
+        @include font--font-awesom-solid;
+
         background-color: $color--theme-2;
         color: $color--white;
         content: '';
         display: inline-block;
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
         height: 24px;
         left: 0;
         line-height: 24px;

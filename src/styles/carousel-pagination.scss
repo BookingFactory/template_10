@@ -54,8 +54,9 @@
   }
 
   .count-page {
+    @include font--pt-serif;
+
     color: $color--dark-grey;
-    font-family: 'PT Serif';
     font-size: 19px;
     font-style: italic;
     font-weight: bold;
@@ -72,8 +73,9 @@
     z-index: 2;
 
     li {
+    @include font--pt-serif;
+
       color: $color--dark-grey;
-      font-family: 'PT Serif';
       font-size: 36px;
       font-style: italic;
       font-weight: bold;

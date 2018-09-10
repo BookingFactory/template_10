@@ -169,7 +169,8 @@
     }
 
     .question-text {
-      font-family: 'Work Sans';
+      @include font--work-sans;
+
       font-weight: 600;
       margin-bottom: 25px;
       text-transform: uppercase;

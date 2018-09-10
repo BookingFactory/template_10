@@ -96,7 +96,8 @@
 
     h2,
     h3 {
-      font-family: 'Playfair Display';
+      @include font--playfair-display;
+
       font-size: 28px;
       line-height: 1.32;
       margin-bottom: 25px;
@@ -108,8 +109,9 @@
     }
 
     .read-more-link {
+      @include font--work-sans;
+
       color: $color--theme-2;
-      font-family: 'Work Sans';
       font-size: 12px;
       font-weight: 600;
       line-height: 2.16;

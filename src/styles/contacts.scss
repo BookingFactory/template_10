@@ -152,6 +152,8 @@
       }
 
       &::before {
+        @include font--muli;
+
         color: $color--unknown-3;
         content:
         '...............................'
@@ -159,7 +161,6 @@
         '...............................'
         '...............................';
         float: left;
-        font-family: Muli;
         font-size: 14px;
         font-weight: 300;
         left: 0;
@@ -190,10 +191,11 @@
       }
 
       .property {
+        @include font--work-sans;
+
         clear: both;
         color: $color--theme-2;
         float: left;
-        font-family: 'Work Sans';
         font-weight: 600;
         margin-top: 1px;
         padding-right: 2px;
@@ -206,8 +208,9 @@
       }
 
       .value {
+        @include font--muli;
+
         color: $color--dark-grey;
-        font-family: Muli;
         padding-left: 2px;
         text-align: right;
 

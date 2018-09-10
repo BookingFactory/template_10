@@ -26,11 +26,12 @@
   }
 
   .dropdown-toggle {
+    @include font--work-sans;
+
     background-color: transparent;
     border: 0;
     color: $color--header-65;
     cursor: pointer;
-    font-family: 'Work Sans';
     font-size: 11px;
     font-weight: 500;
     line-height: 13px;
@@ -85,10 +86,11 @@
     }
 
     a {
+      @include font--work-sans;
+
       box-sizing: border-box;
       color: $color--header-65;
       display: block;
-      font-family: 'Work Sans';
       font-size: 11px;
       font-weight: 500;
       line-height: 13px;
@@ -156,10 +158,11 @@
     }
 
     .currency-search {
+      @include font--work-sans;
+
       border: 0;
       border-bottom: 1px solid $color--unknown-1;
       color: $color--header-65;
-      font-family: 'Work Sans';
       font-size: 11px;
       font-weight: 500;
       line-height: 13px;

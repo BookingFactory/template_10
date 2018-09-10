@@ -48,8 +48,9 @@
     }
 
     .navbar-link {
+      @include font--work-sans;
+
       color: $color--header-90;
-      font-family: 'Work Sans';
       font-size: 12px;
       font-weight: 500;
       margin: 0 25px;
