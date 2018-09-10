@@ -21,6 +21,20 @@
     <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
     <script type="text/javascript" src="./scripts/autosize.js"></script>
 
+    <script type="module">
+      const carouselSlider = tns({
+        container: '.carousel .image-list',
+        items: 1,
+        slideBy: 'page',
+        speed: 700,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        controls: false,
+        autoplayButtonOutput: false,
+        navContainer: '.carousel .nav-tools',
+      });
+    </script>
+
     <title>Special Offer</title>
   </head>
   <body>
