@@ -315,11 +315,11 @@
     }
 
     @media screen and (min-width: 768px) {
-      margin: 104px 0 88px;
+      margin: 104px 0 0;
     }
 
     @media screen and (min-width: 1440px) {
-      margin: 198px 0 184px;
+      margin: 198px 0 55px;
     }
   }
 
@@ -329,11 +329,11 @@
     }
 
     @media screen and (min-width: 768px) {
-      margin: 88px 0 0;
+      margin: 0;
     }
 
     @media screen and (min-width: 1440px) {
-      margin: 184px 0 0;
+      margin: 55px 0 0;
     }
   }
 }

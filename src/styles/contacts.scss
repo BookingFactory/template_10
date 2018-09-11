@@ -8,11 +8,11 @@
   }
 
   @media screen and (min-width: 768px) {
-    padding-top: 105px;
+    padding-top: 195px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 95px;
+    padding-top: 225px;
   }
 
   .body {
@@ -23,7 +23,6 @@
     padding: 65px 80px 95px;
     pointer-events: none;
     position: absolute;
-    top: 0;
     transition: opacity .7s ease-in-out;
     width: 560px;
     z-index: 2;
@@ -33,16 +32,19 @@
       border-right: 0;
       padding: 63px 16px;
       position: relative;
+      top: 0;
       width: 100%;
     }
 
     @media screen and (min-width: 768px) {
       left: 50%;
+      top: 105px;
       transform: translateX(-50%);
     }
 
     @media screen and (min-width: 1440px) {
       left: 153px;
+      top: 130px;
       transform: translateX(0);
     }
 
