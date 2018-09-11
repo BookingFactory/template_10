@@ -13,6 +13,14 @@
   text-decoration: none;
   text-transform: uppercase;
 
+  &:hover {
+    opacity: .85;
+  }
+
+  &:focus {
+    opacity: .75;
+  }
+
   &.button-success {
     background-color: $color--theme-2;
     border-color: $color--theme-2;
