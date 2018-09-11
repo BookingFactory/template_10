@@ -103,25 +103,16 @@
       z-index: 2;
     }
 
-    &::before,
-    &::after {
+    &::before {
       background-color: $color--white;
       content: '';
       height: 3px;
+      left: -25px;
       position: absolute;
-      top: 18px;
-      width: 25px;
+      right: -25px;
+      top: 50%;
+      transform: translateY(-100%);
       z-index: 1;
-    }
-
-    &::before {
-      left: 0;
-      transform: translateX(-100%);
-    }
-
-    &::after {
-      right: 0;
-      transform: translateX(100%);
     }
   }
 

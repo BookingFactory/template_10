@@ -90,25 +90,15 @@
         top: 69px;
       }
 
-      &::before,
-      &::after {
+      &::before {
         background-color: $color--white;
+        bottom: -15px;
         content: '';
-        height: 15px;
         position: absolute;
         right: 16px;
+        top: -15px;
         width: 3px;
         z-index: 1;
-      }
-
-      &::before {
-        top: 0;
-        transform: translateY(-100%);
-      }
-
-      &::after {
-        bottom: 0;
-        transform: translateY(100%);
       }
 
       .button {

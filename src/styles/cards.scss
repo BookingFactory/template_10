@@ -146,12 +146,12 @@
         z-index: 2;
       }
 
-      &::before,
-      &::after {
+      &::before {
         background-color: $color--white;
+        bottom: -13px;
         content: '';
-        height: 13px;
-        position: relative;
+        position: absolute;
+        top: -13px;
         width: 3px;
         z-index: 1;
 
