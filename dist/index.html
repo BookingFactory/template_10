@@ -21,8 +21,7 @@
     <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
     <script type="text/javascript" src="./scripts/autosize.js"></script>
     <script type="module">
-      const carouselSlider = tns({
-        container: '.carousel .image-list',
+      const options_1 = {
         items: 1,
         slideBy: 'page',
         speed: 700,
@@ -30,40 +29,8 @@
         autoplayTimeout: 2000,
         controls: false,
         autoplayButtonOutput: false,
-        navContainer: '.carousel .nav-tools',
-      });
-      const cardSlider = tns({
-        autoWidth: true,
-        container: '.rooms .cards .cards-list',
-        items: 1,
-        slideBy: 'page',
-        speed: 700,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        controls: false,
-        autoplayButtonOutput: false,
-        gutter: 50,
-        mouseDrag: true,
-        navContainer: '.rooms .nav-tools',
-      });
-      const offerSlider = tns({
-        autoWidth: true,
-        container: '.special-offers .cards .cards-list',
-        items: 1,
-        slideBy: 'page',
-        speed: 700,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        controls: false,
-        autoplayButtonOutput: false,
-        gutter: 50,
-        mouseDrag: true,
-        navContainer: '.special-offers .nav-tools',
-      });
-      const opinionSlider = tns({
-        container: '.posts .post-list',
-        controlsContainer: ".posts .carousel-pagination",
-        navContainer: '.posts .nav-tools',
+      }
+      const options_2 = {
         items: 1,
         speed: 700,
         autoplay: true,
@@ -72,6 +39,33 @@
         mode: "gallery",
         animateIn: "fade-in",
         animateOut: "fade-out",
+      }
+      const carouselSlider = tns({
+        ...options_1,
+        container: '.carousel .image-list',
+        navContainer: '.carousel .nav-tools',
+      });
+      const cardSlider = tns({
+        ...options_1,
+        autoWidth: true,
+        container: '.rooms .cards .cards-list',
+        gutter: 50,
+        mouseDrag: true,
+        navContainer: '.rooms .nav-tools',
+      });
+      const offerSlider = tns({
+        ...options_1,
+        autoWidth: true,
+        container: '.special-offers .cards .cards-list',
+        gutter: 50,
+        mouseDrag: true,
+        navContainer: '.special-offers .nav-tools',
+      });
+      const opinionSlider = tns({
+        ...options_2,
+        container: '.posts .post-list',
+        controlsContainer: ".posts .carousel-pagination",
+        navContainer: '.posts .nav-tools',
       });
       const paginationPages = Array.from(document.querySelector('.posts .carousel-pagination .pages').children);
       const imagesList = Array.from(document.querySelector('.expert-opinion .image-list').children);
@@ -92,17 +86,10 @@
       opinionSlider.events.on('transitionStart', moveNavSlider);
 
       const reviewSlider = tns({
+        ...options_2,
         container: '.reviews .reviews-list',
         controlsContainer: ".reviews .carousel-pagination",
         navContainer: '.reviews .carousel-pagination .pages',
-        items: 1,
-        speed: 700,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayButtonOutput: false,
-        mode: "gallery",
-        animateIn: "fade-in",
-        animateOut: "fade-out",
       });
 
       autosize(document.querySelectorAll('textarea'));
