@@ -148,3 +148,22 @@ p {
   line-height: 26px;
   text-transform: uppercase;
 }
+
+.read-more-link {
+  @include font--work-sans;
+
+  color: $color--theme-2;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 2.16;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    opacity: .75;
+  }
+
+  &:focus {
+    opacity: .6;
+  }
+}
