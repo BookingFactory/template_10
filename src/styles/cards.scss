@@ -102,19 +102,6 @@
       margin-bottom: 30px;
     }
 
-    .link {
-      @include font--work-sans;
-
-      color: $color--theme-2;
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 2.16;
-      margin-top: 7px;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
     .read-more-link {
       display: inline-block;
       margin-top: 7px;
