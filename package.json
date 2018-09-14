@@ -6,6 +6,9 @@
   "main": "index.js",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "browser-sync": "^2.24.6",
     "node-sass": "^4.9.2",
     "parallelshell": "^3.0.2",
@@ -17,6 +20,7 @@
     "start": "./node_modules/.bin/parallelshell 'npm run watch' 'npm run web'"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "tiny-slider": "^2.8.5"
   }
 }
