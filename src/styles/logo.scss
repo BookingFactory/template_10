@@ -4,17 +4,8 @@
   vertical-align: middle;
   width: auto;
 
-  .logo-title {
-    @include font--courgette;
-    font-size: 45px;
-  }
-
-  .logo-text {
-    @include font--open-sans;
-
-    color: $color--header-90;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  img {
+    height: 57px;
+    vertical-align: middle;
   }
 }
