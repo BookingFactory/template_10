@@ -185,12 +185,12 @@
       }
 
       .property {
-        @include font--work-sans;
+        @include font--muli;
 
         clear: both;
         color: $color--theme-2;
         float: left;
-        font-weight: 600;
+        font-weight: 700;
         margin-top: 1px;
         padding-right: 2px;
         text-transform: uppercase;

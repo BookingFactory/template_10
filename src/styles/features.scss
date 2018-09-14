@@ -103,12 +103,12 @@
   }
 
   .title {
-    @include font--work-sans;
+    @include font--muli;
 
     color: $color--dark-grey;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
     margin-bottom: 32px;
     text-transform: uppercase;
   }

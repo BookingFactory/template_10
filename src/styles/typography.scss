@@ -49,10 +49,10 @@ h1 {
 }
 
 .section-title {
-  @include font--work-sans;
+  @include font--muli;
 
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 3px;
   line-height: 11px;
   text-transform: uppercase;
@@ -130,31 +130,31 @@ p {
 }
 
 .date-post {
-  @include font--work-sans;
+  @include font--muli;
 
   color: $color--grey;
   display: block;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 13px;
 }
 
 .offer-text {
-  @include font--work-sans;
+  @include font--muli;
 
   color: $color--theme-2;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 26px;
   text-transform: uppercase;
 }
 
 .read-more-link {
-  @include font--work-sans;
+  @include font--muli;
 
   color: $color--theme-2;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 2.16;
   text-decoration: none;
   text-transform: uppercase;

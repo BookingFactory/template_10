@@ -156,12 +156,12 @@
       }
 
       .text {
-        @include font--work-sans;
+        @include font--muli;
 
         color: $color--header-90;
         display: inline-block;
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 20px;
         margin-right: 36px;
         text-transform: uppercase;

@@ -48,11 +48,11 @@
     }
 
     .navbar-link {
-      @include font--work-sans;
+      @include font--muli;
 
       color: $color--header-90;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 600;
       margin: 0 25px;
       position: relative;
       text-decoration: none;

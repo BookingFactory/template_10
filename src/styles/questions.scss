@@ -160,9 +160,9 @@
     }
 
     .question-text {
-      @include font--work-sans;
+      @include font--muli;
 
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 25px;
       text-transform: uppercase;
     }

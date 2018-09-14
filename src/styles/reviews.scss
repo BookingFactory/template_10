@@ -91,11 +91,11 @@
     }
 
     .author {
-      @include font--work-sans;
+      @include font--muli;
 
       color: $color--theme-2;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       line-height: 26px;
       text-transform: uppercase;
 

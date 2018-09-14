@@ -1,5 +1,5 @@
 .button {
-  @include font--work-sans;
+  @include font--muli;
 
   background-color: $color--white;
   border: 1px solid $color--unknown-1;
@@ -7,7 +7,7 @@
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   padding: 14px 32px;
   text-decoration: none;
@@ -25,7 +25,7 @@
     background-color: $color--theme-2;
     border-color: $color--theme-2;
     color: $color--white;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &.button-info {
