@@ -3,7 +3,7 @@
   max-width: 1136px;
   position: relative;
   width: 100%;
-  z-index: 999;
+  z-index: 980;
 
   @media screen and (max-width: 1200px) {
     max-width: 1040px;
@@ -22,7 +22,7 @@
     padding: 0;
     position: relative;
     width: auto;
-    z-index: 999;
+    z-index: 2;
 
     i {
       padding: 15px 17px;
@@ -41,7 +41,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 998;
+    z-index: 1;
 
     li {
       display: inline-block;
