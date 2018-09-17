@@ -48,9 +48,16 @@
         ...options_1,
         autoWidth: true,
         container: '.rooms .cards .cards-list',
-        gutter: 50,
         mouseDrag: true,
         navContainer: '.rooms .nav-tools',
+        responsive: {
+          320: {
+            gutter: 0,
+          },
+          768: {
+            gutter: 50,
+          },
+        },
       });
       const offerSlider = tns({
         ...options_1,
@@ -59,6 +66,14 @@
         gutter: 50,
         mouseDrag: true,
         navContainer: '.special-offers .nav-tools',
+        responsive: {
+          320: {
+            gutter: 0,
+          },
+          768: {
+            gutter: 50,
+          },
+        },
       });
       const opinionSlider = tns({
         ...options_2,
