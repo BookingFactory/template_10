@@ -77,7 +77,7 @@
     z-index: 2;
 
     li {
-    @include font--pt-serif;
+      @include font--pt-serif;
 
       color: $color--dark-grey;
       font-size: 36px;
