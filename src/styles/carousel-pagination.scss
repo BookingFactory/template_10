@@ -2,6 +2,7 @@
   background-color: $color--white;
   bottom: 0;
   height: 85px;
+  outline: none;
   position: absolute;
   width: 260px;
 
@@ -47,6 +48,7 @@
     display: inline-block;
     height: 90px;
     left: 50%;
+    outline: inherit;
     position: absolute;
     top: 0;
     transform: rotate(20deg);
@@ -62,12 +64,14 @@
     font-weight: bold;
     left: 138px;
     line-height: 25px;
+    outline: inherit;
     position: absolute;
     top: 42px;
   }
 
   .pages {
     height: 100%;
+    outline: inherit;
     position: relative;
     width: 100%;
     z-index: 2;
@@ -82,6 +86,7 @@
       left: 100px;
       line-height: 47px;
       opacity: 0;
+      outline: inherit;
       position: absolute;
       top: 13px;
 
