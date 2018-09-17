@@ -54,6 +54,11 @@ header {
       color: $color--theme-2;
       padding-right: 6px;
     }
+
+    a {
+      color: $color--header-65;
+      text-decoration: none;
+    }
   }
 
   @media screen and (max-width: 768px) {
