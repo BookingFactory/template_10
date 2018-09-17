@@ -70,9 +70,15 @@
         width: 0;
       }
 
-      &.active {
+      &:hover {
         &::before {
           transition: width .3s ease-in-out;
+          width: 100%;
+        }
+      }
+
+      &.active {
+        &::before {
           width: 100%;
         }
       }
