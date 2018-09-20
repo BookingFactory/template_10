@@ -44,16 +44,18 @@
     }
   }
 
-  .cards-list {
-    white-space: normal;
+  .cards {
+    &>.cards-list {
+      white-space: normal;
 
-    .card {
-      display: block;
-      margin-bottom: 21px;
+      .card {
+        display: block;
+        margin-bottom: 21px;
 
-      &:last-child {
-        @media screen and (max-width: 767px) {
-          margin-bottom: 22px;
+        &:last-child {
+          @media screen and (max-width: 767px) {
+            margin-bottom: 22px;
+          }
         }
       }
     }
