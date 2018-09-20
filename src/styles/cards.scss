@@ -97,8 +97,8 @@
       width: 100%;
 
       @media screen and (max-width: 480px) {
-        border-left: 0;
-        border-right: 0;
+        border-left-width: 0;
+        border-right-width: 0;
       }
     }
 
@@ -183,8 +183,28 @@
   }
 
   &.cards-mini {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 17px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 53px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 80px;
+    }
+
     .window {
+      overflow: hidden;
+
+      @media screen and (max-width: 767px) {
+        padding-left: 13px;
+        width: 333px;
+      }
+
       @media screen and (max-width: 480px) {
+        padding-left: 0;
         width: 320px;
       }
     }
@@ -209,7 +229,17 @@
 
       .body {
         border-top: 0;
-        padding: 36px 37px 139px 37px;
+        padding: 36px 37px 139px;
+
+        @media screen and (max-width: 480px) {
+          border-left-width: 1px;
+          border-right-width: 1px;
+        }
+
+        @media screen and (max-width: 320px) {
+          border-left-width: 0;
+          border-right-width: 0;
+        }
       }
 
       h2,
