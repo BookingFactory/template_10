@@ -6,6 +6,7 @@
   width: 100%;
 
   @media screen and (max-width: 767px) {
+    border-right-width: 0;
     max-width: 100%;
     padding: 117px 23px 45px 53px;
   }
