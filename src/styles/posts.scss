@@ -270,6 +270,11 @@
         padding: 282px 152px 70px;
       }
 
+      @media screen and (width: 768px) {
+        border-left: 0;
+        border-right: 0;
+      }
+
       @media screen and (min-width: 1440px) {
         margin-top: 55px;
         padding: 74px 264px 75px 176px;

@@ -10,7 +10,7 @@
       margin-top: 66px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1280px) {
       margin-bottom: 75px;
       margin-top: 102px;
     }
@@ -26,8 +26,12 @@
         padding: 0 90px;
       }
 
+      @media screen and (min-width: 1280px) {
+        padding-left: 14%;
+      }
+
       @media screen and (min-width: 1440px) {
-        padding-left: 251px;
+        padding-left: 255px;
       }
 
       h2 {
@@ -43,7 +47,7 @@
           margin-bottom: 30px;
         }
 
-        @media screen and (min-width: 1440px) {
+        @media screen and (min-width: 1280px) {
           margin-bottom: 36px;
         }
       }
@@ -51,7 +55,7 @@
       .section-title {
         margin-bottom: 11px;
 
-        @media screen and (min-width: 1440px) {
+        @media screen and (min-width: 1280px) {
           padding-top: 16px;
         }
       }
