@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "flatpickr": "^4.5.2",
     "tiny-slider": "^2.8.5"
   }
 }

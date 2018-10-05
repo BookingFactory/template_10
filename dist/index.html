@@ -14,11 +14,13 @@
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="./styles/fontawesome/all.css">
     <link rel="stylesheet" type="text/css" href="./styles/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="./styles/flatpickr.css">
     <link rel="stylesheet" type="text/css" href="./styles/index.css">
 
     <script type="text/javascript" src="./scripts/index.js"></script>
     <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
     <script type="text/javascript" src="./scripts/autosize.js"></script>
+    <script type="text/javascript" src="./scripts/flatpickr.js"></script>
     <script type="module">
       const options_1 = {
         items: 1,
@@ -117,6 +119,8 @@
       });
 
       autosize(document.querySelectorAll('textarea'));
+      flatpickr("#checkIn", {});
+      flatpickr("#checkOut", {});
     </script>
 
     <title>Page Title</title>
@@ -265,9 +269,23 @@
             In Minneapolis
           </h1>
           <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa. Vestibulum sed metus in lorem.</p>
-          <a class="button check-in" href=#> <i class="fas fa-calendar-alt"></i>Check-In</a>
-          <a class="button check-out" href=#> <i class="fas fa-calendar-alt"></i>Check-Out</a>
-          <a class="button button-success" href=#>See rooms</a>
+          <!-- <a class="button check-in" href=#> <i class="fas fa-calendar-alt"></i>Check-In</a>
+          <a class="button check-out" href=#> <i class="fas fa-calendar-alt"></i>Check-Out</a> -->
+          <form action="" method="">
+            <div class="input-group">
+              <input id="checkIn" class="date-picker" type="text" placeholder="Check-In">
+              <div class="input-prepend">
+                <i class="fas fa-calendar-alt input-icon"></i>
+              </div>
+            </div>
+            <div class="input-group check-out">
+              <input id="checkOut" class="date-picker" type="text" placeholder="Check-Out">
+              <div class="input-prepend">
+                <i class="fas fa-calendar-alt input-icon"></i>
+              </div>
+            </div>
+            <button class="button button-success" type="submit">See rooms</button>
+          </form>
         </div>
       </div>
       <div class="rooms">

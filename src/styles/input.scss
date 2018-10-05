@@ -43,8 +43,10 @@
   }
 }
 
-.form-group {
+.form-group,
+.input-group {
   position: relative;
+  vertical-align: top;
 }
 
 textarea {
@@ -116,9 +118,57 @@ input {
       }
     }
   }
+
+  &.date-picker {
+    background-color: $color--white;
+    border: 1px solid $color--unknown-1;
+    color: $color--grey;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0 19px 0 44px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::placeholder {
+      color: $color--grey;
+    }
+
+    &:hover {
+      opacity: .85;
+
+      & + .input-prepend {
+        .input-icon {
+          opacity: .85;
+        }
+      }
+    }
+
+    &:focus {
+      opacity: .75;
+
+      & + .input-prepend {
+        .input-icon {
+          opacity: .75;
+        }
+      }
+    }
+  }
 }
 
 label {
   @include text-styles;
   color: $color--dark-grey;
+}
+
+.input-icon {
+  color: $color--dark-grey;
+  font-size: 12px;
+  left: 20px;
+  margin-right: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }

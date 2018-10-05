@@ -63,16 +63,9 @@
       }
     }
 
-    .button {
-      box-sizing: border-box;
-      height: 48px;
-      line-height: 48px;
-      padding: 0 19px;
-      width: 160px;
-
-      @media screen and (max-width: 767px) {
-        width: 100%;
-      }
+    .input-group {
+      display: inline-block;
+      width: auto;
 
       &.check-out {
         margin: 0 -1px;
@@ -81,21 +74,28 @@
           margin: -1px 0;
         }
       }
+    }
 
-      &.button-success {
-        padding: 0;
-        text-align: center;
-        width: 145px;
+    .date-picker,
+    .button-success {
+      box-sizing: border-box;
+      height: 48px;
+      line-height: 48px;
 
-        @media screen and (max-width: 767px) {
-          width: 100%;
-        }
+      @media screen and (max-width: 767px) {
+        width: 100%;
       }
+    }
 
-      i {
-        color: $color--dark-grey;
-        margin-right: 12px;
-      }
+    .date-picker {
+      padding: 0 19px 0 44px;
+      width: 160px;
+    }
+
+    .button-success {
+      padding: 0;
+      text-align: center;
+      width: 145px;
     }
 
     .carousel-wrapper {
