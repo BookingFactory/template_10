@@ -46,6 +46,9 @@
 .form-group,
 .input-group {
   position: relative;
+}
+
+.input-group {
   vertical-align: top;
 }
 
@@ -162,13 +165,31 @@ label {
   color: $color--dark-grey;
 }
 
+.input-prepend,
+.input-append {
+  position: absolute;
+  z-index: 1;
+}
+
+.input-prepend {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-append {
+  right: 20px;
+  top: 23px;
+
+  .input-icon {
+    color: $color--grey;
+    font-size: 10px;
+    line-height: 5px;
+  }
+}
+
 .input-icon {
   color: $color--dark-grey;
   font-size: 12px;
-  left: 20px;
-  margin-right: 12px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
+  line-height: 1;
 }

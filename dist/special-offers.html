@@ -14,11 +14,17 @@
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="./styles/fontawesome/all.css">
     <link rel="stylesheet" type="text/css" href="./styles/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="./styles/flatpickr.css">
     <link rel="stylesheet" type="text/css" href="./styles/index.css">
 
     <script type="text/javascript" src="./scripts/index.js"></script>
     <script type="text/javascript" src="./scripts/tiny-slider.js"></script>
     <script type="text/javascript" src="./scripts/autosize.js"></script>
+    <script type="text/javascript" src="./scripts/flatpickr.js"></script>
+    <script type="module">
+      flatpickr("#from", {});
+      flatpickr("#to", {});
+    </script>
 
     <title>Special Offers</title>
   </head>
@@ -143,9 +149,29 @@
     </header>
     <div class="special-offers">
       <h1 class="to-center">Special Offers</h1>
-      <div class="filters">
+      <form class="filters" action="" method="">
         <span>Show offers available:</span>
-      </div>
+        <div class="elements-group">
+          <div class="input-group">
+            <input id="from" class="date-picker" type="text" placeholder="From">
+            <div class="input-prepend">
+              <i class="fas fa-calendar-alt input-icon"></i>
+            </div>
+            <div class="input-append">
+              <i class="fas fa-angle-down input-icon"></i>
+            </div>
+          </div>
+          <div class="input-group check-out">
+            <input id="to" class="date-picker" type="text" placeholder="To">
+            <div class="input-prepend">
+              <i class="fas fa-calendar-alt input-icon"></i>
+            </div>
+            <div class="input-append">
+              <i class="fas fa-angle-down input-icon"></i>
+            </div>
+          </div>
+        </div>
+      </form>
       <div class="offers tablet-see">
         <div class="offer offer-shadow">
           <div class="body">
