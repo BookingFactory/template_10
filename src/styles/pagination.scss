@@ -43,6 +43,14 @@
 
     a {
       text-decoration: none;
+
+      &:hover {
+        opacity: .75;
+      }
+
+      &:focus {
+        opacity: .55;
+      }
     }
 
     strong {
@@ -69,6 +77,14 @@
       text-decoration: none;
       top: 0;
       width: 63px;
+
+      &:hover {
+        opacity: .75;
+      }
+
+      &:focus {
+        opacity: .55;
+      }
 
       &::before {
         border: 2px solid $color--theme-2;
