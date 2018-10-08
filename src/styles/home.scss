@@ -67,23 +67,16 @@
       display: inline-block;
       width: auto;
 
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
       &.check-out {
         margin: 0 -1px;
 
         @media screen and (max-width: 767px) {
           margin: -1px 0;
         }
-      }
-    }
-
-    .date-picker,
-    .button-success {
-      box-sizing: border-box;
-      height: 48px;
-      line-height: 48px;
-
-      @media screen and (max-width: 767px) {
-        width: 100%;
       }
     }
 
@@ -96,6 +89,17 @@
       padding: 0;
       text-align: center;
       width: 145px;
+    }
+
+    .date-picker,
+    .button-success {
+      box-sizing: border-box;
+      height: 48px;
+      line-height: 48px;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
     }
 
     .carousel-wrapper {
