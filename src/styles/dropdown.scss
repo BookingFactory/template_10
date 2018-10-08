@@ -54,6 +54,14 @@
       vertical-align: top;
       width: 5px;
     }
+
+    &:hover {
+      opacity: .75;
+    }
+
+    &:focus {
+      opacity: .65;
+    }
   }
 
   .dropdown-menu {
