@@ -121,75 +121,9 @@ input {
       }
     }
   }
-
-  &.date-picker {
-    background-color: $color--white;
-    border: 1px solid $color--unknown-1;
-    color: $color--grey;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    padding: 0 19px 0 44px;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    &::placeholder {
-      color: $color--grey;
-    }
-
-    &:hover {
-      opacity: .85;
-
-      & + .input-prepend {
-        .input-icon {
-          opacity: .85;
-        }
-      }
-    }
-
-    &:focus {
-      opacity: .75;
-
-      & + .input-prepend {
-        .input-icon {
-          opacity: .75;
-        }
-      }
-    }
-  }
 }
 
 label {
   @include text-styles;
   color: $color--dark-grey;
-}
-
-.input-prepend,
-.input-append {
-  position: absolute;
-  z-index: 1;
-}
-
-.input-prepend {
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.input-append {
-  right: 20px;
-  top: 23px;
-
-  .input-icon {
-    color: $color--grey;
-    font-size: 10px;
-    line-height: 5px;
-  }
-}
-
-.input-icon {
-  color: $color--dark-grey;
-  font-size: 12px;
-  line-height: 1;
 }

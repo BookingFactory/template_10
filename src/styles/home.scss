@@ -64,25 +64,17 @@
     }
 
     .input-group {
-      display: inline-block;
-      width: auto;
+      width: 160px;
 
       @media screen and (max-width: 767px) {
         width: 100%;
       }
 
       &.check-out {
-        margin: 0 -1px;
-
         @media screen and (max-width: 767px) {
           margin: -1px 0;
         }
       }
-    }
-
-    .date-picker {
-      padding: 0 19px 0 44px;
-      width: 160px;
     }
 
     .button-success {

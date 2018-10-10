@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   new TextFielsdSetup(document.querySelectorAll('textarea'));
   new TextFielsdSetup(document.querySelectorAll('input[type="text"]'));
   new Contacts();
+  new DatePickers();
 });
 
 class NavBar {
@@ -82,5 +83,29 @@ class Contacts {
 
   onClick(event) {
     this.contacts.forEach(body => body.classList.toggle('show'));
+  }
+}
+
+function testUserAgent() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+}
+
+class DatePickers {
+  constructor() {
+    this.isMobile = testUserAgent();
+    this.datePickerLabels = Array.from(document.querySelectorAll('.date-picker-label'));
+    if(this.isMobile) {
+      this.datePickerLabels.forEach(label => label.classList.add('isMobile'));
+    }
+    this.datePickers = Array.from(document.querySelectorAll('.date-picker'));
+    this.datePickers.forEach((datePicker) => {
+      datePicker.addEventListener('change', (event) => {
+        const intutId = event.target.id;
+        if(intutId) {
+          const label = document.querySelector(`[for="${intutId}"]`)
+          label.textContent = event.target.value;
+        }
+      });
+    });
   }
 }

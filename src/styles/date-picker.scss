@@ -1,0 +1,117 @@
+input {
+  &[type='text'] {
+    & + label {
+      &.date-picker-label {
+        color: $color--grey;
+        top: 0;
+      }
+    }
+  }
+}
+
+.date-picker-label {
+  background-color: $color--white;
+  border: 1px solid $color--unknown-1;
+  box-sizing: border-box;
+  color: $color--grey;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  height: 48px;
+  left: 0;
+  line-height: 48px;
+  padding: 0 19px 0 44px;
+  position: absolute;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 0;
+  width: 100%;
+
+  &.isMobile {
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: .85;
+
+    & + .input-prepend {
+      .input-icon {
+        opacity: .85;
+      }
+    }
+  }
+
+  &:focus {
+    opacity: .75;
+
+    & + .input-prepend {
+      .input-icon {
+        opacity: .75;
+      }
+    }
+  }
+
+  & ~ .input-prepend,
+  & ~ .input-append {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+
+    .input-icon {
+      color: $color--dark-grey;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+
+  & ~ .input-prepend {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  & ~ .input-append {
+    right: 20px;
+    top: 23px;
+
+    .input-icon {
+      color: $color--grey;
+      font-size: 10px;
+      line-height: 5px;
+    }
+  }
+}
+
+input {
+  &[type='text'],
+  &[type='date'] {
+    &.flatpickr-input {
+      background-color: transparent;
+      border: 0;
+      color: $color--grey;
+      height: 48px;
+      line-height: 48px;
+      padding: 0 19px 0 44px;
+      vertical-align: top;
+      width: 100%;
+
+      &::placeholder {
+        color: $color--grey;
+      }
+    }
+  }
+}
+
+.input-group {
+  display: inline-block;
+
+  &.check-out {
+    margin: 0 -1px;
+
+    @media screen and (max-width: 480px) {
+      margin: -1px 0;
+    }
+  }
+}

@@ -23,6 +23,7 @@
 
     @media screen and (max-width: 767px) {
       margin-bottom: 23px;
+      padding: 0 16px;
     }
 
     @media screen and (min-width: 768px) {
@@ -41,30 +42,21 @@
       font-weight: 600;
       line-height: 24px;
       margin-right: 28px;
-    }
 
-    .input-group {
-      display: inline-block;
-      vertical-align: middle;
-      width: auto;
+      @media screen and (max-width: 767px) {
+        display: block;
+        margin-bottom: 14px;
+      }
 
-      &:last-child {
-        margin-left: -1px;
-
-        @media screen and (max-width: 767px) {
-          margin-left: -1px;
-        }
+      @media screen and (max-width: 480px) {
+        text-align: left;
       }
     }
 
-    .date-picker {
-      box-sizing: border-box;
-      height: 48px;
-      line-height: 48px;
-      padding: 0 19px 0 44px;
+    .input-group {
       width: 190px;
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 480px) {
         width: 100%;
       }
     }
