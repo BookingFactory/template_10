@@ -141,24 +141,22 @@
 
     .navbar-menu {
       background-color: $color--theme-1;
-      height: 0;
       left: -77px;
       margin: 0;
-      opacity: 0;
-      padding: 0;
+      padding: 177px 38px 46px 77px;
       position: absolute;
       text-align: left;
       top: -57px;
       transform: translateY(0);
       width: 291px;
 
+      &:not(.opened) {
+        display: none;
+      }
+
       &.opened {
         border-bottom: 2px solid $color--unknown-1;
         border-right: 2px solid $color--unknown-1;
-        height: auto;
-        opacity: 1;
-        padding: 177px 38px 46px 77px;
-        transition: opacity .3s ease-in-out;
       }
 
       li {
