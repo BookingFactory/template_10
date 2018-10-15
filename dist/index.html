@@ -122,7 +122,7 @@
       flatpickr("#checkOut", {});
     </script>
 
-    <title>Page Title</title>
+    <title>Home</title>
   </head>
   <body>
     <div class="content-shadow"></div>
@@ -176,23 +176,23 @@
         </div>
       </div>
       <nav class="navbar">
-        <button class="navbar-toggler mobile-only">
+        <button class="navbar-toggler navbar-mobile-only">
           <i class="fas fa-bars"></i>
         </button>
         <div class="logo">
           <a href="/"><img src="./images/zion.svg" alt="Zion Hotel"></a>
         </div>
         <ul class="navbar-menu">
-          <li><a class="navbar-link active" href="/">Home</a></li>
-          <li><a class="navbar-link" href="/rooms-services.html">Room &amp; Services</a></li>
-          <li><a class="navbar-link" href="/special-offers.html">Special Offers</a></li>
-          <li><a class="navbar-link" href="/faq.html">Faq</a></li>
-          <li><a class="navbar-link" href="/blog.html">Blog</a></li>
-          <li><a class="navbar-link" href="#contacts">Contacts</a></li>
-          <li class="desktop-only booking-link-wrapper">
+          <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/rooms-services.html">Room &amp; Services</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/special-offers.html">Special Offers</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/faq.html">Faq</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/blog.html">Blog</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#contacts">Contacts</a></li>
+          <li id="bookNowLinkWrapper" class="desktop-only booking-link-wrapper"></li>
             <a class="button button-success booking-link" href=#>Book now</a>
           </li>
-          <li class="mobile-only">
+          <li class="navbar-mobile-only">
             <div id="lang-menu-mobile" class="dropdown">
               <div class="dropdown-backdrop"></div>
               <button class="dropdown-toggle">Eng</button>
@@ -224,14 +224,14 @@
               </ul>
             </div>
           </li>
-          <li class="mobile-only info-box-wrapper">
+          <li class="navbar-mobile-only info-box-wrapper">
             <span class="info-box">
               <i class="fas fa-phone"></i>
               <a href="tel:+4-567-120-4900">
                 +4-567-120-4900
               </a>
             </span></li>
-          <li class="mobile-only info-box-wrapper">
+          <li class="navbar-mobile-only info-box-wrapper">
             <span class="info-box">
               <i class="far fa-envelope"></i>
               <a href="mailto:zion-hostel@index.mail">
@@ -239,7 +239,7 @@
               </a>
             </span></li>
         </ul>
-        <a class="mobile-only button button-success booking-link">
+        <a class="navbar-mobile-only button button-success booking-link">
           Book now
         </a>
       </nav>
