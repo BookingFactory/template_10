@@ -5,22 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,700i" rel="stylesheet">
-
-    <link rel="stylesheet" href="./styles/bootstrap/bootstrap-grid.css">
-    <link rel="stylesheet" href="./styles/fontawesome/all.css">
-    <link rel="stylesheet" href="./styles/tiny-slider.css">
-    <link rel="stylesheet" href="./styles/index.css">
-
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/tiny-slider.js"></script>
-    <script src="./scripts/autosize.js"></script>
+    <style>
+      #loading-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        background-size: 25%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 1;
+        font-size: 36px;
+        color: 545660;
+        transition: opacity 0.5s;
+        z-index: 100;
+      }
+      #loading-overlay.hidden{
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      .hotel-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        width: 90%;
+        font-size: 48px;
+        text-transform: uppercase;
+        color: #545660;
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
 
     <title>FAQ</title>
   </head>
   <body>
+    <div id="loading-overlay">
+      <div class="hotel-name">Zion Hotel</div>
+    </div>
+    <div id="fixer"></div>
     <header>
       <div class="header grey-theme desktop-only">
         <div class="content-wrapper">
@@ -217,5 +246,42 @@
         </div>
       </div>
     </footer>
+    <noscript id="deferred-styles">
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,700i" rel="stylesheet">
+
+      <link rel="stylesheet" href="./styles/bootstrap/bootstrap-grid.css">
+      <link rel="stylesheet" href="./styles/fontawesome/all.css">
+      <link rel="stylesheet" href="./styles/tiny-slider.css">
+      <link rel="stylesheet" href="./styles/index.css">
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById('deferred-styles');
+        var replacement = document.createElement('div');
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame,
+          fixer = document.getElementById('fixer'),
+          overlay = document.getElementById('loading-overlay');
+    
+      var hideElement = setInterval(function() {
+        if (fixer.clientHeight == 100) {
+          overlay.classList.add('hidden');
+          setTimeout(function() {
+            overlay.remove();
+          }, 500);
+          clearInterval(hideElement);
+        }
+      }, 500);
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
