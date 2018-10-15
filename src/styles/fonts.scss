@@ -14,21 +14,13 @@
 }
 
 @mixin font--playfair-display {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display', serif;
 }
 
 @mixin font--muli {
-  font-family: 'Muli';
-}
-
-@mixin font--open-sans { // For logo
-  font-family: 'Open Sans';
-}
-
-@mixin font--courgette { // For logo text
-  font-family: 'Courgette';
+  font-family: 'Muli', sans-serif;
 }
 
 @mixin font--pt-serif {
-  font-family: 'PT Serif';
+  font-family: 'PT Serif', serif;
 }
