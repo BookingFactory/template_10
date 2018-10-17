@@ -354,12 +354,14 @@
             overlay.remove();
           }, 500);
           clearInterval(hideElement);
+          var event = document.createEvent('Event');
+          event.initEvent('TemplateLoaded', true, true);
+          document.dispatchEvent(event);
         }
       }, 500);
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
     </script>
-
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/template.js"></script>
   </body>
 </html>

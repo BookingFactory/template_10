@@ -1,15 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  new NavBar();
-  Array.from(document.querySelectorAll('.dropdown')).forEach((dropdown) => {
-    new Dropdown(dropdown.id);
-  });
-  new TextFielsdSetup(document.querySelectorAll('textarea'));
-  new TextFielsdSetup(document.querySelectorAll('input[type="text"]'));
-  new Contacts();
-  new DatePickers();
-});
-
-class NavBar {
+export default class NavBar {
   constructor() {
     this.onClick = this.onClick.bind(this);
     this.onToggleClick = this.onToggleClick.bind(this);
@@ -60,17 +49,19 @@ class NavBar {
 
   changeExtraMenuChildren() {
     if(this.checkNeedUseExtraMenu()) {
-      console.log('Hello');
       const itemToMove = this.getLastNavbarMenuChild();
-      this.extraMenuBody.insertBefore(itemToMove, this.extraMenuBody.firstChild);
-      this.changeExtraMenuChildren();
+      if(itemToMove) {
+        this.extraMenuBody.insertBefore(itemToMove, this.extraMenuBody.firstChild);
+        this.changeExtraMenuChildren();
+      }
     } else if(this.checkNeedExtraMenuLetGoItems()) {
       this.menu.insertBefore(this.extraMenuBody.firstChild, this.extraMenu.parentElement);
     }
   }
 
   getLastNavbarMenuChild() {
-    return Array.prototype.slice.call(document.querySelectorAll('.navbar-menu > .navbar-item'), -1)[0];
+    const navbarMenuItems = document.querySelectorAll('.navbar-menu > .navbar-item');
+    return (navbarMenuItems) ? Array.prototype.slice.call(navbarMenuItems, -1)[0] : nill;
   }
 
   createExtraMenu() {
@@ -109,78 +100,5 @@ class NavBar {
         }
       }, 1000);
     }
-  }
-}
-
-class Dropdown {
-  constructor(id) {
-    this.dropdown = document.querySelector(`#${id}`);
-    this.toggle = document.querySelector(`#${id} .dropdown-toggle`);
-    this.backdrop = document.querySelector(`#${id} .dropdown-backdrop`);
-
-    this.onToggleClick = this.onToggleClick.bind(this);
-    this.onBackdropClick = this.onBackdropClick.bind(this);
-
-    this.toggle.addEventListener('click', this.onToggleClick);
-    this.backdrop.addEventListener('click', this.onBackdropClick);
-  }
-
-  onToggleClick() {
-    this.dropdown.classList.add('opened');
-  }
-
-  onBackdropClick() {
-    this.dropdown.classList.remove('opened');
-  }
-}
-
-class TextFielsdSetup {
-  constructor(textFileds) {
-    this.textFileds = Array.from(textFileds);
-    this.onKeyUp = this.onKeyUp.bind(this);
-    this.textFileds.forEach(textFiled => textFiled.addEventListener('keyup', this.onKeyUp));
-  }
-
-  onKeyUp(event) {
-    (event.target.value) ? event.target.classList.add('dirty') : event.target.classList.remove('dirty');
-  }
-}
-
-class Contacts {
-  constructor() {
-    this.contacts = Array.from(document.querySelectorAll('.contacts .body'));
-    this.toggles = Array.from(document.querySelectorAll('.contacts .body .button'));
-
-    this.onClick = this.onClick.bind(this);
-
-    this.toggles.forEach(toggle => toggle.addEventListener('click', this.onClick));
-  }
-
-  onClick(event) {
-    this.contacts.forEach(body => body.classList.toggle('show'));
-  }
-}
-
-function testUserAgent() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
-}
-
-class DatePickers {
-  constructor() {
-    this.isMobile = testUserAgent();
-    this.datePickerLabels = Array.from(document.querySelectorAll('.date-picker-label'));
-    if(this.isMobile) {
-      this.datePickerLabels.forEach(label => label.classList.add('isMobile'));
-    }
-    this.datePickers = Array.from(document.querySelectorAll('.date-picker'));
-    this.datePickers.forEach((datePicker) => {
-      datePicker.addEventListener('change', (event) => {
-        const intutId = event.target.id;
-        if(intutId) {
-          const label = document.querySelector(`[for="${intutId}"]`)
-          label.textContent = event.target.value;
-        }
-      });
-    });
   }
 }

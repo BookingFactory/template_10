@@ -746,115 +746,17 @@
             overlay.remove();
           }, 500);
           clearInterval(hideElement);
+          var event = document.createEvent('Event');
+          event.initEvent('TemplateLoaded', true, true);
+          document.dispatchEvent(event);
         }
       }, 500);
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
     </script>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/tiny-slider.js"></script>
-    <script src="./scripts/autosize.js"></script>
-    <script src="./scripts/flatpickr.js"></script>
-    <script type="module">
-      const options_1 = {
-        items: 1,
-        slideBy: 'page',
-        speed: 700,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        controls: false,
-        autoplayButtonOutput: false,
-      }
-      const options_2 = {
-        items: 1,
-        speed: 700,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayButtonOutput: false,
-        mode: "gallery",
-        animateIn: "fade-in",
-        animateOut: "fade-out",
-      }
-      const carouselSlider = tns({
-        ...options_1,
-        container: '.carousel .image-list',
-        navContainer: '.carousel .nav-tools',
-      });
-      const cardSlider = tns({
-        ...options_1,
-        autoWidth: true,
-        container: '.rooms .cards .cards-list',
-        mouseDrag: true,
-        navContainer: '.rooms .nav-tools',
-        responsive: {
-          320: {
-            gutter: 0,
-          },
-          480: {
-            gutter: 25,
-            edgePadding: 25,
-          },
-          768: {
-            gutter: 50,
-          },
-        },
-      });
-      const offerSlider = tns({
-        ...options_1,
-        autoWidth: true,
-        container: '.special-offers .cards .cards-list',
-        gutter: 50,
-        mouseDrag: true,
-        navContainer: '.special-offers .nav-tools',
-        responsive: {
-          320: {
-            gutter: 0,
-          },
-          480: {
-            gutter: 25,
-            edgePadding: 25,
-          },
-          768: {
-            gutter: 50,
-            edgePadding: 0,
-          },
-        },
-      });
-      const opinionSlider = tns({
-        ...options_2,
-        container: '.posts .post-list',
-        controlsContainer: ".posts .carousel-pagination",
-        navContainer: '.posts .nav-tools',
-      });
-      const paginationPages = Array.from(document.querySelector('.posts .carousel-pagination .pages').children);
-      const imagesList = Array.from(document.querySelector('.expert-opinion .image-list').children);
 
-      paginationPages[0].classList.add('active');
-      imagesList[0].classList.add('active');
+    <script src="./scripts/template.js"></script>
 
-      const moveNavSlider = function (info) {
-        const indexCached = (info.indexCached === info.slideCount) ? 0: info.indexCached;
-
-        paginationPages[indexCached].classList.remove('active');
-        paginationPages[info.navCurrentIndex].classList.add('active');
-
-        imagesList[indexCached].classList.remove('active');
-        imagesList[info.navCurrentIndex].classList.add('active');
-      }
-
-      opinionSlider.events.on('transitionStart', moveNavSlider);
-
-      const reviewSlider = tns({
-        ...options_2,
-        container: '.reviews .reviews-list',
-        controlsContainer: ".reviews .carousel-pagination",
-        navContainer: '.reviews .carousel-pagination .pages',
-      });
-
-      autosize(document.querySelectorAll('textarea'));
-      flatpickr("#checkIn", {});
-      flatpickr("#checkOut", {});
-    </script>
     <script>
       window.myMap = function() {
         var mapOptions = {

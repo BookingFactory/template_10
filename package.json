@@ -2,6 +2,7 @@
   "name": "template-1",
   "author": "Daria Kurmaeva",
   "description": "",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "license": "ISC",
@@ -12,15 +13,19 @@
     "browser-sync": "^2.24.6",
     "node-sass": "^4.9.2",
     "parallelshell": "^3.0.2",
-    "sass-lint": "^1.12.1"
+    "sass-lint": "^1.12.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
     "watch": "./node_modules/.bin/node-sass --watch src/styles/index.scss dist/styles/index.css",
     "web": "./node_modules/.bin/browser-sync start --config bs-config.js",
+    "build": "./node_modules/.bin/webpack",
     "start": "./node_modules/.bin/parallelshell 'npm run watch' 'npm run web'"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "autosize": "^4.0.2",
     "flatpickr": "^4.5.2",
     "tiny-slider": "^2.8.5"
   }
