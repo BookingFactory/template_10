@@ -1,4 +1,6 @@
 node_modules
 npm-debug.log
-dist/styles/index.css
+dist/styles/
+dist/scripts/
+dist/fonts/
 .vscode/

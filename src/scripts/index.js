@@ -7,13 +7,16 @@ import Dropdown from './dropdown';
 import carouselsSetup from './carousels';
 import DatePickers from './datepickers';
 import TextFielsdSetup from './textfieldsetup';
-// import loadDeferredStyles from './loadDeferredStyles';
 
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   loadDeferredStyles();
-// });
+import '../styles/index.scss'
 
-document.addEventListener("TemplateLoaded", (event) => {
+if(window.templateLoaded) {
+  main();
+} else {
+  document.addEventListener("TemplateLoaded", main);
+}
+
+function main() {
   new NavBar();
   new Contacts();
   new DatePickers();
@@ -31,4 +34,6 @@ document.addEventListener("TemplateLoaded", (event) => {
   flatpickr("#to", {});
 
   autosize(document.querySelectorAll('textarea'));
-});
+}
+
+
