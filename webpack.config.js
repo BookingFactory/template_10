@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/scripts/index.js',
   output: {
     filename: 'template.js',
-    path: path.resolve(__dirname, 'dist', 'scripts')
+    path: path.resolve(__dirname, 'dist', 'js')
   },
   devtool: "source-map",
   devServer: {
@@ -57,7 +57,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "../styles/template.css",
+      filename: "../css/template.css",
     })
   ],
 };
