@@ -24,7 +24,7 @@ function main() {
   new TextFielsdSetup(document.querySelectorAll('input[type="text"]'));
 
   Array.from(document.querySelectorAll('.dropdown')).forEach((dropdown) => {
-    new Dropdown(dropdown.id);
+    new Dropdown(dropdown);
   });
   carouselsSetup();
 

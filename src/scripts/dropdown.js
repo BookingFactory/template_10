@@ -1,8 +1,8 @@
 export default class Dropdown {
-  constructor(id) {
-    this.dropdown = document.querySelector(`#${id}`);
-    this.toggle = document.querySelector(`#${id} .dropdown-toggle`);
-    this.backdrop = document.querySelector(`#${id} .dropdown-backdrop`);
+  constructor(dropdown) {
+    this.dropdown = dropdown;
+    this.toggle = dropdown.querySelector(`.dropdown-toggle`);
+    this.backdrop = dropdown.querySelector(`.dropdown-backdrop`);
 
     this.onToggleClick = this.onToggleClick.bind(this);
     this.onBackdropClick = this.onBackdropClick.bind(this);
