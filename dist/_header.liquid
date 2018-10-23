@@ -1,0 +1,148 @@
+{% comment %} <div class="content-shadow"></div> {% endcomment %}
+<header>
+  <div class="header desktop-only">
+    <div class="content-wrapper">
+      <span class="info-box">
+        <i class="fas fa-phone"></i>
+        <a href="tel:{{website_data.phone_number}}">
+          {{website_data.phone_number}}
+        </a>
+      </span>
+      <span class="info-box">
+        <i class="far fa-envelope"></i>
+        <a href="mailto:{{website_data.email_address}}">
+          {{website_data.email_address}}
+        </a>
+      </span>
+      <div class="right-side">
+        {% if website_data.langs.size > 1 -%}
+          <div id="lang-menu" class="dropdown">
+            <div class="dropdown-backdrop"></div>
+            <button class="dropdown-toggle">
+              {{ website_data.lang | get_native_title }}
+            </button>
+            <ul class="dropdown-menu">
+              {% for lang in website_data.langs %}
+                <li>
+                  <a href="{{ '/' | append: lang | link_to_another_lang: website_data.link_object }}" title="Choose language">
+                    <span class="flag-icon flag-icon-{{lang}}"></span>
+                    {{ lang | get_native_title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <div id="currency-menu" class="dropdown currency-dropdown" style="background: blue;">
+          <div class="dropdown-backdrop"></div>
+          <button class="dropdown-toggle">(£) GBP</button>
+          <ul class="dropdown-menu">
+            <li><input class="currency-search" type="text" placeholder="Search"></li>
+            <li>
+              <ul class="dropdown-menu-content">
+                <li><a href="#">British Pound Sterling <span class="currency-code">GBP</span></a></li>
+                <li><a href="#">Euro <span class="currency-code">EUR</span></a></li>
+                <li><a href="#">US Dollar <span class="currency-code">USD</span></a></li>
+                <li><a href="#">Canadian Dollar <span class="currency-code">CAD</span></a></li>
+                <li><a href="#">Australian Dollar <span class="currency-code">AUD</span></a></li>
+                <li><a href="#">Brazilian Real <span class="currency-code">BRL</span></a></li>
+                <li><a href="#">Japanese Yen <span class="currency-code">JPY</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <button class="navbar-toggler navbar-mobile-only">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="logo">
+      <a href="{{ '' | link_to: website_data.link_object}}">
+        {% if website_data.logo_text == nil or website_data.logo_text == '' %}
+          <img src="{{website_data.logo | attachment_url: 'default' }}" />
+        {% else %}
+          <span>{{website_data.logo_text}}</span>
+        {% endif %}
+      </a>
+    </div>
+    <ul class="navbar-menu">
+      {% for link in website_data.top_links %}
+        {% if link.links.size == 0 %}
+          {% include 'navbar_menu_links' %}
+        {% else %}
+          <li class="dropdown navbar-item">
+            <div class="dropdown-backdrop"></div>
+            <a href="" class="dropdown-toggle navbar-link" data-toggle="dropdown">
+              {{ link.title }}
+              <i class="fa fa-caret-right"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              {% for link in link.links %}
+                {% include 'navbar_menu_links' %}
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+      <li class="navbar-mobile-only">
+        {% if website_data.langs.size > 1 -%}
+          <div id="lang-menu-mobile" class="dropdown">
+            <div class="dropdown-backdrop"></div>
+            <button class="dropdown-toggle">
+              {{ website_data.lang | get_native_title }}
+            </button>
+            <ul class="dropdown-menu">
+              {% for lang in website_data.langs %}
+                <li>
+                  <a href="{{ '/' | append: lang | link_to_another_lang: website_data.link_object }}" title="Choose language">
+                    <span class="flag-icon flag-icon-{{lang}}"></span>
+                    {{ lang | get_native_title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <div id="currency-menu-mobile" class="dropdown currency-dropdown">
+          <div class="dropdown-backdrop"></div>
+          <button class="dropdown-toggle">(£) GBP</button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-option"><input class="currency-search" type="text" placeholder="Search"></li>
+            <li class="dropdown-option">
+              <ul class="dropdown-menu-content">
+                <li class="dropdown-option"><a href="#">British Pound Sterling <span class="currency-code">GBP</span></a></li>
+                <li class="dropdown-option"><a href="#">Euro <span class="currency-code">EUR</span></a></li>
+                <li class="dropdown-option"><a href="#">US Dollar <span class="currency-code">USD</span></a></li>
+                <li class="dropdown-option"><a href="#">Canadian Dollar <span class="currency-code">CAD</span></a></li>
+                <li class="dropdown-option"><a href="#">Australian Dollar <span class="currency-code">AUD</span></a></li>
+                <li class="dropdown-option"><a href="#">Brazilian Real <span class="currency-code">BRL</span></a></li>
+                <li class="dropdown-option"><a href="#">Japanese Yen <span class="currency-code">JPY</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="navbar-mobile-only info-box-wrapper">
+        <span class="info-box">
+          <i class="fas fa-phone"></i>
+          <a href="tel:{{website_data.phone_number}}">
+            {{website_data.phone_number}}
+          </a>
+        </span></li>
+      <li class="navbar-mobile-only info-box-wrapper">
+        <span class="info-box">
+          <i class="far fa-envelope"></i>
+          <a href="mailto:{{website_data.email_address}}">
+            {{website_data.email_address}}
+          </a>
+        </span></li>
+    </ul>
+    {% if website_data.booking_link == nil or website_data.booking_link == "" %}
+      <a class="button button-success booking-link navbar-mobile-only " href="{{ '/book' | link_to: website_data.link_object }}">{{booking_link.title}}</a>
+    {% else %}
+      <a class="button button-success booking-link navbar-mobile-only " href="{{website_data.booking_link}}">{{booking_link.title}}</a>
+    {% endif %}
+  </nav>
+</header>

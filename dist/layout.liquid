@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{website_data.page_title}}
+      {%  if record and record.title %}
+        : {{record.title}}
+      {%  elsif page and page.title %}
+        : {{page.title}}
+      {%  elsif room and room.title %}
+        : {{room.title}}
+      {%  endif %}
+    </title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    {%  if record and record.meta_description %}
+      <meta content="{{recrod.meta_description}}" name="description"/>
+    {%  elsif page and page.meta_description %}
+      <meta content="{{page.meta_description}}" name="description"/>
+    {%  elsif room and room.meta_description %}
+      <meta content="{{room.meta_description}}" name="description" />
+    {%  else %}
+      <meta content="{{website_data.page_description}}" name="description" />
+    {%  endif %}
+
+    <meta name="engine" content="new" />
+    <meta content="{{website_data.page_keywords}}" name="keywords"/>
+    <meta content="en_UK" property="og:locale"/>
+    <meta content="website" property="og:type"/>
+    <meta content="{{website_data.page_title}}" property="og:title"/>
+    <meta content="{{website_data.page_description}}" property="og:description"/>
+    <meta content="{{website_data.page_title}}" property="og:site_name"/>
+    <style>
+      #loading-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        background-size: 25%;
+        background-image: {{ website.data.logo }};
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 1;
+        transition: opacity 0.5s;
+        z-index: 100;
+      }
+      #loading-overlay.hidden{
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      .hotel-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        width: 90%;
+        font-size: 48px;
+        text-transform: uppercase;
+        color: #6b635e;
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <div id="loading-overlay">
+    {% unless website_data.logo == nil %}
+      <div class="hotel-name">{{website_data.header_text_1}}</div>
+    {% endunless %}
+  </div>
+  <noscript id="deferred-styles">
+    {% comment %} <link rel="shortcut icon" href="{{ website_data.favicon | attachment_url: 'default' }}" type="image/x-icon"/> {% endcomment %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,700i" type="text/css">
+    <link rel="stylesheet" href="{{ '/css/template.css' | file_url: website_data.template }}">
+  </noscript>
+  <body data-hotel="{{website_data.hotel_id}}">
+    <div id="fixer"></div>
+     {% comment %} {%  include 'mobile_navigation' %} {% endcomment %}
+    <main id="panel">
+      {%  include 'header' %}
+      {{content}}
+      {% comment %} {%  include 'footer' %} {% endcomment %}
+    </main>
+      {% comment %} <div class="booking-form hidden"  style="background-image: url({{website_data.header_image | attachment_url: 'blured' }});">
+        <div class="background"></div>
+        <div class="booking-close">
+          Close
+        </div>
+        <div class="form">
+         <h2>
+           Book Direct, Best Rate Guaranteed
+           <br/>
+           <small>
+             Trouble finding what your looking for? Call us on
+             {{website_data.phone_number}}
+           </small>
+         </h2>
+         <form action="{{'/book' | link_to: website_data.link_object }}">
+           <div>
+             <div class="field">
+               <label>Check in</label>
+               <input class="date" value="{{ 'now' | date: "%d %b %Y" }}"></input>
+               <input name="dateFrom" type="hidden" value="{{ 'now' | date: "%Y-%m-%d" }}"></input>
+             </div>
+             <div class="field select">
+               <label>Nights</label>
+               <select name="nights">
+                 {%  for x in (1..20) %}
+                   <option value="{{x}}">
+                     {{x}}
+                   </option>
+                 {%  endfor %}
+               </select>
+             </div>
+           </div>
+           <div>
+             <div class="field-control">
+               <button class="submit booking-submit">Check Availability</button>
+             </div>
+             <div class="error"></div>
+           </div>
+         </form>
+       </div>
+      </div> {% endcomment %}
+      <script>
+
+      {% comment %} {% if website_data.map_center_lat and website_data.map_center_lng %}
+          var zoom = {{website_data.map_zoom_level}}
+          var lat = {{website_data.map_center_lat}}
+          var lng = {{website_data.map_center_lng}}
+          function initialize() {
+            var myOptions = {
+                zoom: zoom,
+                center: new google.maps.LatLng(lat, lng),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                scrollwheel: false
+            }
+            map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(lat, lng)
+            });
+          }
+          function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+                '&callback=initialize&key=AIzaSyCxqPAlL6tmp-Wny3tC0e_byl-jOxzu_QA';
+            document.body.appendChild(script);
+          }
+      {% endif %} {% endcomment %}
+
+        var loadDeferredStyles = function() {
+          var addStylesNode = document.getElementById("deferred-styles");
+          var replacement = document.createElement("div");
+          var fixer = document.getElementById("fixer");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement)
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+            webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+        var hideElement = setInterval(function() {
+          if (fixer.clientHeight == 100) {
+            {% comment %} debugger {% endcomment %}
+            var overlay = document.getElementById('loading-overlay');
+            overlay.parentNode.removeChild(overlay);
+            {% comment %} {% if website_data.map_center_lat and website_data.map_center_lng %}
+              loadScript()
+            {% endif %} {% endcomment %}
+            clearInterval(hideElement);
+            var event = document.createEvent('Event');
+            event.initEvent('TemplateLoaded', true, true);
+            document.dispatchEvent(event);
+            window.templateLoaded = true;
+          }
+        }, 200);
+
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
+    {{website_data.ga_code}}
+    <script type="text/javascript" async src="{{ '/js/template.js' | file_url: website_data.template }}"> </script>
+  </body>
+</html>

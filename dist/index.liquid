@@ -1,0 +1,272 @@
+<div class="main-photo" style="background-image: url('{{website_data.header_image | attachment_url: 'default' }}');">
+  <div class="background">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="text">
+          <p class="title">
+            {{website_data.header_text_1}}
+          </p>
+          <p>
+            {{website_data.header_text_2}}
+          </p>
+          {% if website_data.booking_link == nil or website_data.booking_link == '' %}
+            <a href="{{ '/book' | link_to: website_data.link_object }}" class="btn btn-primary btn-lg booking-form-link" style="background-color: {{website_data.booking_button_color}}"> {{website_data.booking_button_text}} </a>
+          {% else %}
+            <a href="{{ website_data.booking_link }}" class="btn btn-primary btn-lg" style="background-color: {{website_data.booking_button_color}}"> {{website_data.booking_button_text}} </a>
+          {% endif %}
+        </div>
+        <a class="scrolldown hidden-xs hidden-sm" href="#rooms"></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% if website_data.membership_active and website_data.membership_placement == 'top' %}
+  <div class="insiders" style="background: {{website_data.membership_description_color}}; background: -moz-linear-gradient(left,   {{website_data.membership_description_color}} 0%, {{website_data.membership_description_color}} 50%, {{website_data.membership_form_color}} 50%, {{website_data.membership_form_color}}> 100%); background: -webkit-linear-gradient(left,  {{website_data.membership_description_color}} 0%,{{website_data.membership_description_color}} 50%,{{website_data.membership_form_color}} 50%,{{website_data.membership_form_color}} 100%); background: linear-gradient(to right,  {{website_data.membership_description_color}} 0%,{{website_data.membership_description_color}} 50%,{{website_data.membership_form_color}} 50%,{{website_data.membership_form_color}} 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{website_data.membership_description_color}}', endColorstr='{{website_data.membership_form_color}}',GradientType=1 );">
+    <div class="container"></div>
+  </div>
+{% endif %}
+<a id="rooms"></a>
+<div class="container numbers">
+  <div class="row">
+    <div class="col-md-5">
+      {{website_data.text_area}}
+    </div>
+    <div class="col-md-7 numbers-block hidden-xs">
+
+      {% for room in website_data.rooms %}
+        {% if room.visible == true and room.room_type.photos.size > 0 %}
+          <a href="{{ room.slug | link_to: website_data.link_object }}">
+            <div class="number">
+              <div class="image">
+                <img src="{{room.room_type.photos.first.image | attachment_url: 'public'}}" />
+              </div>
+              <div class="info">
+                <div class="text">
+                  <span>
+                    {{ room.name }}
+                  </span>
+                  <br />
+                  <span class="btn btn-primary">{% if website_data.view_room_button_text == nil or website_data.view_room_button_text == '' %}{{website_data.view_room_button_text}}{% else %}View Room{% endif %}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+      {% for room in website_data.custom_rooms %}
+        {% if room.visible == true and room.website_custom_room_photos.size > 0 %}
+          <a href="{{ room.slug | link_to: website_data.link_object }}">
+            <div class="number custom">
+              <div class="image">
+                <img src="{{room.website_custom_room_photos.first.image | attachment_url: 'public'}}" />
+              </div>
+              <div class="info">
+                <div class="text">
+                  <span>
+                    {{ room.title }}
+                  </span>
+                  <br />
+                  {% unless room.button_text == nil or room.button_text == '' %}
+                    <span class="btn btn-primary">
+                      {{ room.button_text }}
+                    </span>
+                  {% else %}
+                    <span class="btn btn-primary">{% if website_data.view_room_button_text == nil or website_data.view_room_button_text == '' %}{{website_data.view_room_button_text}}{% else %}View Room{% endif %}</span>
+                  {% endunless %}
+                </div>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-7 numbers-block visible-xs-block">
+      {% for room in website_data.rooms %}
+        {% if room.visible == true and room.room_type.photos.size > 0 %}
+          <div class="number">
+            <div class="image">
+              <img src="{{room.room_type.photos.first.image | attachment_url: 'public'}}"/>
+            </div>
+            <div class="info">
+              <div class="text">
+                <a href="{{ room.slug | link_to: website_data.link_object }}" class="btn btn-primary">{{room.name}}</a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      {% for room in website_data.custom_rooms %}
+        {% if room.visible == true and room.website_custom_room_photos.size > 0 %}
+          <div class="number custom">
+            <div class="image">
+              <img src="{{room.website_custom_room_photos.first.image | attachment_url: 'public'}}" />
+            </div>
+            <div class="info">
+              <div class="text">
+                <a href="{{ room.slug | link_to: website_data.link_object }}" class="btn btn-primary">
+                  {{room.title}}
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      <br />
+      <div class="btn btn-primary btn-more-rooms">Show more rooms</div>
+    </div>
+  </div>
+</div>
+<a id="features"></a>
+<div class="features" style="background-image: url({{website_data.features_background_image | attachment_url: 'blured'}})">
+  <div class="background">
+    <div class="container">
+      <div class="tripadvisor">
+        {{website_data.tripadvisor_code}}
+      </div>
+      <div class="feature-list">
+        <h2>
+          {{website_data.features_title}}
+        </h2>
+        {% for feature in website_data.features %}
+          <div class="feature">
+            <i class="fa fa-{{feature.icon}}"> </i>
+            <strong>{{feature.title}}</strong>
+            <br />
+            {{feature.description}}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% if website_data.membership_active and website_data.membership_placement == 'middle' %}
+  <div class="insiders" style="background: {{website_data.membership_description_color}}; background: -moz-linear-gradient(left, {{website_data.membership_description_color}} 0%, {{website_data.membership_description_color}} 50%, {{website_data.membership_form_color}} 50%, {{website_data.membership_form_color}}> 100%); background: -webkit-linear-gradient(left,  {{website_data.membership_description_color}} 0%,{{website_data.membership_description_color}} 50%,{{website_data.membership_form_color}} 50%,{{website_data.membership_form_color}} 100%); background: linear-gradient(to right,  {{website_data.membership_description_color}} 0%,{{website_data.membership_description_color}} 50%,{{website_data.membership_form_color}} 50%,{{website_data.membership_form_color}} 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{website_data.membership_description_color}}', endColorstr='{{website_data.membership_form_color}}',GradientType=1 );">
+    <div class="container"></div>
+  </div>
+{% endif %}
+<a id="faq"></a>
+<div class="container faq">
+  <h2>
+    {{website_data.faq_title}}
+  </h2>
+  {% for question in website_data.questions limit: 6 offset: 0 %}
+    <div class="question-block">
+      <p class="question">
+        <i class="fa fa-question-circle"></i>
+        {{question.question}}
+      </p>
+      <p class="anwser">
+        {{question.answer}}
+      </p>
+    </div>
+  {% endfor %}
+  {% if website_data.questions.size > 6 %}
+    <div class="invisible-questions">
+      {% for question in website_data.questions limit: website_data.questions.size -1 offset: 6 %}
+        <div class="question-block">
+          <p class="question">
+            <i class="fa fa-question-circle"></i>
+            {{question.question}}
+          </p>
+          <p class="anwser">
+            {{question.answer}}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+    <a class="show-more" href="#">
+      Show more questions
+      <i class="fa fa-caret-down"></i>
+    </a>
+  {% endif %}
+</div>
+<a id="map"></a>
+<div class="map">
+  <div id="map-canvas"></div>
+  <script>
+    {% if website_data.map_center_lat and website_data.map_center_lng %}
+      var zoom = {{website_data.map_zoom_level}}
+      var lat = {{website_data.map_center_lat}}
+      var lng = {{website_data.map_center_lng}}
+      function initialize() {
+        var myOptions = {
+            zoom: zoom,
+            center: new google.maps.LatLng(lat, lng),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+        }
+        map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(lat, lng)
+        });
+      }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+            '&callback=initialize&key=AIzaSyCxqPAlL6tmp-Wny3tC0e_byl-jOxzu_QA';
+        document.body.appendChild(script);
+      }
+  {% endif %}
+</script>
+</div>
+<a id="contact"></a>
+<div class="container contacts">
+  <div class="row">
+    <div class="col-md-6 left-block">
+      <h2>{{ 'Get In Touch' | t: website_data.lang }}</h2>
+     <form id="contact-form" method="POST" action="{{ "/send_mail" | link_to: website_data.link_object }}">
+       <input type="hidden" name="part_a" value="{{website_data.rand_a}}" />
+       <input type="hidden" name="part_b" value="{{website_data.rand_b}}" />
+       <div class="half-input first">
+         <input class="half" name="name" placeholder="{{ 'Name' | t: website_data.lang }}" type="text"></input>
+       </div>
+       <div class="half-input">
+         <input class="half" name="email" placeholder="{{ 'Email' | t: website_data.lang }}" type="email"></input>
+       </div>
+       <textarea name="message" placeholder="{{ 'Message' | t: website_data.lang }}"></textarea>
+       <div class="control text-right">
+         {{website_data.rand_a}} + {{website_data.rand_b}} =
+         <input class="small" name="answer" placeholder="..." type="text"></input>
+         <button class="btn btn-primary">{{ 'Submit' | t: website_data.lang }}</button>
+       </div>
+     </form>
+    </div>
+    <div class="col-md-6 right-block">
+      <h2>
+        {{website_data.contact_area_title}}
+      </h2>
+      <p>
+        {{website_data.contact_description_text}}
+      </p>
+      <dl class="dl-horizontal">
+        <dt>{{ 'Phone' | t: website_data.lang }}: </dt>
+        <dd>
+          <a class="href-action" href="tel:{{website_data.phone_number}}"> {{website_data.phone_number}} </a>
+        </dd>
+        <dt>{{ 'Email' | t: website_data.lang }}:</dt>
+        <dd>
+            <a class="href-action" href="mailto:{{website_data.email_address}}"> {{website_data.email_address}} </a>
+        </dd>
+        <dt>{{ 'Booking' | t: website_data.lang }}</dt>
+        <dd>
+          {% if website_data.booking_link == nil or website_data.booking_link == "" %}
+            <a href="{{ '/book' | link_to: website_data.link_object }}" class="btn btn-success btn-sm booking-form-link"> {{website_data.booking_button_text}} </a>
+          {% else %}
+            <a href="{{website_data.booking_link}}" class="btn btn-success btn-sm"> {{website_data.booking_button_text}} </a>
+          {% endif %}
+        </dd>
+        <dt>{{ 'Trip Advisor' | t: website_data.lang }}:</dt>
+        <dd>
+          <a class="btn btn-success btn-sm" href="{{website_data.tripadvisor_listing_link}}">{{ 'View Our Profile' | t: website_data.lang }}</a>
+        </dd>
+        <dt>{{ 'Address' | t: website_data.lang }}:</dt>
+        <dd>
+          {{website_data.address}}
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>

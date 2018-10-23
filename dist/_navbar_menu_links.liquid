@@ -1,0 +1,68 @@
+{% if link.category == 'Predefined Link' %}
+  {% if link.value == 'home' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'rooms' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/rooms' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'features' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/#features' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'contacts' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/#contact' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'faq' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/#faq' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'about' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/about' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'blog' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/blog' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'terms-and-conditions' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/terms-and-conditions' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'privacy-policy' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/privacy-policy' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'gallery' %}
+    <li class="navbar-item">
+      <a class="navbar-link" href="{{ '/gallery' | link_to: website_data.link_object }}">{{link.title}}</a>
+    </li>
+  {% elsif link.value == 'booking' %}
+    {% assign booking_link = link %}
+    <li id="bookNowLinkWrapper" class="desktop-only booking-link-wrapper">
+      {% if website_data.booking_link == nil or website_data.booking_link == "" %}
+        <a class="button button-success booking-link navbar-desktop-only " href="{{ '/book' | link_to: website_data.link_object }}">{{link.title}}</a>
+      {% else %}
+        <a class="button button-success booking-link navbar-desktop-only " href="{{website_data.booking_link}}">{{link.title}}</a>
+      {% endif %}
+    </li>
+  {% endif %}
+{% elsif link.category == 'Custom Page Link' %}
+  <li class="navbar-item">
+    <a class="navbar-link" href="{{ link.value | link_to: website_data.link_object }}">{{link.title}}</a>
+  </li>
+{% elsif link.category == 'Blog Record Link' %}
+  <li class="navbar-item">
+    <a class="navbar-link" href="{{ '/blog/' | append: link.value | link_to: website_data.link_object }}">Read more...</a>
+  </li>
+{% elsif link.category == 'Room Page Link' %}
+  <li class="navbar-item">
+    <a class="navbar-link" href="{{ link.value | link_to: website_data.link_object }}">{{link.title}}</a>
+  </li>
+{% else %}
+  <li class="navbar-item">
+    <a class="navbar-link" href="{{ link.value | link_to: website_data.link_object }}">{{link.title}}</a>
+  </li>
+{% endif %}
