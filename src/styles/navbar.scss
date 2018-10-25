@@ -33,18 +33,6 @@
     }
   }
 
-  .logo {
-    a {
-      @include font--playfair-display;
-      color: $color--header-90;
-      font-size: 32px;
-      margin: 0 25px;
-      position: relative;
-      text-decoration: none;
-      text-transform: capitalize;
-    }
-  }
-
   .navbar-menu {
     background-color: transparent;
     display: inline-block;

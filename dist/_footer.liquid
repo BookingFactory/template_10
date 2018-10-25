@@ -80,7 +80,11 @@
     <div class="row no-gutters output-info">
       <div class="col-xl-3 col-md-12 col-12 no-gutters logo-wrapper">
         <div class="logo">
-          <img src="./images/zion.svg" alt="Zion Hotel">
+          {% if website_data.logo_text == nil or website_data.logo_text == '' %}
+            <img src="{{website_data.logo | attachment_url: 'default' }}" />
+          {% else %}
+            <span>{{website_data.logo_text}}</span>
+          {% endif %}
         </div>
       </div>
       {% for footer in website_data.footers %}

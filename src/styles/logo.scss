@@ -4,6 +4,20 @@
   vertical-align: middle;
   width: auto;
 
+  a {
+    text-decoration: none;
+  }
+
+  span {
+    @include font--playfair-display;
+    color: $color--header-90;
+    font-size: 32px;
+    margin: 0 25px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
   img {
     height: 57px;
     vertical-align: middle;
