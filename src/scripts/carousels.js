@@ -89,12 +89,11 @@ export default function carouselsSetup() {
     imagesList[0].classList.add('active');
   
     const moveNavSlider = function (info) {
-      const indexCached = (info.indexCached === info.slideCount) ? 0: info.indexCached;
-  
-      paginationPages[indexCached].classList.remove('active');
+
+      paginationPages.forEach(paginationPage => paginationPage.classList.remove('active'));
       paginationPages[info.navCurrentIndex].classList.add('active');
-  
-      imagesList[indexCached].classList.remove('active');
+
+      imagesList.forEach(image => image.classList.remove('active'));
       imagesList[info.navCurrentIndex].classList.add('active');
     }
   
