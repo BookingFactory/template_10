@@ -82,9 +82,9 @@
     <div id="fixer"></div>
      {% comment %} {%  include 'mobile_navigation' %} {% endcomment %}
     <main id="panel">
-      {%  include 'header' %}
+      {% include 'header' %}
       {{content}}
-      {% comment %} {%  include 'footer' %} {% endcomment %}
+      {% include 'footer' %}
     </main>
       {% comment %} <div class="booking-form hidden"  style="background-image: url({{website_data.header_image | attachment_url: 'blured' }});">
         <div class="background"></div>
