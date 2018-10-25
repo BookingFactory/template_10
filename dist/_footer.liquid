@@ -75,4 +75,107 @@
     <div id="map-canvas" class="map"></div>
   </div>
 </div>
-
+<footer>
+  <div class="container">
+    <div class="row no-gutters output-info">
+      <div class="col-xl-3 col-md-12 col-12 no-gutters logo-wrapper">
+        <div class="logo">
+          <img src="./images/zion.svg" alt="Zion Hotel">
+        </div>
+      </div>
+      {% for footer in website_data.footers %}
+        <div class="col-xl-3 col-md-4 col-12 no-gutters">
+          <div class="title">{{footer.title}}</div>
+          <p>{{footer.text}}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row no-gutters">
+      <div class="col-xl-8 col-md-12 col-12 no-gutters">
+        <ul class="footer-nav">
+        {% for link in website_data.footer_links %}
+          {% if link.category == 'Predefined Link' %}
+            {% if link.value == 'home' %}
+              <li><a href="{{ '' | link_to: website_data.link_object }}"> {{link.title}} </a></li>
+            {% elsif link.value == 'rooms' %}
+              <li><a href="{{ '/rooms' | link_to: website_data.link_object }}"> {{link.title}} </a></li>
+            {% elsif link.value == 'features' %}
+              <li><a href="{{ '#features' | link_to: website_data.link_object }}">{{link.title}}</a></li>
+            {% elsif link.value == 'contacts' %}
+              <li><a href="{{ '#contact' | link_to: website_data.link_object }}">{{link.title}}</a></li>
+            {% elsif link.value == 'faq' %}
+              <li><a href="{{ '#faq' | link_to: website_data.link_object }}">{{link.title}}> </a></li>
+            {% elsif link.value == 'about'%}
+              <li><a href="{{ '/about' | link_to: website_data.link_object }}">{{link.title}}> </a></li>
+            {% elsif link.value == 'blog' %}
+              <li><a href="{{ '/blog' | link_to: website_data.link_object }}"> {{link.title}} </a></li>
+            {% elsif link.value == 'terms-and-conditions'%}
+              <li><a href="{{ '/terms-and-conditions' | link_to: website_data.link_object }}">{{link.title}} </a></li>
+            {% elsif link.value == 'privacy-policy' %}
+              <li><a href="{{ '/privacy-policy' | link_to: website_data.link_object }}">{{link.title}}</a></li>
+            {% elsif link.value == 'booking' %}
+              <li><a href="{{ '/book' | link_to: website_data.link_object }}" class="booking-form-link"></a></li>
+            {% endif %}
+          {% elsif link.category == 'Custom Page Link' %}
+            <li><a href="{{ link.value | link_to: website_data.link_object }}">{{link.title}}</a></li>
+          {% elsif link.category == 'Blog Record Link' %}
+            <li><a href="{{ link.value | link_to: website_data.link_object }}"> {{link.title}} </a></li>
+          {% elsif link.category == 'Room Page Link' %}
+            <li><a href="{{ link.value | link_to: website_data.link_object }}">{{link.title}}</a></li>
+          {% else %}
+            <li><a href="{{ link.value | link_to: website_data.link_object }}">{{link.title}}</a></li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="col-xl-4 col-md-12 col-12 no-gutters">
+        <ul class="social-nav">
+          {% if website_data.instagram %}
+            <li class="social-instagram">
+              <a href="{{website_data.instagram}}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+            </li>
+          {% endif %}
+          {% if website_data.facebook %}
+            <li class="social-facebook">
+              <a href="{{website_data.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook-f"></i></a>
+            </li>
+          {% endif %}
+          {% if website_data.twitter %}
+            <li class="social-twitter">
+              <a href="{{website_data.twitter}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+            </li>
+          {% endif %}
+          {% if website_data.youtube %}
+            <li class="social-youtube">
+              <a href="{{website_data.youtube}}" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a>
+            </li>
+          {% endif %}
+          {% if website_data.linkedin %}
+            <li class="social-linkedin">
+              <a href="{{website_data.linkedin}}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </li>
+          {% endif %}
+          {% if website_data.pinterest %}
+            <li class="social-pinterest">
+              <a href="{{website_data.pinterest}}" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+            </li>
+          {% endif %}
+          {% if website_data.googleplus %}
+            <li class="social-googleplus">
+              <a href="{{website_data.googleplus}}" target="_blank" title="Google+"><i class="fa fa-google-plus-square"></i></a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="row no-gutters copyright">
+      <div class="col-xl-6 col-md-12 col-12 no-gutters">
+        {% include 'tbf_logo' %}
+        <span>Hotel Website Powered by <a href="https://thebookingfactory.com/" target="_blank">thebookingfactory.com</a></span>
+      </div>
+      <div class="col-xl-6 col-md-12 col-12 no-gutters copyright-text">
+        Copyright &copy; {{website_data.hotel_name}}. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>

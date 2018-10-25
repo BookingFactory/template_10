@@ -9,6 +9,10 @@
     display: inline-block;
     margin-right: 27px;
 
+    @media screen and (max-width: 320px) {
+      margin-right: 24px;
+    }
+
     &:last-child {
       margin-right: 0;
     }
