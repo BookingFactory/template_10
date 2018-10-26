@@ -8,17 +8,17 @@
   @media screen and (max-width: 767px) {
     border-right-width: 0;
     max-width: 100%;
-    padding: 117px 23px 45px 53px;
+    padding: 58px 23px 45px 53px;
   }
 
   @media screen and (max-width: 575px) {
-    padding: 117px 0 45px;
+    padding: 58px 0 45px;
     text-align: left;
   }
 
   @media screen and (min-width: 768px) {
     max-width: 679px;
-    padding: 117px 23px 45px 53px;
+    padding: 58px 23px 45px 53px;
   }
 
   @media screen and (min-width: 1136px) {
@@ -35,23 +35,23 @@
 
   .header {
     display: block;
+    left: -76px;
     line-height: 1;
-    position: absolute;
+    position: relative;
+    top: 0;
+    width: 100%;
     z-index: 1;
 
-    @media screen and (max-width: 767px) {
-      left: -23px;
-      top: 58px;
-    }
-
-    @media screen and (min-width: 768px) {
-      left: -30px;
-      top: 58px;
+    @media screen and (max-width: 575px) {
+      left: -22px;
     }
 
     @media screen and (min-width: 1136px) {
       left: -113px;
+      position: absolute;
+      text-align: center;
       top: 85px;
+      width: 260px;
     }
 
     h2 {
@@ -61,21 +61,17 @@
 
     &::after {
       background-color: $color--white;
+      bottom: -24px;
       content: '';
       display: block;
-      height: 102px;
+      left: 22px;
       position: absolute;
-      top: 65%;
-      transform: translateY(-50%);
+      top: -24px;
       width: 3px;
       z-index: 1;
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 575px) {
         left: 21px;
-      }
-
-      @media screen and (min-width: 768px) {
-        left: 28px;
       }
 
       @media screen and (min-width: 1136px) {
@@ -113,6 +109,23 @@
 
     @media screen and (min-width: 1136px) {
       padding: 40px 77px;
+    }
+
+    a {
+      @include font--muli;
+
+      color: $color--theme-2;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        opacity: .75;
+      }
+
+      &:focus {
+        opacity: .6;
+      }
     }
   }
 }
