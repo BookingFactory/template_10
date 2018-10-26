@@ -48,7 +48,7 @@
             {% if room.visible == true %}
               <div class="card">
                 <div class="image-wrapper">
-                  <img src="{{ room.room_type.photos.first.image | attachment_url: 'public_big' }}" alt="Room photo">
+                  <img src="{{ room.room_type.photos.first.image | attachment_url: 'original' }}" alt="Room photo">
                 </div>
                 <div class="body">
                   <h3>{{ room.name }}</h3>
@@ -78,7 +78,9 @@
       <div class="col-12">
         <div class="nav-tools">
           {% for room in website_data.rooms %}
-            <div class="nav-point"></div>
+            {% if room.visible == true %}
+              <div class="nav-point"></div>
+            {% endif %}
           {% endfor %}
         </div>
         <a class="button button-info" href="/rooms-services.html">Check all rooms</a>
