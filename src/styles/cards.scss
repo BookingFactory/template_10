@@ -23,13 +23,11 @@
 
     @media screen and (min-width: 768px) {
       overflow: hidden;
-      padding-left: 13px;
-      width: 738px;
+      width: 750px;
     }
 
     @media screen and (min-width: 1440px) {
-      padding-left: 24px;
-      width: 1126px;
+      width: 1152px;
     }
   }
 
@@ -64,16 +62,9 @@
     }
 
     .image-wrapper {
+      height: 223px;
       position: relative;
       width: 100%;
-
-      @media screen and (max-width: 480px) {
-        height: auto;
-      }
-
-      @media screen and (min-width: 768px) {
-        height: 223px;
-      }
 
       @media screen and (min-width: 1440px) {
         height: 230px;
@@ -82,10 +73,6 @@
       img {
         height: 100%;
         width: 100%;
-
-        @media screen and (max-width: 480px) {
-          height: auto;
-        }
       }
     }
 
