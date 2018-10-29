@@ -101,7 +101,7 @@
       }
 
       .dropdown-menu {
-        padding: 12px 0;
+        padding: 0;
         width: auto;
 
         .navbar-link {
@@ -208,6 +208,7 @@
 
         .dropdown-menu {
           left: 0;
+          right: auto;
         }
       }
     }

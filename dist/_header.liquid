@@ -22,7 +22,7 @@
             </button>
             <ul class="dropdown-menu">
               {% for lang in website_data.langs %}
-                <li>
+                <li class="dropdown-option">
                   <a href="{{ '/' | append: lang | link_to_another_lang: website_data.link_object }}" title="Choose language">
                     <span class="flag-icon flag-icon-{{lang}}"></span>
                     {{ lang | get_native_title }}
@@ -76,7 +76,7 @@
             </button>
             <ul class="dropdown-menu">
               {% for lang in website_data.langs %}
-                <li>
+                <li class="dropdown-option">
                   <a href="{{ '/' | append: lang | link_to_another_lang: website_data.link_object }}" title="Choose language">
                     <span class="flag-icon flag-icon-{{lang}}"></span>
                     {{ lang | get_native_title }}
