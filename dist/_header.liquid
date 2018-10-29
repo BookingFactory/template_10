@@ -20,7 +20,7 @@
             <button class="dropdown-toggle">
               {{ website_data.lang | get_native_title }}
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-content">
               {% for lang in website_data.langs %}
                 <li class="dropdown-option">
                   <a href="{{ '/' | append: lang | link_to_another_lang: website_data.link_object }}" title="Choose language">
@@ -74,7 +74,7 @@
             <button class="dropdown-toggle">
               {{ website_data.lang | get_native_title }}
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-content">
               {% for lang in website_data.langs %}
                 <li class="dropdown-option">
                   <a href="{{ '/' | append: lang | link_to_another_lang: website_data.link_object }}" title="Choose language">
