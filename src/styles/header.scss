@@ -17,6 +17,10 @@ header {
     line-height: 40px;
     width: 100%;
 
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+
     &.grey-theme {
       background-color: $color--theme-1;
     }
