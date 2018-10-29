@@ -1,0 +1,14 @@
+<div class="faq">
+  <h1 class="to-center">{{ website_data.faq_title }}</h1>
+  <div class="questions">
+    <div class="questions-list">
+      {% for question in website_data.questions %}
+        <div class="question">
+          <span class="marker"></span>
+          <p class="question-text">{{question.question}}</p>
+          <p>{{question.answer}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
