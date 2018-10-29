@@ -5,17 +5,23 @@
   width: auto;
 
   a {
+    display: inline-block;
     text-decoration: none;
   }
 
   span {
     @include font--playfair-display;
-    color: $color--header-90;
-    font-size: 32px;
-    margin: 0 25px;
+    color: $color--dark-grey;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1;
     position: relative;
     text-decoration: none;
     text-transform: capitalize;
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
   }
 
   img {

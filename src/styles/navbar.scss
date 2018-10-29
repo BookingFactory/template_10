@@ -220,6 +220,10 @@
       left: 16px;
     }
 
+    .logo {
+      width: 100%;
+    }
+
     .navbar-menu {
       left: 0;
       top: -31px;
@@ -232,20 +236,26 @@
     }
   }
 
-  @media screen and (max-width: 380px) {
-    text-align: left;
+  @media screen and (max-width: 575px) {
+    padding-top: 77px;
+
+    .navbar-toggler,
+    .booking-link {
+      top: 0;
+      transform: translateY(0);
+    }
+
+    .booking-link {
+      top: 2px;
+    }
 
     .logo {
-      display: inline-block;
-      margin-left: 150px;
-      transform: translateX(-50%);
-      width: auto;
+      padding-right: 0;
+      text-align: center;
     }
   }
 
-  @media screen and (max-width: 320px) {
-    .logo {
-      margin-left: 135px;
-    }
+  @media screen and (max-width: 380px) {
+    text-align: left;
   }
 }
