@@ -229,17 +229,18 @@
   }
 
   .cards {
-    @media screen and (max-width: 767px) {
-      margin-bottom: 32px;
-    }
+    margin-bottom: 0;
+    // @media screen and (max-width: 767px) {
+    //   margin-bottom: 32px;
+    // }
 
-    @media screen and (min-width: 768px) {
-      margin-bottom: 55px;
-    }
+    // @media screen and (min-width: 768px) {
+    //   margin-bottom: 55px;
+    // }
 
-    @media screen and (min-width: 1440px) {
-      margin-bottom: 103px;
-    }
+    // @media screen and (min-width: 1440px) {
+    //   margin-bottom: 103px;
+    // }
 
     h2 {
       font-size: 40px;

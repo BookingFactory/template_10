@@ -1,0 +1,98 @@
+<div class="blog-post">
+  <div class="posts white-theme">
+    <div class="body">
+      <div class="image-wrapper image-wrapper-shadow">
+        {% if record.cover %}
+          <img src="{{ record.image | attachment_url: 'public_big' }}" alt="{{ record.all_text }}">
+        {% endif %}
+      </div>
+      <div class="post">
+        <h1 class="post-subtitle">Blog</h1>
+        <h2 class="post-title">{{ record.title }}</h2>
+        <span class="date-post">Posted {{ record.created_at | date: "%d %B %Y" }}</span>
+        <div class="text-content">{{ record.text }}</div>
+      </div>
+      <div class="row no-gutters footer">
+        <div class="col-md-6 col-12 no-gutters left-side">
+          <span class="text">Share:</span>
+          <ul class="social-nav">
+            {% if website_data.instagram %}
+              <li class="social-instagram">
+                <a href="{{website_data.instagram}}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+              </li>
+            {% endif %}
+            {% if website_data.facebook %}
+              <li class="social-facebook">
+                <a href="{{website_data.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook-f"></i></a>
+              </li>
+            {% endif %}
+            {% if website_data.twitter %}
+              <li class="social-twitter">
+                <a href="{{website_data.twitter}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+              </li>
+            {% endif %}
+            {% if website_data.youtube %}
+              <li class="social-youtube">
+                <a href="{{website_data.youtube}}" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a>
+              </li>
+            {% endif %}
+            {% if website_data.linkedin %}
+              <li class="social-linkedin">
+                <a href="{{website_data.linkedin}}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+              </li>
+            {% endif %}
+            {% if website_data.pinterest %}
+              <li class="social-pinterest">
+                <a href="{{website_data.pinterest}}" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+              </li>
+            {% endif %}
+            {% if website_data.googleplus %}
+              <li class="social-googleplus">
+                <a href="{{website_data.googleplus}}" target="_blank" title="Google+"><i class="fa fa-google-plus-square"></i></a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cards cards-mini">
+    <h2 class="to-center">More Posts</h2>
+    <div class="window">
+      <div class="cards-list">
+        <div class="card card-mini">
+          <div class="image-wrapper">
+            {% if website_data.blog_records[0].cover %}
+              <img
+                src="{{ website_data.blog_records[0].image | attachment_url: 'public_big' }}"
+                alt="{{ website_data.blog_records[0] }}">
+            {% else %}
+              <img src="https://placehold.it/325x223?text=No%20photo">
+            {% endif %}
+            <a class="link read-more-link" href="{{ website_data.blog_records[0].slug }}">Read More</a>
+          </div>
+          <div class="body">
+            <span class="date-post">{{ website_data.blog_records[0].created_at | date: "%d %B %Y" }}</span>
+            <h3><a href="{{ website_data.blog_records[0].slug }}">{{ website_data.blog_records[0].title }}</a></h3>
+          </div>
+        </div>
+        <div class="card card-mini">
+          <div class="image-wrapper">
+            {% if website_data.blog_records[1].cover %}
+              <img
+                src="{{ website_data.blog_records[1].image | attachment_url: 'public_big' }}"
+                alt="{{ website_data.blog_records[1] }}">
+            {% else %}
+              <img src="https://placehold.it/325x223?text=No%20photo">
+            {% endif %}
+            <a class="link read-more-link" href="{{ website_data.blog_records[1].slug }}">Read More</a>
+          </div>
+          <div class="body">
+            <span class="date-post">{{ website_data.blog_records[1].created_at | date: "%d %B %Y" }}</span>
+            <h3><a href="{{ website_data.blog_records[1].slug }}">{{ website_data.blog_records[1].title }}</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

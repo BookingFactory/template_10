@@ -285,9 +285,11 @@
         position: absolute;
         right: 0;
         text-align: center;
+        text-decoration: none;
         top: 0;
         transition: opacity .3s ease-in-out;
         vertical-align: middle;
+        z-index: 1;
 
         &:hover {
           opacity: 1;
