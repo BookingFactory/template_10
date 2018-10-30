@@ -43,7 +43,7 @@
     }
   }
 
-  p {
+  .text-content {
     @include font--muli;
 
     color: $color--white;
@@ -245,19 +245,19 @@
         margin-top: 0;
       }
 
-      &:last-child {
-        @media screen and (max-width: 767px) {
-          margin-bottom: 24px;
-        }
+      // &:last-child {
+      //   @media screen and (max-width: 767px) {
+      //     margin-bottom: 24px;
+      //   }
 
-        @media screen and (min-width: 768px) {
-          margin-bottom: 65px;
-        }
+      //   @media screen and (min-width: 768px) {
+      //     margin-bottom: 65px;
+      //   }
 
-        @media screen and (min-width: 1440px) {
-          margin-bottom: 82px;
-        }
-      }
+      //   @media screen and (min-width: 1440px) {
+      //     margin-bottom: 82px;
+      //   }
+      // }
 
       @media screen and (max-width: 767px) {
         border-left: 0;
@@ -285,7 +285,7 @@
         border-right: 0;
       }
 
-      &.body-reflection {
+      &:nth-child(even) {
         @media screen and (min-width: 1440px) {
           margin-left: 0;
           margin-right: auto;
@@ -317,7 +317,7 @@
       }
     }
 
-    p,
+    .text-content,
     .post-title,
     .post-subtitle {
       color: $color--dark-grey;

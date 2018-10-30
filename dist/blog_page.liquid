@@ -1,0 +1,22 @@
+<div class="blog">
+  <h1 class="to-center">Blog</h1>
+  <div class="posts white-theme">
+    {% for record in website_data.blog_records %}
+      <div class="body">
+        <div class="image-wrapper image-wrapper-shadow">
+          {% if record.cover %}
+            <img src="{{ record.image | attachment_url: 'public_big' }}" alt="{{record.all_text}}">
+          {% endif %}
+        </div>
+        <div class="post">
+          <span class="date-post">{{ record.created_at | date: "%d %B %Y" }}</span>
+          <h2 class="post-title">{{ record.title }}</h2>
+          <div class="text-content">
+            {{ record.text | truncate: 300 }}
+          </div>
+          <a class="button button-info" href="{{ 'blog/' | append: record.slug }}">Read post</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
