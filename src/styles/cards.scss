@@ -185,8 +185,12 @@
     .window {
       overflow: hidden;
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 1439px) {
         padding-left: 13px;
+        width: 713px;
+      }
+
+      @media screen and (max-width: 767px) {
         width: 333px;
       }
 

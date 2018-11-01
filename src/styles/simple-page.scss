@@ -77,6 +77,10 @@
   }
 
   .cards {
+    &.cards-mini {
+      margin-bottom: 0;
+    }
+
     h2 {
       @media screen and (max-width: 767px) {
         margin-bottom: 42px;
