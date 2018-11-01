@@ -5,7 +5,9 @@
       <div class="body">
         <div class="image-wrapper image-wrapper-shadow">
           {% if record.cover %}
-            <img src="{{ record.image | attachment_url: 'public_big' }}" alt="{{record.all_text}}">
+            <img src="{{ record.image | attachment_url: 'public_big' }}" alt="{{record.alt_text}}">
+          {% else %}
+            <img src="https://placehold.it/480x320?text=No%20photo" alt="No photo"/>
           {% endif %}
         </div>
         <div class="post">

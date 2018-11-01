@@ -5,15 +5,21 @@
       <div class="carousel carousel-shadow white-theme">
         <div class="window">
           <ul class="image-list">
-            {% for photo in website_data.top_bar_photos %}
-              <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo"></li>
-            {% endfor %}
+            {% if website_data.top_bar_photos.size > 0 %}
+              {% for photo in website_data.top_bar_photos %}
+                <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo"></li>
+              {% endfor %}
+            {% else %}
+              <li class="image-warpper">
+                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+              </li>
+            {% endif %}
           </ul>
         </div>
         <div class="nav-tools">
-            {% for photo in website_data.top_bar_photos %}
-              <div class="nav-point"></div>
-            {% endfor %}
+          {% for photo in website_data.top_bar_photos %}
+            <div class="nav-point"></div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -49,7 +55,11 @@
             {% if room.visible == true %}
               <div class="card">
                 <div class="image-wrapper">
-                  <img src="{{ room.room_type.photos.first.image | attachment_url: 'original' }}" alt="Room photo">
+                  {% if room.room_type.photos.size > 0 %}
+                    <img src="{{ room.room_type.photos.first.image | attachment_url: 'original' }}" alt="Room photo">
+                  {% else %}
+                    <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo"/>
+                  {% endif %}
                 </div>
                 <div class="body">
                   <h3>{{ room.name }}</h3>
@@ -140,9 +150,13 @@
         <div class="image-wrapper image-wrapper-shadow">
           <div class="image-list pagination-image-list">
             {% for record in website_data.blog_records %}
-              <img
-                src="{{ record.image | attachment_url: 'public_big' }}"
-                alt="{{ record.alt_text }}">
+              {% if record.cover %}
+                <img
+                  src="{{ record.image | attachment_url: 'public_big' }}"
+                  alt="{{ record.alt_text }}">
+              {% else %}
+                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
