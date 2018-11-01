@@ -11,7 +11,8 @@ export default class Dropdown {
     this.backdrop.addEventListener('click', this.onBackdropClick);
   }
 
-  onToggleClick() {
+  onToggleClick(event) {
+    event.preventDefault();
     this.dropdown.classList.add('opened');
   }
 
