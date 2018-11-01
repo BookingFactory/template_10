@@ -64,20 +64,24 @@
                 <div class="body">
                   <h3>{{ room.name }}</h3>
                   <ul class="bulleted-list">
-                    <li><i class="marker"></i>Adults: 4</li>
-                    <li><i class="marker"></i>Children: 2</li>
-                    <li><i class="marker"></i>Free Wi-Fi, Conditioneer, Microwave oven, Extra Bed 
-                        and 7 more</li>
+                    <li><i class="marker"></i>Adults: {{ room.room_type.max_adults }}</li>
+                    <li><i class="marker"></i>Children: {{ room.room_type.max_children }}</li>
+                    {% if room.room_type.facilities.size > 0 %}
+                      <li><i class="marker"></i>
+                        {% for facility in room.room_type.facilities %}
+                          {% if forloop.last == true %}
+                            {{ facility.title | get_translation: website_data.id, website_data.lang }}
+                          {% else %}
+                            {{ facility.title | get_translation: website_data.id, website_data.lang }},
+                          {% endif %}
+                        {% endfor %}
+                      </li>
+                    {% endif %}
                   </ul>
                   <a class="read-more-link" href="{{ room.slug | link_to: website_data.link_object }}">Read More</a>
                 </div>
                 <div class="footer">
                   <a class="button button-success" href="#">book now</a>
-                  <div class="price">
-                    from<br>
-                    <span class="value">£12.59</span><br>
-                    per night
-                  </div>
                 </div>
               </div>
             {% endif %}
