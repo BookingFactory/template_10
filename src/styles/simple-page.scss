@@ -65,6 +65,15 @@
     .offer-text {
       margin-bottom: 16px;
     }
+
+    .text-content {
+      @include font--muli;
+
+      color: $color--dark-grey;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 26px;
+    }
   }
 
   .calendar {

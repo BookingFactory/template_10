@@ -1,0 +1,115 @@
+<div class="simple-page">
+  <div class="info">
+    <div class="header">
+      <h1 class="section-title">Rooms &amp; Services</h1>
+      <h2>{{ room.title }}</h2>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel carousel-shadow">
+        <div class="window">
+          <ul class="image-list">
+            {% if room.website_custom_room_photos.size > 0 %}
+              {% for photo in room.website_custom_room_photos %}
+                <li class="image-warpper">
+                  <img src="{{ photo.image | attachment_url: 'original' }}" alt="Room photo"/>
+                </li>
+              {% endfor %}
+            {% else %}
+              <li class="image-warpper">
+                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="nav-tools">
+          {% for photo in room.website_custom_room_photos %}
+            <div class="nav-point"></div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if website_data.booking_link == '' %}
+        <a href="{{ '/book' | link_to: website_data.link_object}}" class="button button-success">Book Now</a>
+      {% else %}
+        <a href="{{website_data.booking_link}}" class="button button-success">Book Now</a>
+      {% endif %}
+    </div>
+    <div class="text-wrapper">
+      {% unless room.description == '' %}
+        <div class="text-content">{{ room.description }}</div>
+      {% endunless %}
+    </div>
+  </div>
+  <div class="cards cards-mini">
+    <h2 class="to-center">More Rooms</h2>
+    <div class="window">
+      <div class="cards-list">
+        <div class="card">
+          <div class="image-wrapper">
+            {% if website_data.rooms[0].room_type.photos.size > 0 %}
+              <img
+                src="{{ website_data.rooms[0].room_type.photos.first.image | attachment_url: 'original' }}"
+                alt="Room photo">
+            {% else %}
+              <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
+            {% endif %}
+            <a class="link read-more-link" href="#">Read More</a>
+          </div>
+          <div class="body">
+            <h3><a href="#">{{ website_data.rooms[0].name }}</a></h3>
+          </div>
+          <div class="footer">
+            {% if website_data.booking_link == nil or website_data.booking_link == "" %}
+              <a class="button button-success" href="{{ '/book' | link_to: website_data.link_object }}">{{website_data.booking_button_text}}</a>
+            {% else %}
+              <a class="button button-success" href="{{website_data.booking_link}}">{{booking_link.title}}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-wrapper">
+            {% if website_data.rooms[1].room_type.photos.size > 0 %}
+              <img
+                src="{{ website_data.rooms[1].room_type.photos.first.image | attachment_url: 'original' }}"
+                alt="Room photo">
+            {% else %}
+              <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
+            {% endif %}
+            <a class="link read-more-link" href="#">Read More</a>
+          </div>
+          <div class="body">
+            <h3><a href="#">{{ website_data.rooms[1].name }}</a></h3>
+          </div>
+          <div class="footer">
+            {% if website_data.booking_link == nil or website_data.booking_link == "" %}
+              <a class="button button-success" href="{{ '/book' | link_to: website_data.link_object }}">{{website_data.booking_button_text}}</a>
+            {% else %}
+              <a class="button button-success" href="{{website_data.booking_link}}">{{booking_link.title}}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="card">
+          <div class="image-wrapper">
+            {% if website_data.rooms[2].room_type.photos.size > 0 %}
+              <img
+                src="{{ website_data.rooms[2].room_type.photos.first.image | attachment_url: 'original' }}"
+                alt="Room photo">
+            {% else %}
+              <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
+            {% endif %}
+            <a class="link read-more-link" href="#">Read More</a>
+          </div>
+          <div class="body">
+            <h3><a href="#">{{ website_data.rooms[2].name }}</a></h3>
+          </div>
+          <div class="footer">
+            {% if website_data.booking_link == nil or website_data.booking_link == "" %}
+              <a class="button button-success" href="{{ '/book' | link_to: website_data.link_object }}">{{website_data.booking_button_text}}</a>
+            {% else %}
+              <a class="button button-success" href="{{website_data.booking_link}}">{{booking_link.title}}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
