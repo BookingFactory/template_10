@@ -1,0 +1,59 @@
+.gallery {
+  overflow-x: hidden;
+
+  @media screen and (max-width: 767px) {
+    margin: 33px auto 43px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 55px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 70px;
+  }
+
+  .carousel-wrapper {
+    @media screen and (max-width: 767px) {
+      padding: 26px 0 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 45px 0 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 45px 0 20px;
+    }
+  }
+
+  .carousel {
+    &.carousel-shadow {
+      margin: auto;
+
+      &::before {
+        left: -45px;
+        top: -45px;
+
+        @media screen and (min-width: 768px) {
+          border-left-width: 590px;
+        }
+    
+        @media screen and (min-width: 1280px) {
+          border-left-width: 660px;
+        }
+
+        @media screen and (max-width: 767px) {
+          border-left-width: 100vw;
+          bottom: -26px;
+          left: 0;
+          top: -27px;
+        }
+      }
+    }
+  }
+
+  &+.contacts {
+    background-color: transparent;
+  }
+}
