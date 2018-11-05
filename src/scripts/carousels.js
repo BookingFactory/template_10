@@ -2,27 +2,34 @@ import { tns } from "../../node_modules/tiny-slider/src/tiny-slider"
 
 export default function carouselsSetup() {
 
-  const options_1 = {
+  const opinions = {
     items: 1,
-    slideBy: 'page',
     speed: 700,
     autoplay: true,
-    autoplayTimeout: 2000,
-    controls: false,
     autoplayButtonOutput: false,
   }
+
+  const options_1 = {
+    ...opinions,
+    slideBy: 'page',
+    autoplayTimeout: 2000,
+    controls: false,
+  }
   const options_2 = {
-    items: 1,
-    speed: 700,
-    autoplay: true,
+    ...opinions,
     autoplayTimeout: 3000,
-    autoplayButtonOutput: false,
     mode: "gallery",
     animateIn: "fade-in",
     animateOut: "fade-out",
   }
 
-  if(document.querySelector('.carousel')) {
+  const options_3 = {
+    ...opinions,
+    slideBy: 'page',
+    autoplayTimeout: 3000,
+  }
+
+  if(document.querySelector('.carousel .nav-tools')) {
     const carouselSlider = tns({
       ...options_1,
       container: '.carousel .image-list',
@@ -106,6 +113,15 @@ export default function carouselsSetup() {
       container: '.reviews .reviews-list',
       controlsContainer: ".reviews .carousel-pagination",
       navContainer: '.reviews .carousel-pagination .pages',
+    });
+  }
+
+  if(document.querySelector('.carousel-with-arrows')) {
+    const reviewSlider = tns({
+      ...options_3,
+      container: '.carousel-with-arrows .content-list',
+      controlsContainer: ".carousel-with-arrows .carousel-pagination",
+      navContainer: '.carousel-with-arrows .carousel-pagination .pages',
     });
   }
 }

@@ -15,15 +15,15 @@
 
   .carousel-wrapper {
     @media screen and (max-width: 767px) {
-      padding: 26px 0 0;
+      padding: 26px 0;
     }
 
     @media screen and (min-width: 768px) {
-      padding: 45px 0 20px;
+      padding: 45px 0 70px;
     }
 
     @media screen and (min-width: 1280px) {
-      padding: 45px 0 20px;
+      padding: 45px 0 70px;
     }
   }
 
@@ -32,6 +32,7 @@
       margin: auto;
 
       &::before {
+        height: 477px;
         left: -45px;
         top: -45px;
 
@@ -46,11 +47,28 @@
         @media screen and (max-width: 767px) {
           border-left-width: 100vw;
           bottom: -26px;
+          height: auto;
           left: 0;
           top: -27px;
         }
       }
     }
+  }
+
+  .carousel-pagination-wrapper {
+    padding-top: 15px;
+    position: relative;
+    text-align: center;
+  }
+
+  .carousel-pagination {
+    background-color: transparent;
+    display: inline-block;
+    left: 0;
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+    z-index: 999;
   }
 
   &+.contacts {

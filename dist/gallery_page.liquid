@@ -1,9 +1,9 @@
 
 <div class="gallery">
   <div class="carousel-wrapper">
-    <div class="carousel carousel-shadow">
+    <div class="carousel carousel-shadow carousel-with-arrows">
       <div class="window">
-        <ul class="image-list">
+        <ul class="image-list content-list">
           {% if website_data.gallery_photos.size > 0 %}
             {% for photo in website_data.gallery_photos %}
               <li class="image-warpper"><img src="{{photo.image | attachment_url: 'original'}}" alt="Hotel photo"></li>
@@ -15,10 +15,18 @@
           {% endif %}
         </ul>
       </div>
-      <div class="nav-tools">
-        {% for photo in website_data.gallery_photos %}
-          <div class="nav-point"></div>
-        {% endfor %}
+      <div class="carousel-pagination-wrapper">
+        <div class="carousel-pagination">
+          <div class="left-arrow"></div>
+          <div class="right-arrow"></div>
+          <ul class="pages">
+            {% for photo in website_data.gallery_photos %}
+              <li>{{ forloop.index }}</li>
+            {% endfor %}
+          </ul>
+          <span class="delimiter"></span>
+          <span class="count-page">{{ website_data.gallery_photos.size }}</span>
+        </div>
       </div>
     </div>
   </div>
