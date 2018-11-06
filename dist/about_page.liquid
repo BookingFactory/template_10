@@ -1,0 +1,33 @@
+<div class="simple-page custom-page">
+  <div class="info">
+    <div class="carousel-wrapper">
+      <div class="carousel carousel-shadow">
+        <div class="window">
+          <ul class="image-list">
+            {% if website_data.about_photos.size > 0 %}
+              {% for photo in website_data.about_photos %}
+                <li class="image-warpper">
+                  <img src="{{ photo.image | attachment_url: 'original' }}" alt="Room photo"/>
+                </li>
+              {% endfor %}
+            {% else %}
+              <li class="image-warpper">
+                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="nav-tools">
+          {% for photo in website_data.about_photos %}
+            <div class="nav-point"></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="text-wrapper">
+      {% unless page.content == '' %}
+        <div class="text-content">{{ website_data.about_text }}</div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
