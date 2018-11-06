@@ -1,0 +1,58 @@
+.text-page {
+  box-sizing: border-box;
+  padding: 0;
+
+  @media screen and (max-width: 1023px) {
+    padding: 0 51px 0 77px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 33px;
+    padding: 0 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 55px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 70px;
+  }
+
+  .content-wrapper {
+    margin: auto;
+    max-width: 978px;
+    width: 100%;
+
+    @media screen and (max-width: 1200px) {
+      max-width: 1040px;
+    }
+
+    @media screen and (max-width: 1080px) {
+      max-width: 736px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+      margin-bottom: 42px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 63px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-bottom: 83px;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+    text-align: justify;
+    text-align-last: left;
+  }
+}
