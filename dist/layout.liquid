@@ -72,7 +72,6 @@
     {% endunless %}
   </div>
   <noscript id="deferred-styles">
-    {% comment %} <link rel="shortcut icon" href="{{ website_data.favicon | attachment_url: 'default' }}" type="image/x-icon"/> {% endcomment %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,700i" type="text/css">
@@ -80,116 +79,73 @@
   </noscript>
   <body data-hotel="{{website_data.hotel_id}}">
     <div id="fixer"></div>
-     {% comment %} {%  include 'mobile_navigation' %} {% endcomment %}
     <main id="panel">
       {% include 'header' %}
       {{content}}
       {% include 'footer' %}
     </main>
-      {% comment %} <div class="booking-form hidden"  style="background-image: url({{website_data.header_image | attachment_url: 'blured' }});">
-        <div class="background"></div>
-        <div class="booking-close">
-          Close
-        </div>
-        <div class="form">
-         <h2>
-           Book Direct, Best Rate Guaranteed
-           <br/>
-           <small>
-             Trouble finding what your looking for? Call us on
-             {{website_data.phone_number}}
-           </small>
-         </h2>
-         <form action="{{'/book' | link_to: website_data.link_object }}">
-           <div>
-             <div class="field">
-               <label>Check in</label>
-               <input class="date" value="{{ 'now' | date: "%d %b %Y" }}"></input>
-               <input name="dateFrom" type="hidden" value="{{ 'now' | date: "%Y-%m-%d" }}"></input>
-             </div>
-             <div class="field select">
-               <label>Nights</label>
-               <select name="nights">
-                 {%  for x in (1..20) %}
-                   <option value="{{x}}">
-                     {{x}}
-                   </option>
-                 {%  endfor %}
-               </select>
-             </div>
-           </div>
-           <div>
-             <div class="field-control">
-               <button class="submit booking-submit">Check Availability</button>
-             </div>
-             <div class="error"></div>
-           </div>
-         </form>
-       </div>
-      </div> {% endcomment %}
-      <script>
-
-        {% if website_data.map_center_lat and website_data.map_center_lng %}
-          var zoom = {{website_data.map_zoom_level}}
-          var lat = {{website_data.map_center_lat}}
-          var lng = {{website_data.map_center_lng}}
-          function initialize() {
-            var myOptions = {
-              zoom: zoom,
-              center: new google.maps.LatLng(lat, lng),
-              scrollwheel: false,
-              disableDefaultUI: true
-            }
-            map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-
-            var styles = {% include 'google_map_style' %};
-
-            map.setOptions({styles: styles});
-
-            var marker = new google.maps.Marker({
-              map: map,
-              position: new google.maps.LatLng(lat, lng)
-            });
+    <script>
+      {% if website_data.map_center_lat and website_data.map_center_lng %}
+        var zoom = {{website_data.map_zoom_level}}
+        var lat = {{website_data.map_center_lat}}
+        var lng = {{website_data.map_center_lng}}
+        function initialize() {
+          var myOptions = {
+            zoom: zoom,
+            center: new google.maps.LatLng(lat, lng),
+            scrollwheel: false,
+            disableDefaultUI: true
           }
-          function loadScript() {
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
-              '&callback=initialize&key=AIzaSyCxqPAlL6tmp-Wny3tC0e_byl-jOxzu_QA';
-            document.body.appendChild(script);
-          }
-        {% endif %}
+          map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 
-        var loadDeferredStyles = function() {
-          var addStylesNode = document.getElementById("deferred-styles");
-          var replacement = document.createElement("div");
-          var fixer = document.getElementById("fixer");
-          replacement.innerHTML = addStylesNode.textContent;
-          document.body.appendChild(replacement)
-          addStylesNode.parentElement.removeChild(addStylesNode);
-        };
+          var styles = {% include 'google_map_style' %};
 
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-            webkitRequestAnimationFrame || msRequestAnimationFrame;
+          map.setOptions({styles: styles});
 
-        var hideElement = setInterval(function() {
-          if (fixer.clientHeight == 100) {
-            {% comment %} debugger {% endcomment %}
-            var overlay = document.getElementById('loading-overlay');
-            overlay.parentNode.removeChild(overlay);
-            {% if website_data.map_center_lat and website_data.map_center_lng %}
-              loadScript()
-            {% endif %}
-            clearInterval(hideElement);
-            var event = document.createEvent('Event');
-            event.initEvent('TemplateLoaded', true, true);
-            document.dispatchEvent(event);
-            window.templateLoaded = true;
-          }
-        }, 200);
+          var marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(lat, lng)
+          });
+        }
+        function loadScript() {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+            '&callback=initialize&key=AIzaSyCxqPAlL6tmp-Wny3tC0e_byl-jOxzu_QA';
+          document.body.appendChild(script);
+        }
+      {% endif %}
 
-        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-        else window.addEventListener('load', loadDeferredStyles);
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        var fixer = document.getElementById("fixer");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+      var hideElement = setInterval(function() {
+        if (fixer.clientHeight == 100) {
+          {% comment %} debugger {% endcomment %}
+          var overlay = document.getElementById('loading-overlay');
+          overlay.parentNode.removeChild(overlay);
+          {% if website_data.map_center_lat and website_data.map_center_lng %}
+            loadScript()
+          {% endif %}
+          clearInterval(hideElement);
+          var event = document.createEvent('Event');
+          event.initEvent('TemplateLoaded', true, true);
+          document.dispatchEvent(event);
+          window.templateLoaded = true;
+        }
+      }, 200);
+
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
     </script>
 
     {{website_data.ga_code}}
