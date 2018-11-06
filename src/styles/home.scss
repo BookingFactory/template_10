@@ -103,6 +103,17 @@
         padding-bottom: 30px;
       }
     }
+
+    .carousel {
+      &.carousel-shadow {
+        &::before {
+          @media screen and (max-width: 1280px) and (min-width: 769px) {
+            left: -45px;
+            top: -45px;
+          }
+        }
+      }
+    }
   }
 
   .rooms {
