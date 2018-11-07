@@ -100,6 +100,14 @@
         padding: 0;
         width: auto;
 
+        a {
+          color: $color--header-90;
+
+          &:hover {
+            color: $color--theme-2;
+          }
+        }
+
         .navbar-link {
           display: block;
           margin: 0;
@@ -112,16 +120,6 @@
 
           &:hover {
             color: $color--theme-2;
-          }
-        }
-
-        .dropdown-menu {
-          a {
-            color: $color--header-90;
-
-            &:hover {
-              color: $color--theme-2;
-            }
           }
         }
       }

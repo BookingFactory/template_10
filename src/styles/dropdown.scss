@@ -11,6 +11,7 @@
       border: 1px solid $color--unknown-1;
       height: auto;
       opacity: 1;
+      overflow: visible;
     }
   }
 
@@ -54,6 +55,7 @@
     height: 0;
     min-width: 100px;
     opacity: 0;
+    overflow: hidden;
     position: absolute;
     right: 0;
     top: 40px;

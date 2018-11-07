@@ -1,3 +1,5 @@
+import Dropdown from './dropdown';
+
 export default class ExtraMenu {
   constructor() {
     this.changeExtraMenuChildren = this.changeExtraMenuChildren.bind(this);
@@ -64,6 +66,7 @@ export default class ExtraMenu {
   initExtraMenu() {
     this.createExtraMenu();
     this.extraMenu = document.querySelector('#more-navbar-menu');
+    new Dropdown(this.extraMenu);
     this.extraMenuBody = document.querySelector('#more-navbar-menu .dropdown-menu');
     this.changeExtraMenuChildren();
   }
