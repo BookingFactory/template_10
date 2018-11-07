@@ -50,7 +50,7 @@ export default class ExtraMenu {
     const extraMenuTemplate = `
     <div id="more-navbar-menu" class="dropdown">
       <div class="dropdown-backdrop"></div>
-      <button class="dropdown-toggle navbar-link">More</button>
+      <button class="dropdown-toggle navbar-link">More <i class="fa fa-angle-down"></i></button>
       <ul class="dropdown-menu"></ul>
     </div>`;
 
