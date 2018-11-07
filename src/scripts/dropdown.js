@@ -17,6 +17,8 @@ export default class Dropdown {
   }
 
   onBackdropClick() {
-    this.dropdown.classList.remove('opened');
+    Array.from(document.querySelectorAll('.dropdown')).forEach((dropdown) => {
+      dropdown.classList.remove('opened');
+    });
   }
 }

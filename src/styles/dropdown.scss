@@ -3,11 +3,11 @@
   position: relative;
 
   &.opened {
-    .dropdown-backdrop {
+    & > .dropdown-backdrop {
       display: block;
     }
 
-    .dropdown-menu {
+    & > .dropdown-menu {
       border: 1px solid $color--unknown-1;
       height: auto;
       opacity: 1;
@@ -71,7 +71,6 @@
     height: 0;
     min-width: 100px;
     opacity: 0;
-    overflow: hidden;
     position: absolute;
     right: 0;
     top: 40px;
@@ -99,6 +98,16 @@
         box-sizing: border-box;
       }
     }
+
+    .dropdown {
+      .dropdown-menu {
+        left: 105%;
+        left: calc(100% + 5px);
+        right: auto;
+        top: -10px;
+      }
+    }
+
 
     .dropdown-option {
       margin: 0;

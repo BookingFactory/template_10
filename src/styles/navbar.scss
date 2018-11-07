@@ -118,6 +118,16 @@
             color: $color--theme-2;
           }
         }
+
+        .dropdown-menu {
+          a {
+            color: $color--header-90;
+
+            &:hover {
+              color: $color--theme-2;
+            }
+          }
+        }
       }
 
       .navbar-item {
