@@ -168,14 +168,13 @@
     .navbar-menu {
       background-color: $color--theme-1;
       float: none;
-      left: -77px;
+      left: -160px;
       margin: 0;
-      padding: 177px 38px 46px 77px;
+      padding: 177px 38px 46px 160px;
       position: absolute;
       text-align: left;
       top: -57px;
       transform: translateY(0);
-      width: 291px;
 
       &:not(.opened) {
         display: none;
