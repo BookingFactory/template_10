@@ -35,12 +35,10 @@
 
   .navbar-menu {
     background-color: transparent;
+    clear: both;
     display: inline-block;
+    float: right;
     padding: 0;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
     white-space: nowrap;
     z-index: 1;
 
@@ -55,6 +53,7 @@
       font-size: 12px;
       font-weight: 600;
       margin: 0 25px;
+      padding: 17px 0;
       position: relative;
       text-decoration: none;
       text-transform: uppercase;
@@ -64,10 +63,9 @@
         content: '';
         height: 3px;
         left: 50%;
-        margin-top: 8px;
         position: absolute;
         top: 100%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -100%);
         width: 0;
       }
 
@@ -91,9 +89,15 @@
 
     .dropdown {
       .dropdown-toggle {
+        &:hover {
+          opacity: 1;
+        }
+
         &:focus {
+          opacity: 1;
           outline: none;
         }
+
       }
 
       .dropdown-menu {
@@ -111,6 +115,7 @@
         .navbar-link {
           display: block;
           margin: 0;
+          padding: 6px 20px;
           text-transform: none;
           width: auto;
 
@@ -162,6 +167,7 @@
 
     .navbar-menu {
       background-color: $color--theme-1;
+      float: none;
       left: -77px;
       margin: 0;
       padding: 177px 38px 46px 77px;
