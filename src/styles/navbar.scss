@@ -131,6 +131,18 @@
 
       .navbar-item {
         display: block;
+
+        &:first-child {
+          .navbar-link {
+            padding-top: 16px;
+          }
+        }
+
+        &:last-child {
+          .navbar-link {
+            padding-bottom: 16px;
+          }
+        }
       }
     }
   }
