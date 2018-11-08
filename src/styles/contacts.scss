@@ -234,7 +234,7 @@
       }
 
       form {
-        .first-name-group {
+        .name-group {
           @media screen and (max-width: 767px) {
             margin-left: 0;
           }
@@ -249,6 +249,12 @@
         line-height: 42px;
         margin-top: 90px;
         position: relative;
+
+        span {
+          color: $color--dark-grey;
+          font-size: 14px;
+          line-height: 24px;
+        }
 
         .footer-button {
           @media screen and (max-width: 767px) {

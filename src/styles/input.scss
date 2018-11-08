@@ -71,12 +71,21 @@ textarea {
 }
 
 input {
-  &[type='text'] {
+  &[type='text'],
+  &[type='email'] {
     @include text-styles;
     @include box-styles;
     @include label-styles;
     @include focus-styles;
     @include dirty-styles;
+
+    &.small {
+      border: 1px solid $color--theme-2;
+      display: inline-block;
+      height: 40px;
+      padding: 0 10px;
+      width: 50px;
+    }
   }
 
   &[type='checkbox'] {
