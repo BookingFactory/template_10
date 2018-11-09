@@ -41,7 +41,11 @@
             <i class="fa fa-calendar input-icon"></i>
           </div>
         </div>
-        <button class="button button-success" type="submit">See rooms</button>
+        {% if website_data.booking_link == '' %}
+          <a href="{{ '/book' | link_to: website_data.link_object}}" class="button button-success">Book Now</a>
+        {% else %}
+          <a href="{{website_data.booking_link}}" class="button button-success">Book Now</a>
+        {% endif %}
       </form>
     </div>
   </div>
@@ -81,7 +85,11 @@
                   <a class="read-more-link" href="{{ room.slug | link_to: website_data.link_object }}">Read More</a>
                 </div>
                 <div class="footer">
-                  <a class="button button-success" href="#">book now</a>
+                  {% if website_data.booking_link == '' %}
+                    <a href="{{ '/book' | link_to: website_data.link_object}}" class="button button-success">Book Now</a>
+                  {% else %}
+                    <a href="{{website_data.booking_link}}" class="button button-success">Book Now</a>
+                  {% endif %}
                 </div>
               </div>
             {% endif %}
@@ -98,7 +106,6 @@
             {% endif %}
           {% endfor %}
         </div>
-        <a class="button button-info" href="/rooms-services.html">Check all rooms</a>
       </div>
     </div>
   </div>
@@ -129,7 +136,7 @@
               <p>{{ testimonial.body }}</p>
               <div class="author">
                 {{ testimonial.name }}<br>
-                <span class="author-role">babysitter, AF Agency</span>
+                <span class="author-role"></span>
               </div>
             </div>
           {% endfor %}
@@ -169,8 +176,8 @@
             <div class="post">
               <h2 class="post-subtitle">{{ website_data.blog_section_title }}</h2>
               <h3 class="post-title">{{ record.title }}</h3>
-              <p>{{ record.text }}</p>
-              <a class="button button-info" href="{{ record.slug | link_to: website_data.link_object }}">Check post</a>
+              <div class="text-content" >{{ record.text }}</div>
+              <a class="button button-info" href="{{ 'blog/' | append: record.slug }}">Check post</a>
             </div>
           {% endfor %}
         </div>
@@ -186,9 +193,9 @@
           <span class="count-page">{{ website_data.blog_records.size }}</span>
         </div>
         <div class="nav-tools white-theme mobile-see">
-          <div class="nav-point"></div>
-          <div class="nav-point"></div>
-          <div class="nav-point"></div>
+          {% for record in website_data.blog_records %}
+            <div class="nav-point"></div>
+          {% endfor %}
         </div>
       </div>
     </div>

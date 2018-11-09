@@ -21,10 +21,12 @@
             {% endif %}
           </ul>
         </div>
-        <div class="nav-tools">
-          {% for photo in number.room_type.photos %}
-            <div class="nav-point"></div>
-          {% endfor %}
+        <div class="nav-tools-wrapper">
+          <div class="nav-tools">
+            {% for photo in number.room_type.photos %}
+              <div class="nav-point"></div>
+            {% endfor %}
+          </div>
         </div>
       </div>
       {% if website_data.booking_link == '' %}
@@ -69,10 +71,10 @@
             {% else %}
               <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
             {% endif %}
-            <a class="link read-more-link" href="#">Read More</a>
+            <a class="link read-more-link" href="{{ website_data.rooms[0].slug | link_to: website_data.link_object }}">Read More</a>
           </div>
           <div class="body">
-            <h3><a href="#">{{ website_data.rooms[0].name }}</a></h3>
+            <h3><a href="{{ website_data.rooms[0].slug | link_to: website_data.link_object }}">{{ website_data.rooms[0].name }}</a></h3>
           </div>
           <div class="footer">
             {% if website_data.booking_link == nil or website_data.booking_link == "" %}
@@ -91,10 +93,10 @@
             {% else %}
               <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
             {% endif %}
-            <a class="link read-more-link" href="#">Read More</a>
+            <a class="link read-more-link" href="{{ website_data.rooms[1].slug | link_to: website_data.link_object }}">Read More</a>
           </div>
           <div class="body">
-            <h3><a href="#">{{ website_data.rooms[1].name }}</a></h3>
+            <h3><a href="{{ website_data.rooms[1].slug | link_to: website_data.link_object }}">{{ website_data.rooms[1].name }}</a></h3>
           </div>
           <div class="footer">
             {% if website_data.booking_link == nil or website_data.booking_link == "" %}
@@ -113,10 +115,10 @@
             {% else %}
               <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
             {% endif %}
-            <a class="link read-more-link" href="#">Read More</a>
+            <a class="link read-more-link" href="{{ website_data.rooms[2].slug | link_to: website_data.link_object }}">Read More</a>
           </div>
           <div class="body">
-            <h3><a href="#">{{ website_data.rooms[2].name }}</a></h3>
+            <h3><a href="{{ website_data.rooms[2].slug | link_to: website_data.link_object }}">{{ website_data.rooms[2].name }}</a></h3>
           </div>
           <div class="footer">
             {% if website_data.booking_link == nil or website_data.booking_link == "" %}

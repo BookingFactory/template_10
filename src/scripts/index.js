@@ -24,6 +24,7 @@ function main() {
   new DatePickers();
   new TextFielsdSetup(document.querySelectorAll('textarea'));
   new TextFielsdSetup(document.querySelectorAll('input[type="text"]'));
+  new TextFielsdSetup(document.querySelectorAll('input[type="email"]'));
 
   Array.from(document.querySelectorAll('.dropdown')).forEach((dropdown) => {
     new Dropdown(dropdown);

@@ -23,11 +23,6 @@
           {% endfor %}
         </div>
       </div>
-      {% if website_data.booking_link == '' %}
-        <a href="{{ '/book' | link_to: website_data.link_object}}" class="button button-success">Book Now</a>
-      {% else %}
-        <a href="{{website_data.booking_link}}" class="button button-success">Book Now</a>
-      {% endif %}
     </div>
     <div class="text-wrapper">
       {% unless page.content == '' %}

@@ -1,17 +1,14 @@
 .simple-page {
   .info {
     @media screen and (max-width: 767px) {
-      margin-bottom: 50px;
       margin-top: 55px;
     }
 
     @media screen and (min-width: 768px) {
-      margin-bottom: 75px;
       margin-top: 66px;
     }
 
     @media screen and (min-width: 1280px) {
-      margin-bottom: 75px;
       margin-top: 102px;
     }
 
@@ -73,6 +70,26 @@
       font-size: 15px;
       font-weight: 300;
       line-height: 26px;
+    }
+  }
+
+  .nav-tools-wrapper {
+    @media screen and (max-width: 767px) {
+      min-height: 35px;
+    }
+  }
+
+  .features {
+    @media screen and (max-width: 767px) {
+      margin-top: 50px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-top: 75px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-top: 75px;
     }
   }
 
