@@ -8,11 +8,11 @@ module.exports = {
   entry: './src/scripts/index.js',
   output: {
     filename: 'template.js',
-    path: path.resolve(__dirname, 'dist', 'js')
+    path: path.resolve(__dirname, '', 'js')
   },
   devtool: "source-map",
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, ''),
     compress: true,
     port: 9000
   },
