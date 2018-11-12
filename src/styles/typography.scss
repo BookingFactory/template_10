@@ -83,6 +83,24 @@ p {
   font-size: 15px;
   font-weight: 300;
   line-height: 1.73;
+
+  a {
+    @include font--muli;
+    color: $color--theme-2;
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 2.16;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: .75;
+    }
+
+    &:focus {
+      opacity: .6;
+    }
+  }
 }
 
 strong {

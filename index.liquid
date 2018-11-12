@@ -49,66 +49,68 @@
       </form>
     </div>
   </div>
-  <div class="rooms">
-    <h2>{{website_data.room_section_title}}</h2>
-    <p>{{website_data.room_section_description}}</p>
-    <div class="cards">
-      <div class="window">
-        <div class="cards-list">
-          {% for room in website_data.rooms %}
-            {% if room.visible == true %}
-              <div class="card">
-                <div class="image-wrapper">
-                  {% if room.room_type.photos.size > 0 %}
-                    <img src="{{ room.room_type.photos.first.image | attachment_url: 'original' }}" alt="Room photo">
-                  {% else %}
-                    <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo"/>
-                  {% endif %}
-                </div>
-                <div class="body">
-                  <h3>{{ room.name }}</h3>
-                  <ul class="bulleted-list">
-                    <li><i class="marker"></i>Adults: {{ room.room_type.max_adults }}</li>
-                    <li><i class="marker"></i>Children: {{ room.room_type.max_children }}</li>
-                    {% if room.room_type.facilities.size > 0 %}
-                      <li><i class="marker"></i>
-                        {% for facility in room.room_type.facilities %}
-                          {% if forloop.last == true %}
-                            {{ facility.title | get_translation: website_data.id, website_data.lang }}
-                          {% else %}
-                            {{ facility.title | get_translation: website_data.id, website_data.lang }},
-                          {% endif %}
-                        {% endfor %}
-                      </li>
+  {% if website_data.rooms.size > 0 %}
+    <div class="rooms">
+      <h2>{{website_data.room_section_title}}</h2>
+      <p>{{website_data.room_section_description}}</p>
+      <div class="cards">
+        <div class="window">
+          <div class="cards-list">
+            {% for room in website_data.rooms %}
+              {% if room.visible == true %}
+                <div class="card">
+                  <div class="image-wrapper">
+                    {% if room.room_type.photos.size > 0 %}
+                      <img src="{{ room.room_type.photos.first.image | attachment_url: 'original' }}" alt="Room photo">
+                    {% else %}
+                      <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo"/>
                     {% endif %}
-                  </ul>
-                  <a class="read-more-link" href="{{ room.slug | link_to: website_data.link_object }}">Read More</a>
+                  </div>
+                  <div class="body">
+                    <h3>{{ room.name }}</h3>
+                    <ul class="bulleted-list">
+                      <li><i class="marker"></i>Adults: {{ room.room_type.max_adults }}</li>
+                      <li><i class="marker"></i>Children: {{ room.room_type.max_children }}</li>
+                      {% if room.room_type.facilities.size > 0 %}
+                        <li><i class="marker"></i>
+                          {% for facility in room.room_type.facilities %}
+                            {% if forloop.last == true %}
+                              {{ facility.title | get_translation: website_data.id, website_data.lang }}
+                            {% else %}
+                              {{ facility.title | get_translation: website_data.id, website_data.lang }},
+                            {% endif %}
+                          {% endfor %}
+                        </li>
+                      {% endif %}
+                    </ul>
+                    <a class="read-more-link" href="{{ room.slug | link_to: website_data.link_object }}">Read More</a>
+                  </div>
+                  <div class="footer">
+                    {% if website_data.booking_link == '' %}
+                      <a href="{{ '/book' | link_to: website_data.link_object}}" class="button button-success">Book Now</a>
+                    {% else %}
+                      <a href="{{website_data.booking_link}}" class="button button-success">Book Now</a>
+                    {% endif %}
+                  </div>
                 </div>
-                <div class="footer">
-                  {% if website_data.booking_link == '' %}
-                    <a href="{{ '/book' | link_to: website_data.link_object}}" class="button button-success">Book Now</a>
-                  {% else %}
-                    <a href="{{website_data.booking_link}}" class="button button-success">Book Now</a>
-                  {% endif %}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row footer no-gutters">
+        <div class="col-12">
+          <div class="nav-tools">
+            {% for room in website_data.rooms %}
+              {% if room.visible == true %}
+                <div class="nav-point"></div>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-    <div class="row footer no-gutters">
-      <div class="col-12">
-        <div class="nav-tools">
-          {% for room in website_data.rooms %}
-            {% if room.visible == true %}
-              <div class="nav-point"></div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endif %}
   <div class="features features-shadow">
     <div class="cells">
       <div class="header">
@@ -125,81 +127,85 @@
       </div>
     </div>
   </div>
-  <div class="what-people-say">
-    <div id="reviews_1" class="reviews">
-      <div class="window">
-        <div class="author-background"></div>
-        <div class="reviews-list">
-          {% for testimonial in website_data.testimonials %}
-            <div class="review active">
-              <h2>{{ testimonial.title }}</h2>
-              <p>{{ testimonial.body }}</p>
-              <div class="author">
-                {{ testimonial.name }}<br>
-                <span class="author-role"></span>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-        <div class="carousel-pagination">
-          <div class="left-arrow"></div>
-          <div class="right-arrow"></div>
-          <ul class="pages">
+  {% if website_data.testimonials.size > 0 %}
+    <div class="what-people-say">
+      <div id="reviews_1" class="reviews">
+        <div class="window">
+          <div class="author-background"></div>
+          <div class="reviews-list">
             {% for testimonial in website_data.testimonials %}
-              <li>{{ forloop.rindex }}</li>
+              <div class="review active">
+                <h2>{{ testimonial.title }}</h2>
+                <p>{{ testimonial.body }}</p>
+                <div class="author">
+                  {{ testimonial.name }}<br>
+                  <span class="author-role"></span>
+                </div>
+              </div>
             {% endfor %}
-          </ul>
-          <span class="delimiter"></span>
-          <span class="count-page">{{ website_data.testimonials.size }}</span>
+          </div>
+          <div class="carousel-pagination">
+            <div class="left-arrow"></div>
+            <div class="right-arrow"></div>
+            <ul class="pages">
+              {% for testimonial in website_data.testimonials %}
+                <li>{{ forloop.rindex }}</li>
+              {% endfor %}
+            </ul>
+            <span class="delimiter"></span>
+            <span class="count-page">{{ website_data.testimonials.size }}</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="expert-opinion">
-    <div id="reviews_2" class="posts">
-      <div class="body">
-        <div class="image-wrapper image-wrapper-shadow">
-          <div class="image-list pagination-image-list">
+  {% endif %}
+  {% if website_data.blog_records.size > 0 %}
+    <div class="expert-opinion">
+      <div id="reviews_2" class="posts">
+        <div class="body">
+          <div class="image-wrapper image-wrapper-shadow">
+            <div class="image-list pagination-image-list">
+              {% for record in website_data.blog_records %}
+                {% if record.cover %}
+                  <img
+                    src="{{ record.image | attachment_url: 'public_big' }}"
+                    alt="{{ record.alt_text }}">
+                {% else %}
+                  <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="post-list pagination-text-list">
             {% for record in website_data.blog_records %}
-              {% if record.cover %}
-                <img
-                  src="{{ record.image | attachment_url: 'public_big' }}"
-                  alt="{{ record.alt_text }}">
-              {% else %}
-                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
-              {% endif %}
+              <div class="post">
+                <h2 class="post-subtitle">{{ website_data.blog_section_title }}</h2>
+                <h3 class="post-title">{{ record.title }}</h3>
+                <div class="text-content" >{{ record.text }}</div>
+                <a class="button button-info" href="{{ 'blog/' | append: record.slug }}">Check post</a>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="carousel-pagination tablet-see">
+            <div class="left-arrow" data-arrrow="left"></div>
+            <div class="right-arrow" data-arrrow="right"></div>
+            <ul class="pages">
+              {% for record in website_data.blog_records %}
+                <li>{{ forloop.rindex }}</li>
+              {% endfor %}
+            </ul>
+            <span class="delimiter"></span>
+            <span class="count-page">{{ website_data.blog_records.size }}</span>
+          </div>
+          <div class="nav-tools white-theme mobile-see">
+            {% for record in website_data.blog_records %}
+              <div class="nav-point"></div>
             {% endfor %}
           </div>
         </div>
-        <div class="post-list pagination-text-list">
-          {% for record in website_data.blog_records %}
-            <div class="post">
-              <h2 class="post-subtitle">{{ website_data.blog_section_title }}</h2>
-              <h3 class="post-title">{{ record.title }}</h3>
-              <div class="text-content" >{{ record.text }}</div>
-              <a class="button button-info" href="{{ 'blog/' | append: record.slug }}">Check post</a>
-            </div>
-          {% endfor %}
-        </div>
-        <div class="carousel-pagination tablet-see">
-          <div class="left-arrow" data-arrrow="left"></div>
-          <div class="right-arrow" data-arrrow="right"></div>
-          <ul class="pages">
-            {% for record in website_data.blog_records %}
-              <li>{{ forloop.rindex }}</li>
-            {% endfor %}
-          </ul>
-          <span class="delimiter"></span>
-          <span class="count-page">{{ website_data.blog_records.size }}</span>
-        </div>
-        <div class="nav-tools white-theme mobile-see">
-          {% for record in website_data.blog_records %}
-            <div class="nav-point"></div>
-          {% endfor %}
-        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
   <div class="frequently-asked-questions">
     <div class="questions">
       <h2>{{ website_data.faq_title }}</h2>

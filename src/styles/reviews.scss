@@ -100,6 +100,7 @@
       font-weight: 700;
       line-height: 26px;
       text-transform: uppercase;
+      white-space: normal;
 
       .author-role {
         @include font--muli;
@@ -111,15 +112,17 @@
       }
 
       @media screen and (max-width: 1439px) {
+        bottom: auto;
+        left: auto;
         position: relative;
-        right: auto;
-        top: auto;
+        width: auto;
       }
-  
+
       @media screen and (min-width: 1440px) {
+        bottom: 181px;
+        left: 850px;
         position: absolute;
-        right: 151px;
-        top: 220px;
+        width: 182px;
       }
     }
 
