@@ -16,44 +16,46 @@
       </div>
       <div class="row no-gutters footer">
         <div class="col-md-6 col-12 no-gutters left-side">
-          <span class="text">Share:</span>
-          <ul class="social-nav">
-            {% if website_data.instagram %}
-              <li class="social-instagram">
-                <a href="{{website_data.instagram}}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
-              </li>
-            {% endif %}
-            {% if website_data.facebook %}
-              <li class="social-facebook">
-                <a href="{{website_data.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook-f"></i></a>
-              </li>
-            {% endif %}
-            {% if website_data.twitter %}
-              <li class="social-twitter">
-                <a href="{{website_data.twitter}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
-              </li>
-            {% endif %}
-            {% if website_data.youtube %}
-              <li class="social-youtube">
-                <a href="{{website_data.youtube}}" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a>
-              </li>
-            {% endif %}
-            {% if website_data.linkedin %}
-              <li class="social-linkedin">
-                <a href="{{website_data.linkedin}}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-              </li>
-            {% endif %}
-            {% if website_data.pinterest %}
-              <li class="social-pinterest">
-                <a href="{{website_data.pinterest}}" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-              </li>
-            {% endif %}
-            {% if website_data.googleplus %}
-              <li class="social-googleplus">
-                <a href="{{website_data.googleplus}}" target="_blank" title="Google+"><i class="fa fa-google-plus-square"></i></a>
-              </li>
-            {% endif %}
-          </ul>
+        {% if website_data.instagram or website_data.facebook or website_data.twitter or website_data.youtube or website_data.linkedin or website_data.pinterest or website_data.googleplus %}
+            <span class="text">Share:</span>
+            <ul class="social-nav">
+              {% if website_data.instagram %}
+                <li class="social-instagram">
+                  <a href="{{website_data.instagram}}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+                </li>
+              {% endif %}
+              {% if website_data.facebook %}
+                <li class="social-facebook">
+                  <a href="{{website_data.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook-f"></i></a>
+                </li>
+              {% endif %}
+              {% if website_data.twitter %}
+                <li class="social-twitter">
+                  <a href="{{website_data.twitter}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                </li>
+              {% endif %}
+              {% if website_data.youtube %}
+                <li class="social-youtube">
+                  <a href="{{website_data.youtube}}" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a>
+                </li>
+              {% endif %}
+              {% if website_data.linkedin %}
+                <li class="social-linkedin">
+                  <a href="{{website_data.linkedin}}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                </li>
+              {% endif %}
+              {% if website_data.pinterest %}
+                <li class="social-pinterest">
+                  <a href="{{website_data.pinterest}}" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                </li>
+              {% endif %}
+              {% if website_data.googleplus %}
+                <li class="social-googleplus">
+                  <a href="{{website_data.googleplus}}" target="_blank" title="Google+"><i class="fa fa-google-plus-square"></i></a>
+                </li>
+              {% endif %}
+            </ul>
+          {% endif %}
         </div>
       </div>
     </div>

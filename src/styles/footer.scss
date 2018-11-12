@@ -26,7 +26,15 @@ footer {
       }
 
       @media screen and (min-width: 1200px) {
+        padding-right: 16px;
         text-align: left;
+      }
+    }
+
+    .logo {
+      @media screen and (min-width: 1200px) {
+        position: absolute;
+        right: 80px;
       }
     }
 
@@ -168,6 +176,14 @@ footer {
     a {
       color: $color--theme-2;
       text-decoration: none;
+
+      &:hover {
+        opacity: .75;
+      }
+
+      &:focus {
+        opacity: .6;
+      }
     }
 
     .copyright-text {

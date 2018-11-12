@@ -299,6 +299,10 @@
           opacity: 1;
         }
 
+        &:focus {
+          opacity: .65;
+        }
+
         @media screen and (max-width: 480px) {
           line-height: 221px;
         }
