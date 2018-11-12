@@ -181,7 +181,7 @@
               <div class="post">
                 <h2 class="post-subtitle">{{ website_data.blog_section_title }}</h2>
                 <h3 class="post-title">{{ record.title }}</h3>
-                <div class="text-content" >{{ record.text }}</div>
+                <div class="text-content" >{{ record.text | strip_html | truncate: 300 }}...</div>
                 <a class="button button-info" href="{{ 'blog/' | append: record.slug }}">Check post</a>
               </div>
             {% endfor %}
