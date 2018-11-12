@@ -11,7 +11,7 @@
             {% if room.website_custom_room_photos.size > 0 %}
               {% for photo in room.website_custom_room_photos %}
                 <li class="image-warpper">
-                  <img src="{{ photo.image | attachment_url: 'original' }}" alt="Room photo"/>
+                  <img src="{{ photo.image | attachment_url: 'public_big' }}" alt="Room photo"/>
                 </li>
               {% endfor %}
             {% else %}
@@ -47,7 +47,7 @@
           <div class="image-wrapper">
             {% if website_data.rooms[0].room_type.photos.size > 0 %}
               <img
-                src="{{ website_data.rooms[0].room_type.photos.first.image | attachment_url: 'original' }}"
+                src="{{ website_data.rooms[0].room_type.photos.first.image | attachment_url: 'public_big' }}"
                 alt="Room photo">
             {% else %}
               <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
@@ -69,7 +69,7 @@
           <div class="image-wrapper">
             {% if website_data.rooms[1].room_type.photos.size > 0 %}
               <img
-                src="{{ website_data.rooms[1].room_type.photos.first.image | attachment_url: 'original' }}"
+                src="{{ website_data.rooms[1].room_type.photos.first.image | attachment_url: 'public_big' }}"
                 alt="Room photo">
             {% else %}
               <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>
@@ -91,7 +91,7 @@
           <div class="image-wrapper">
             {% if website_data.rooms[2].room_type.photos.size > 0 %}
               <img
-                src="{{ website_data.rooms[2].room_type.photos.first.image | attachment_url: 'original' }}"
+                src="{{ website_data.rooms[2].room_type.photos.first.image | attachment_url: 'public_big' }}"
                 alt="Room photo">
             {% else %}
               <img src="https://placehold.it/334x230?text=No%20photo" alt="No photo"/>

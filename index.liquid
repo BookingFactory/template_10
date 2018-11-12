@@ -61,7 +61,7 @@
                 <div class="card">
                   <div class="image-wrapper">
                     {% if room.room_type.photos.size > 0 %}
-                      <img src="{{ room.room_type.photos.first.image | attachment_url: 'original' }}" alt="Room photo">
+                      <img src="{{ room.room_type.photos.first.image | attachment_url: 'public_big' }}" alt="Room photo">
                     {% else %}
                       <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo"/>
                     {% endif %}

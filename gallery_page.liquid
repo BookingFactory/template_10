@@ -6,7 +6,7 @@
         <ul class="image-list content-list">
           {% if website_data.gallery_photos.size > 0 %}
             {% for photo in website_data.gallery_photos %}
-              <li class="image-warpper"><img src="{{photo.image | attachment_url: 'original'}}" alt="Hotel photo"></li>
+              <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo"></li>
             {% endfor %}
           {% else %}
             <li class="image-warpper">
