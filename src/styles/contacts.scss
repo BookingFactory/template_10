@@ -54,14 +54,14 @@
     }
 
     h2 {
+      padding-right: 70px;
+
       @media screen and (max-width: 767px) {
         margin-bottom: 37px;
-        width: 520px;
       }
 
       @media screen and (min-width: 768px) {
         margin-bottom: 52px;
-        width: 300px;
       }
 
       @media screen and (min-width: 1440px) {
