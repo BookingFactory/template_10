@@ -73,7 +73,6 @@ export default class ExtraMenu {
 
   resizeExtraMenu() {
     if(!this.resizeTimeout) {
-      console.log('Resize');
       this.resizeTimeout = setTimeout(() => {
         clearTimeout(this.resizeTimeout);
         this.resizeTimeout = null;
@@ -91,7 +90,7 @@ export default class ExtraMenu {
       }
     } else {
       if (this.checkIsMobile()) {
-        if(this.extraMenuBody.children.length){
+        if(this.extraMenuBody && this.extraMenuBody.children.length){
           this.letGoExtraMenuItems();
         }
       }

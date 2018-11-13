@@ -214,6 +214,7 @@
       }
 
       .navbar-link {
+        display: inline-block;
         margin: 0;
 
         &::before {
@@ -230,6 +231,10 @@
         .dropdown-menu {
           left: 0;
           right: auto;
+        }
+
+        &.lang-menu {
+          margin-top: 34px;
         }
       }
     }

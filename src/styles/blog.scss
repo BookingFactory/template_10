@@ -1,4 +1,8 @@
 .blog {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 44px;
+  }
+
   h1 {
     @media screen and (max-width: 767px) {
       margin-bottom: 44px;
