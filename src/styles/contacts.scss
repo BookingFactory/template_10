@@ -276,10 +276,13 @@
   }
 
   .map-wrapper {
+    background: url('../images/map.png') no-repeat center center;
+    background-size: cover;
     height: 600px;
     margin: auto;
     overflow: hidden;
     position: relative;
+    text-align: center;
     width: 100%;
 
     &.map-wrapper-shadow {
@@ -288,6 +291,7 @@
         border-right: 100vw solid transparent;
         bottom: 0;
         content: '';
+        left: 0;
         position: absolute;
 
         @media screen and (max-width: 767px) {
@@ -306,6 +310,11 @@
 
     .map {
       height: 100%;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
     }
   }
 }

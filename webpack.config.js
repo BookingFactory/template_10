@@ -52,6 +52,17 @@ module.exports = {
         options: {
           name: '../fonts/[name].[ext]'
         }
+      },
+      {
+        test: /\.(png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '../images/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
