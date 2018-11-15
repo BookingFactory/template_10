@@ -1,0 +1,37 @@
+"_footer":
+  {
+    "Text your message here…",
+    "Contact Us",
+    "Hotel Website Powered by",
+    "Copyright",
+    "All rights reserved"
+  },
+"blog_page": {
+  "Read post"
+},
+"blog_record": {
+  "Read More",
+},
+"index": {
+  "Check In",
+  "Check Out",
+  "Book Now",
+  "Read More",
+  "Check post",
+  "Check All Answers"
+},
+"not_found_page_": {
+  "Hotel not found",
+},
+"number": {
+  "Rooms &amp; Services",
+  "Book Now",
+  "Features",
+  "Read More",
+}
+"other_room": {
+  "Rooms &amp; Services",
+  "Book Now",
+  "More Rooms"
+  "Read More"
+}
