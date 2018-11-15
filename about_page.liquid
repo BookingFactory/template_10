@@ -7,12 +7,12 @@
             {% if website_data.about_photos.size > 0 %}
               {% for photo in website_data.about_photos %}
                 <li class="image-warpper">
-                  <img src="{{ photo.image | attachment_url: 'public_big' }}" alt="Room photo"/>
+                  <img src="{{ photo.image | attachment_url: 'public_big' }}" alt="Room photo" />
                 </li>
               {% endfor %}
             {% else %}
               <li class="image-warpper">
-                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo" />
               </li>
             {% endif %}
           </ul>

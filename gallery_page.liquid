@@ -6,11 +6,11 @@
         <ul class="image-list content-list">
           {% if website_data.gallery_photos.size > 0 %}
             {% for photo in website_data.gallery_photos %}
-              <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo"></li>
+              <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo" /></li>
             {% endfor %}
           {% else %}
             <li class="image-warpper">
-              <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+              <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo" />
             </li>
           {% endif %}
         </ul>

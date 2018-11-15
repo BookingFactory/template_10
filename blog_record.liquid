@@ -3,9 +3,9 @@
     <div class="body">
       <div class="image-wrapper image-wrapper-shadow">
         {% if record.cover %}
-          <img src="{{ record.image | attachment_url: 'public_big' }}" alt="{{ record.alt_text }}">
+          <img src="{{ record.image | attachment_url: 'public_big' }}" alt="{{ record.alt_text }}" />
         {% else %}
-          <img src="https://placehold.it/480x320?text=No%20photo" alt="No photo"/>
+          <img src="https://placehold.it/480x320?text=No%20photo" alt="No photo" />
         {% endif %}
       </div>
       <div class="post">
@@ -69,9 +69,9 @@
             {% if website_data.blog_records[0].cover %}
               <img
                 src="{{ website_data.blog_records[0].image | attachment_url: 'public_big' }}"
-                alt="{{ website_data.blog_records[0] }}">
+                alt="{{ website_data.blog_records[0] }}" />
             {% else %}
-              <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo">
+              <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo" />
             {% endif %}
             <a class="link read-more-link" href="{{ website_data.blog_records[0].slug }}">Read More</a>
           </div>
@@ -85,9 +85,9 @@
             {% if website_data.blog_records[1].cover %}
               <img
                 src="{{ website_data.blog_records[1].image | attachment_url: 'public_big' }}"
-                alt="{{ website_data.blog_records[1] }}">
+                alt="{{ website_data.blog_records[1] }}" />
             {% else %}
-              <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo">
+              <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo" />
             {% endif %}
             <a class="link read-more-link" href="{{ website_data.blog_records[1].slug }}">Read More</a>
           </div>

@@ -7,11 +7,11 @@
           <ul class="image-list">
             {% if website_data.top_bar_photos.size > 0 %}
               {% for photo in website_data.top_bar_photos %}
-                <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo"></li>
+                <li class="image-warpper"><img src="{{photo.image | attachment_url: 'public_big'}}" alt="Hotel photo" /></li>
               {% endfor %}
             {% else %}
               <li class="image-warpper">
-                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+                <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo" />
               </li>
             {% endif %}
           </ul>
@@ -28,14 +28,14 @@
       <p>{{website_data.header_text_2}}</p>
       <form action="" method="">
         <div class="input-group">
-          <input id="checkIn" class="date-picker" type="text" placeholder="Check-In">
+          <input id="checkIn" class="date-picker" type="text" placeholder="Check-In" />
           <label class="date-picker-label" for="checkIn">Check In</label>
           <div class="input-prepend">
             <i class="fa fa-calendar input-icon"></i>
           </div>
         </div>
         <div class="input-group check-out">
-          <input id="checkOut" class="date-picker" type="text" placeholder="Check-Out">
+          <input id="checkOut" class="date-picker" type="text" placeholder="Check-Out" />
           <label class="date-picker-label" for="checkOut">Check Out</label>
           <div class="input-prepend">
             <i class="fa fa-calendar input-icon"></i>
@@ -61,9 +61,9 @@
                 <div class="card">
                   <div class="image-wrapper">
                     {% if room.room_type.photos.size > 0 %}
-                      <img src="{{ room.room_type.photos.first.image | attachment_url: 'public_big' }}" alt="Room photo">
+                      <img src="{{ room.room_type.photos.first.image | attachment_url: 'public_big' }}" alt="Room photo" />
                     {% else %}
-                      <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo"/>
+                      <img src="https://placehold.it/325x223?text=No%20photo" alt="No photo" />
                     {% endif %}
                   </div>
                   <div class="body">
@@ -169,9 +169,9 @@
                 {% if record.cover %}
                   <img
                     src="{{ record.image | attachment_url: 'public_big' }}"
-                    alt="{{ record.alt_text }}">
+                    alt="{{ record.alt_text }}" />
                 {% else %}
-                  <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo"/>
+                  <img src="https://placehold.it/464x310?text=No%20photo" alt="No photo" />
                 {% endif %}
               {% endfor %}
             </div>
