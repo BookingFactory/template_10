@@ -40,6 +40,7 @@ export default function carouselsSetup() {
   if(document.querySelector('.rooms')) {
     const cardSlider = tns({
       ...options_1,
+      autoplay: false,
       autoWidth: true,
       container: '.rooms .cards .cards-list',
       mouseDrag: true,
@@ -85,6 +86,7 @@ export default function carouselsSetup() {
   if(document.querySelector('.posts')) {
     const opinionSlider = tns({
       ...options_2,
+      autoplay: false,
       container: '.posts .post-list',
       controlsContainer: ".posts .carousel-pagination",
       navContainer: '.posts .nav-tools',

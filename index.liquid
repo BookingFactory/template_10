@@ -149,7 +149,7 @@
             <div class="right-arrow"></div>
             <ul class="pages">
               {% for testimonial in website_data.testimonials %}
-                <li>{{ forloop.rindex }}</li>
+                <li>{{ forloop.index }}</li>
               {% endfor %}
             </ul>
             <span class="delimiter"></span>
@@ -191,7 +191,7 @@
             <div class="right-arrow" data-arrrow="right"></div>
             <ul class="pages">
               {% for record in website_data.blog_records %}
-                <li>{{ forloop.rindex }}</li>
+                <li>{{ forloop.index }}</li>
               {% endfor %}
             </ul>
             <span class="delimiter"></span>
