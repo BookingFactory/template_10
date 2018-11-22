@@ -90,16 +90,12 @@ input {
     &.flatpickr-input {
       background-color: transparent;
       border: 0;
-      color: $color--grey;
+      color: transparent;
       height: 48px;
       line-height: 48px;
       padding: 0 19px 0 44px;
       vertical-align: top;
       width: 100%;
-
-      &::placeholder {
-        color: $color--grey;
-      }
     }
   }
 }

@@ -31,8 +31,18 @@ function main() {
   });
   carouselsSetup();
 
-  flatpickr("#checkIn", {});
-  flatpickr("#checkOut", {});
+  const checkOut = flatpickr("#checkOut", {minDate: "today"});
+  flatpickr("#checkIn", { minDate: "today", onValueUpdate: [function(selectedDates) {
+    const selectedDate = new Date(selectedDates[0]);
+    checkOut.setDate(selectedDate.setDate(selectedDate.getDate() + 1));
+    if ("createEvent" in document) {
+      var evt = document.createEvent("HTMLEvents");
+      evt.initEvent("change", false, true);
+      checkOut.element.dispatchEvent(evt);
+    }
+    else
+      checkOut.element.fireEvent("onchange");
+  }] });
   flatpickr("#from", {});
   flatpickr("#to", {});
 
