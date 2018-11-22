@@ -32,6 +32,7 @@ export default function carouselsSetup() {
   if(document.querySelector('.carousel .nav-tools')) {
     const carouselSlider = tns({
       ...options_1,
+      autoplayTimeout: 3000,
       container: '.carousel .image-list',
       navContainer: '.carousel .nav-tools',
     });
