@@ -5,8 +5,15 @@ export default function carouselsSetup() {
   const opinions = {
     items: 1,
     speed: 700,
-    autoplay: true,
     autoplayButtonOutput: false,
+    responsive: {
+      320: {
+        autoplay: false,
+      },
+      768: {
+        autoplay: true,
+      },
+    },
   }
 
   const options_1 = {
@@ -41,7 +48,6 @@ export default function carouselsSetup() {
   if(document.querySelector('.rooms')) {
     const cardSlider = tns({
       ...options_1,
-      autoplay: false,
       autoWidth: true,
       container: '.rooms .cards .cards-list',
       mouseDrag: true,
@@ -55,6 +61,7 @@ export default function carouselsSetup() {
           edgePadding: 25,
         },
         768: {
+          autoplay: false,
           gutter: 50,
         },
       },
@@ -87,10 +94,14 @@ export default function carouselsSetup() {
   if(document.querySelector('.posts')) {
     const opinionSlider = tns({
       ...options_2,
-      autoplay: false,
       container: '.posts .post-list',
       controlsContainer: ".posts .carousel-pagination",
       navContainer: '.posts .nav-tools',
+      responsive: {
+        768: {
+          autoplay: false,
+        },
+      },
     });
     const paginationPages = Array.from(document.querySelector('.posts .carousel-pagination .pages').children);
     const imagesList = Array.from(document.querySelector('.expert-opinion .image-list').children);
