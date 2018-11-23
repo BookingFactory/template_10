@@ -22,7 +22,7 @@ function main() {
   new NavBar();
   new Contacts();
   new ExtraMenu();
-  new BookForm();
+  new BookForm('bookForm');
   new DatePickers();
   new TextFielsdSetup(document.querySelectorAll('textarea'));
   new TextFielsdSetup(document.querySelectorAll('input[type="text"]'));

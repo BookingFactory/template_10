@@ -1,19 +1,21 @@
 import flatpickr from 'flatpickr';
 
 export default class Book {
-  constructor() {
-    this.form = document.querySelector('#bookForm');
+  constructor(idForm) {
+    this.form = document.querySelector(`#${idForm}`);
 
-    this.link = document.querySelector('#bookForm a');
-
-    this.selectCheckInDate = this.selectCheckInDate.bind(this);
-    this.onClick = this.onClick.bind(this);
-
-    this.link.addEventListener('click', this.onClick);
-
-
-    this.checkOut = flatpickr("#checkOut", {minDate: "today"});
-    this.checkIn = flatpickr("#checkIn", { minDate: "today", onValueUpdate: [this.selectCheckInDate] });
+    if(this.form) {
+      this.link = document.querySelector(`#${idForm} a`);
+  
+      this.selectCheckInDate = this.selectCheckInDate.bind(this);
+      this.onClick = this.onClick.bind(this);
+  
+      this.link.addEventListener('click', this.onClick);
+  
+  
+      this.checkOut = flatpickr("#checkOut", {minDate: "today"});
+      this.checkIn = flatpickr("#checkIn", { minDate: "today", onValueUpdate: [this.selectCheckInDate] });
+    }
   }
 
   onClick(event) {
