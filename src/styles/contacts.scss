@@ -285,6 +285,10 @@
     text-align: center;
     width: 100%;
 
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
     &.map-wrapper-shadow {
       &::after {
         border-bottom: 50px solid $color--white;
