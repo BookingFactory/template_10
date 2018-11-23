@@ -26,7 +26,7 @@ export default function carouselsSetup() {
   const options_3 = {
     ...opinions,
     slideBy: 'page',
-    autoplayTimeout: 3000,
+    autoplay: false,
   }
 
   if(document.querySelector('.carousel .nav-tools')) {

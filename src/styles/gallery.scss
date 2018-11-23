@@ -53,6 +53,10 @@
         }
       }
     }
+
+    .image-list {
+      transition: all .3s ease-in-out;
+    }
   }
 
   .carousel-pagination-wrapper {
