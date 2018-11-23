@@ -15,19 +15,21 @@
           {% endif %}
         </ul>
       </div>
-      <div class="carousel-pagination-wrapper">
-        <div class="carousel-pagination">
-          <div class="left-arrow"></div>
-          <div class="right-arrow"></div>
-          <ul class="pages">
-            {% for photo in website_data.gallery_photos %}
-              <li>{{ forloop.index }}</li>
-            {% endfor %}
-          </ul>
-          <span class="delimiter"></span>
-          <span class="count-page">{{ website_data.gallery_photos.size }}</span>
+      {% if website_data.gallery_photos.size > 0 %}
+        <div class="carousel-pagination-wrapper">
+          <div class="carousel-pagination">
+            <div class="left-arrow"></div>
+            <div class="right-arrow"></div>
+            <ul class="pages">
+              {% for photo in website_data.gallery_photos %}
+                <li>{{ forloop.index }}</li>
+              {% endfor %}
+            </ul>
+            <span class="delimiter"></span>
+            <span class="count-page">{{ website_data.gallery_photos.size }}</span>
+          </div>
         </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </div>

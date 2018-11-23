@@ -37,11 +37,12 @@ export default function carouselsSetup() {
   }
 
   if(document.querySelector('.carousel .nav-tools')) {
+    const navContainer = (document.querySelectorAll('.carousel .nav-point').length > 1) ? '.carousel .nav-tools' : false;
     const carouselSlider = tns({
       ...options_1,
       autoplayTimeout: 3000,
       container: '.carousel .image-list',
-      navContainer: '.carousel .nav-tools',
+      navContainer,
     });
   }
 
@@ -91,7 +92,7 @@ export default function carouselsSetup() {
     });
   }
 
-  if(document.querySelector('.posts')) {
+  if(document.querySelector('.posts .nav-tools')) {
     const opinionSlider = tns({
       ...options_2,
       container: '.posts .post-list',
@@ -131,11 +132,15 @@ export default function carouselsSetup() {
   }
 
   if(document.querySelector('.carousel-with-arrows')) {
+    let navContainer = false;
+    if(document.querySelectorAll('.carousel-with-arrows .carousel-pagination .pages li').length) {
+      navContainer = '.carousel-with-arrows .carousel-pagination .pages';
+    }
     const reviewSlider = tns({
       ...options_3,
       container: '.carousel-with-arrows .content-list',
       controlsContainer: ".carousel-with-arrows .carousel-pagination",
-      navContainer: '.carousel-with-arrows .carousel-pagination .pages',
+      navContainer,
     });
   }
 }
