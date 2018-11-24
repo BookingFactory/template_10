@@ -8,21 +8,21 @@
   }
 
   @media screen and (min-width: 768px) {
-    padding-top: 195px;
+    padding-top: 105px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 225px;
+    padding-top: 130px;
   }
 
   .body {
     background-color: $color--white;
     border: 1px solid $color--unknown-1;
-    left: 0;
+    margin: 0 auto -50px;
     opacity: 0;
     padding: 65px 80px 95px;
     pointer-events: none;
-    position: absolute;
+    position: relative;
     transition: opacity .7s ease-in-out;
     width: 560px;
     z-index: 2;
@@ -30,22 +30,10 @@
     @media screen and (max-width: 767px) {
       border-left: 0;
       border-right: 0;
+      margin: auto;
       padding: 63px 16px;
       position: relative;
-      top: 0;
       width: 100%;
-    }
-
-    @media screen and (min-width: 768px) {
-      left: 50%;
-      top: 105px;
-      transform: translateX(-50%);
-    }
-
-    @media screen and (min-width: 1440px) {
-      left: 153px;
-      top: 130px;
-      transform: translateX(0);
     }
 
     &.show {
@@ -222,11 +210,12 @@
     }
 
     &.body__form {
+      left: 0;
+      position: absolute;
+      top: 0;
+
       @media screen and (max-width: 767px) {
-        left: 0;
         padding: 63px 16px 50px;
-        position: absolute;
-        top: 0;
       }
 
       h2 {
@@ -276,8 +265,6 @@
   }
 
   .map-wrapper {
-    background: url('../images/map.png') no-repeat center center;
-    background-size: cover;
     height: 600px;
     margin: auto;
     overflow: hidden;
@@ -286,7 +273,7 @@
     width: 100%;
 
     @media screen and (max-width: 767px) {
-      display: none;
+      height: auto;
     }
 
     &.map-wrapper-shadow {
@@ -317,8 +304,9 @@
     }
 
     img {
-      max-height: 100%;
-      max-width: 100%;
+      max-height: 600px;
+      max-width: 640px;
+      width: 100%;
     }
   }
 }

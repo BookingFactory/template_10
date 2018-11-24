@@ -112,6 +112,11 @@
             script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
               '&callback=initialize&key=AIzaSyCxqPAlL6tmp-Wny3tC0e_byl-jOxzu_QA';
             document.body.appendChild(script);
+          } else {
+            var styles = {% include 'google_map_image_style' %};
+            var img = document.createElement('img');
+            img.src = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${zoom}&size=640x600&key=AIzaSyCxqPAlL6tmp-Wny3tC0e_byl-jOxzu_QA&${styles}&markers=color:red%7C${lat},${lng}`;
+            document.getElementById("map-canvas").appendChild(img);
           }
         }
       {% endif %}
