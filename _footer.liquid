@@ -176,8 +176,7 @@
     </div>
     <div class="row no-gutters copyright">
       <div class="col-xl-6 col-md-12 col-12 no-gutters">
-        {% include 'tbf_logo' %}
-        <span>Hotel Website Powered by <a href="https://thebookingfactory.com/" target="_blank">thebookingfactory.com</a></span>
+        <span>Hotel Website Powered by <a href="{{website_data.project_url}}" target="_blank">{{website_data.project_name}}</a></span>
       </div>
       <div class="col-xl-6 col-md-12 col-12 no-gutters copyright-text">
         Copyright &copy; {{website_data.hotel_name}}. All rights reserved.
