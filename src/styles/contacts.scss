@@ -238,7 +238,7 @@
 
       .footer {
         line-height: 42px;
-        margin-top: 90px;
+        margin-top: 30px;
         position: relative;
 
         span {
@@ -248,17 +248,14 @@
         }
 
         .footer-button {
+          float: none;
+          margin-top: 17px;
+          text-align: center;
+
           @media screen and (max-width: 767px) {
-            float: none;
-            margin-top: 17px;
-            text-align: center;
             width: 100%;
           }
 
-          @media screen and (min-width: 768px) {
-            clear: both;
-            float: right;
-          }
         }
       }
     }
@@ -309,4 +306,8 @@
       width: 100%;
     }
   }
+}
+
+.g-recaptcha > div {
+  margin: auto;
 }
