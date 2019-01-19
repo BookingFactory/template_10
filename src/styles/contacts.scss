@@ -210,12 +210,14 @@
     }
 
     &.body__form {
-      left: 0;
+      left: 50%;
       position: absolute;
-      top: 0;
+      top: 130px;
+      transform: translate(-50%);
 
       @media screen and (max-width: 767px) {
         padding: 63px 16px 50px;
+        top: 0;
       }
 
       h2 {
