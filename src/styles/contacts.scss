@@ -41,6 +41,13 @@
       pointer-events: auto;
     }
 
+    &.second {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
     h2 {
       padding-right: 70px;
 
