@@ -29,7 +29,7 @@
       </button>
     </div>
   </div>
-  <div id="get-in-touch" class="body second">
+  <div id="get-in-touch" class="body body__form">
     <h2>{{ 'Get In Touch' | t: website_data.lang }}</h2>
     <form id="contact-form" method="POST" action="{{ "/send_mail" | link_to: website_data.link_object }}">
       <input type="hidden" name="part_a" value="{{website_data.rand_a}}" />
