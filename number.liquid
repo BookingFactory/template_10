@@ -62,6 +62,7 @@
     <h2 class="to-center">More Rooms</h2>
     <div class="window">
       <div class="cards-list">
+        {% if website_data.rooms[0] %}
         <div class="card">
           <div class="image-wrapper">
             {% if website_data.rooms[0].room_type.photos.size > 0 %}
@@ -84,6 +85,8 @@
             {% endif %}
           </div>
         </div>
+        {% endif %}
+        {% if website_data.rooms[1] %}
         <div class="card">
           <div class="image-wrapper">
             {% if website_data.rooms[1].room_type.photos.size > 0 %}
@@ -106,6 +109,8 @@
             {% endif %}
           </div>
         </div>
+        {% endif %}
+        {% if website_data.rooms[2] %}
         <div class="card">
           <div class="image-wrapper">
             {% if website_data.rooms[2].room_type.photos.size > 0 %}
@@ -128,6 +133,7 @@
             {% endif %}
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
